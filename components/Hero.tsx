@@ -6,12 +6,13 @@ const VIDEO_URL = "https://assets.mixkit.co/videos/preview/mixkit-abstract-techn
 
 // --- Components ---
 
-const MagneticButton = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+const MagneticButton = ({ children, className,disabled }: { children: React.ReactNode, className?: string,disabled?: boolean; }) => {
   const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (disabled) return;
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current?.getBoundingClientRect() || { left: 0, top: 0, width: 0, height: 0 };
     const center = { x: left + width / 2, y: top + height / 2 };
@@ -22,6 +23,7 @@ const MagneticButton = ({ children, className }: { children: React.ReactNode, cl
   };
 
   const handleMouseLeave = () => {
+    if (disabled) return;
     x.set(0);
     y.set(0);
   };
@@ -29,11 +31,15 @@ const MagneticButton = ({ children, className }: { children: React.ReactNode, cl
   return (
     <motion.button
       ref={ref}
+      disabled={disabled}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ x, y }}
+     style={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className={className}
+      className={`
+        ${className}
+        ${disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}
+      `}
     >
       {children}
     </motion.button>
@@ -61,21 +67,44 @@ const TypewriterText = ({ text, delay = 0 }: { text: string, delay?: number }) =
   return <span>{displayedText}<span className="animate-pulse">_</span></span>;
 };
 
+ const TARGET_DATE = new Date(2026, 2, 21, 9, 0, 0); 
+
+ function calculateTimeLeft() {
+  const now = new Date().getTime();
+  const target = TARGET_DATE.getTime();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  return { days, hours, minutes, seconds };
+}
+
+
+
+
+
 const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 14, hours: 2, minutes: 45, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
+  // console.log(afterlaunch);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        return prev;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+  const timer = setInterval(() => {
+    setTimeLeft(calculateTimeLeft());
+   
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);;
+
+
 
   return (
     <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 cursor-default select-none">
@@ -97,6 +126,27 @@ const Countdown = () => {
 };
 
 const Hero: React.FC = () => {
+
+  const TARGET_DATE = new Date(2026, 2, 21, 9, 0, 0); 
+  
+  const isafterlaunch=()=>{
+  const now = new Date().getTime();
+  const target = TARGET_DATE.getTime();
+  return now >= target;
+}
+
+  const [afterlaunch, setAfterLaunch] = useState(isafterlaunch());
+  //console.log(afterlaunch);
+
+   useEffect(() => {
+  const timer = setInterval(() => {
+    setAfterLaunch(isafterlaunch());
+    //console.log(afterlaunch);
+   
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);;
   const { scrollY } = useScroll();
 
   // Opacity: Fade out quickly (0-200px) to avoid overlap with white section
@@ -183,7 +233,7 @@ const Hero: React.FC = () => {
             </span>
           </MagneticButton>
 
-          <MagneticButton className="relative px-10 py-5 bg-black/40 backdrop-blur-md border border-zinc-700 text-white font-archivo font-bold text-xl uppercase tracking-tight hover:bg-white/10 hover:border-white transition-all rounded-full">
+          <MagneticButton disabled={!afterlaunch}  className="relative px-10 py-5 bg-black/40 backdrop-blur-md border border-zinc-700 text-white font-archivo font-bold text-xl uppercase tracking-tight hover:bg-white/10 hover:border-white transition-all rounded-full">
             <span className="flex items-center gap-2">
               View Problem Statements <Terminal size={20} />
             </span>

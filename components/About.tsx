@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="relative py-32 md:py-48 xl:py-64 px-8 md:px-16 xl:px-24 bg-white text-black rounded-t-[4rem] md:rounded-t-[6rem] lg:rounded-t-[10rem] -mt-24 z-20">
+    <section id="about" className="relative py-32 md:py-48 xl:py-64 px-8 md:px-16 xl:px-24 bg-white text-black rounded-t-[4rem] md:rounded-t-[6rem] lg:rounded-t-[10rem]">
       <div className="max-w-[1800px] mx-auto">
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,11 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] bg-[#050008]/80 backdrop-blur-xl border-b border-white/5 px-6 md:px-12 py-5 flex justify-between items-center transition-all">
       <div className="flex items-center gap-4">
-        <div className="w-10 h-10 bg-cyan-400 flex items-center justify-center font-archivo text-black font-black text-xl select-none">P</div>
-        <div className="flex flex-col">
-          <span className="text-white font-archivo text-xs md:text-sm tracking-[0.2em] uppercase leading-none">PIXELVERSE</span>
-          <span className="text-zinc-600 text-[7px] md:text-[8px] font-pixel uppercase mt-1">GDG_SIES_GST</span>
-        </div>
+       <img src="../public/logo.png" alt="Pixelverse Logo" className=" h-10"/>
       </div>
       
       {/* Desktop Nav */}

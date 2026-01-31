@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
   const { scrollY } = useScroll();
 
   // Opacity: Fade out quickly (0-200px) to avoid overlap with white section
-  const opacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#0a0a0f] text-white">

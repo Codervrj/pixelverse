@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
                 key={item.name} 
                 href={item.href} 
                 onClick={() => setIsOpen(false)}
-                className="text-white font-archivo text-4xl tracking-tighter uppercase"
+                className="text-white  font-archivo text-4xl tracking-tighter uppercase"
               >
                 {item.name}
               </a>

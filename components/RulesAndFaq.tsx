@@ -13,18 +13,18 @@ const RulesAndFaq: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="py-32 px-6 md:px-10 bg-[#0c0014]">
+    <div className="py-32 px-6 md:px-10 bg-[#F5F5DC] text-black border-t-2 border-black">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-cyan-400 font-pixel text-4xl md:text-7xl mb-16 text-center tracking-tighter uppercase">FAQ</h2>
-        <div className="space-y-4">
+        <h2 className="text-black font-archivo text-4xl md:text-7xl mb-16 text-center tracking-tighter uppercase">FAQ</h2>
+        <div className="space-y-6">
           {faqs.map((faq, idx) => (
             <div key={idx}>
               <button
                 onClick={() => setOpen(open === idx ? null : idx)}
-                className="w-full bg-pink-theme p-6 md:p-8 flex justify-between items-center text-left border-4 border-black hover:opacity-90 transition-all"
+                className="w-full bg-white p-6 md:p-8 flex justify-between items-center text-left border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all"
               >
-                <span className="text-white font-pixel text-[12px] md:text-[14px] uppercase text-left">{faq.q}</span>
-                <span className="text-white text-xl">{open === idx ? '▲' : '▼'}</span>
+                <span className="text-black font-archivo font-bold text-lg md:text-xl uppercase text-left">{faq.q}</span>
+                <span className="text-black text-xl font-bold">{open === idx ? '−' : '+'}</span>
               </button>
               <AnimatePresence>
                 {open === idx && (
@@ -32,9 +32,11 @@ const RulesAndFaq: React.FC = () => {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="bg-white text-black p-6 font-pixel text-[12px] uppercase border-x-4 border-b-4 border-black"
+                    className="overflow-hidden"
                   >
-                    {faq.a}
+                    <div className="bg-[#FFD700] text-black p-6 font-archivo font-medium text-base md:text-lg border-x-2 border-b-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] mt-2">
+                      {faq.a}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

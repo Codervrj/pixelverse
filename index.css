@@ -1,0 +1,36 @@
+:root {
+  --color-cream: #F5F5DC;
+  --color-gold: #FFD700;
+  --color-black: #050008;
+  --color-red: #FF4D4D;
+  --color-blue: #4D4DFF;
+  --color-green: #37A221;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-black);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Paper / Texture Effects */
+.bg-cream { background-color: var(--color-cream); }
+.bg-gold { background-color: var(--color-gold); }
+.text-gold { color: var(--color-gold); }
+
+/* Sunburst Animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}

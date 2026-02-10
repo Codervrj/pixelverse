@@ -64,13 +64,6 @@ const questList = [
     icon: Sparkles,
     color: '#55AA55',
     cardColor: 'bg-green-600'
-  },
-  {
-    title: 'RETRO REMASTER',
-    desc: 'Take a legacy system and give it a pixel-perfect, hyper-modern design overhaul.',
-    icon: Monitor,
-    color: '#5555FF',
-    cardColor: 'bg-blue-600'
   }
 ];
 
@@ -251,7 +244,7 @@ export default function Quests() {
           Hover over the cards to reveal the quests
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-[1050px] mx-auto">
           {questList.map((quest, idx) => (
             <UnoReverseCard key={idx} quest={quest} index={idx} />
           ))}

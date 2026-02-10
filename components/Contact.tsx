@@ -3,74 +3,47 @@ import { Phone, Mail } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-12 pb-0 bg-[#F5F5DC] relative text-[#050008] min-h-screen overflow-hidden">
-      {/* Background dot pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#050008 1px, transparent 1px)',
-          backgroundSize: '20px 20px'
-        }}
-      />
-      {/* Background gold grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #ffd7004d 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 215, 0, 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
-          WebkitMaskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
-          maskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
-          animation: 'blueprintMove 40s linear infinite'
-        }}
-      />
-      <style>{`
-        @keyframes blueprintMove {
-          0% { background-position: 0 0; }
-          100% { background-position: 40px 40px; }
-        }
-      `}</style>
+    <section className="py-24 md:py-40 px-6 md:px-12 bg-[#050008] relative text-white min-h-screen overflow-hidden">
+      {/* Structural Grid Background (same as PrizePool) */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none"
+           style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="mb-24 text-center">
-          <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-bold text-xs mb-4 uppercase tracking-widest">
-            COMM_LINK
+        <div className="mb-24 space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="h-[1px] w-12 bg-yellow-400" />
+            <span className="font-pixel text-yellow-400 text-xs tracking-[0.3em]">COMM_LINK</span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none text-[#050008]">
-            GET IN<br />
-            <span className="text-transparent" style={{ WebkitTextStroke: '2px #050008' }}>
-              TOUCH
-            </span>
+          <h2 className="text-5xl md:text-8xl font-archivo text-white uppercase tracking-tighter">
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">GET IN TOUCH</span>
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Side - Contact Info */}
           <div className="space-y-10">
-            <div className="bg-white border-2 border-[#050008] rounded-2xl p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              <p className="text-[#050008]/60 text-base md:text-lg font-bold uppercase tracking-tight mb-8">
+            <div className="p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors relative group">
+              <p className="text-zinc-500 text-base md:text-lg font-bold uppercase tracking-tight mb-8">
                 Any query, suggestion or comment? Feel free to contact us.
               </p>
 
               {/* Phone Numbers */}
               <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 group">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FFD700] flex items-center justify-center border-2 border-[#050008] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                    <Phone className="text-[#050008]" size={24} />
+                <div className="flex items-center gap-4 group/phone">
+                  <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/phone:border-yellow-400/50 transition-colors">
+                    <Phone className="text-yellow-400" size={24} />
                   </div>
                   <div className="space-y-1">
                     <a
                       href="tel:+918828046919"
-                      className="text-[#050008] text-lg font-bold uppercase tracking-tight hover:text-[#FFD700] transition-colors block"
+                      className="text-white text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 88280 46919
                     </a>
                     <a
                       href="tel:+919833875297"
-                      className="text-[#050008] text-lg font-bold uppercase tracking-tight hover:text-[#FFD700] transition-colors block"
+                      className="text-white text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 98338 75297
                     </a>
@@ -80,41 +53,47 @@ const ContactSection: React.FC = () => {
 
               {/* Email Section */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-black tracking-tighter uppercase mb-6 text-[#050008]">
+                <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest mb-6">
                   Any Queries?
                 </h3>
-                <div className="flex items-center gap-4 group">
-                  <div className="w-14 h-14 rounded-2xl bg-[#FFD700] flex items-center justify-center border-2 border-[#050008] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none group-hover:translate-x-[2px] group-hover:translate-y-[2px] transition-all">
-                    <Mail className="text-[#050008]" size={24} />
+                <div className="flex items-center gap-4 group/mail">
+                  <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/mail:border-yellow-400/50 transition-colors">
+                    <Mail className="text-yellow-400" size={24} />
                   </div>
                   <div>
-                    <p className="text-[#050008]/40 text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
+                    <p className="text-zinc-600 text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
                       href="mailto:pixelverse@siesgst.ac.in"
-                      className="text-[#050008] text-lg font-bold tracking-tight hover:text-[#FFD700] transition-colors break-all"
+                      className="text-white text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
                       pixelverse@siesgst.ac.in
                     </a>
                   </div>
                 </div>
               </div>
+
+              {/* Decorative Corners */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
             </div>
           </div>
 
           {/* Right Side - Map */}
           <div className="space-y-6">
-            <h3 className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-[#050008]">
-              Find Us <span className="text-transparent" style={{ WebkitTextStroke: '1px #050008' }}>On Map</span>
+            <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest">
+              LOCATION_DATA
             </h3>
 
-            <div className="relative rounded-2xl overflow-hidden border-2 border-[#050008] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all">
-              <div className="absolute top-4 left-4 z-10 bg-white border-2 border-[#050008] rounded-xl px-4 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                <p className="text-sm font-bold text-[#050008] uppercase tracking-tight">SIES Graduate School...</p>
+            <div className="relative overflow-hidden border border-white/10 hover:border-yellow-400/30 transition-all group">
+              <div className="absolute top-4 left-4 z-10 bg-[#050008]/90 border border-white/10 px-4 py-3">
+                <p className="text-sm font-bold text-white uppercase tracking-tight">SIES Graduate School...</p>
                 <a
                   href="https://maps.google.com/?q=SIES+Graduate+School+of+Technology"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#FFD700] hover:underline uppercase tracking-widest font-bold"
+                  className="text-xs text-yellow-400 hover:underline uppercase tracking-widest font-bold"
                 >
                   View larger map
                 </a>
@@ -129,11 +108,17 @@ const ContactSection: React.FC = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[30%] contrast-110 brightness-95"
+                className="grayscale-[50%] contrast-110 brightness-75"
               />
 
               {/* Map overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#F5F5DC]/30 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050008]/40 to-transparent pointer-events-none" />
+
+              {/* Decorative Corners */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
             </div>
           </div>
         </div>

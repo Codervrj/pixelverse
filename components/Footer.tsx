@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#F5F5DC] text-[#050008] py-10 px-6 md:px-12 text-center overflow-hidden">
+    <footer className="relative bg-[#F5F5DC] text-[#050008] pt-10 pb-16 px-6 md:px-12 text-center overflow-hidden">
       
   
       <div 
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         
 
-        <div className="mb-16 relative inline-block group">
+        <div className="mb-6 relative inline-block group">
 
           <div className="absolute -top-4 -left-6 w-3 h-3 border-t-2 border-l-2 border-[#FFD700] opacity-50 group-hover:opacity-100 transition-opacity" />
           
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
 
 
-        <div className="flex justify-center gap-8 mb-16 mt-8">
+        <div className="flex justify-center gap-8 mb-6 mt-4">
           {['IG', 'LI', 'TW'].map((social) => (
             <div 
               key={social} 
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
         </div>
 
 
-        <div className="pt-10 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="pt-6 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-4">
             <div className="w-2 h-2 bg-[#FFD700] animate-pulse" />
          

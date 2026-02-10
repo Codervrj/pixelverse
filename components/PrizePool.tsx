@@ -32,7 +32,7 @@ const PrizePool: React.FC = () => {
 
   return (
     <div className="py-40 px-8 bg-[#050008] relative">
-      {/* Structural Grid Background - matching App.tsx global style */}
+      {/* Structural Grid Background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
@@ -44,7 +44,7 @@ const PrizePool: React.FC = () => {
             <span className="font-pixel text-yellow-400 text-xs tracking-[0.3em]">REWARD_PROTOCOL</span>
           </div>
           <h2 className="text-6xl md:text-8xl font-archivo text-white uppercase tracking-tighter">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">Loot Box</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">PRIZES</span>
           </h2>
         </div>
 
@@ -55,8 +55,17 @@ const PrizePool: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              className={`p-12 border-white/10 border-b md:border-b-0 md:border-r last:border-r-0 relative group hover:bg-white/[0.02] transition-colors`}
+              whileHover={{ 
+                y: -10, 
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
+                zIndex: 20 
+              }}
+              transition={{ 
+                delay: idx * 0.1,
+                y: { duration: 0.2, ease: "easeOut" },
+                backgroundColor: { duration: 0.2 }
+              }}
+              className={`p-12 border-white/10 border-b md:border-b-0 md:border-r last:border-r-0 relative group transition-colors`}
             >
               {/* Card Rank Header */}
               <div className="flex justify-between items-start mb-16">
@@ -82,8 +91,11 @@ const PrizePool: React.FC = () => {
                 ))}
               </div>
 
-              {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all" />
+              {/* Decorative Corners - All four now included */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
             </motion.div>
           ))}
         </div>
@@ -93,13 +105,22 @@ const PrizePool: React.FC = () => {
           <div className="flex items-center gap-6">
             <ShieldCheck className="w-8 h-8 text-zinc-500" />
             <div>
-              <p className="font-pixel text-[10px] text-zinc-500 uppercase">Participant Security</p>
-              <p className="text-sm text-zinc-400">All certificates are cryptographically signed and stored in the PIXELVERSE_OS vault.</p>
+              <p className="font-pixel text-[10px] text-zinc-500 uppercase">ADDITIONAL_PERKS</p>
+              <p className="text-sm text-zinc-400">All participants get exclusive digital certificates & community badges.</p>
             </div>
           </div>
-          <button className="px-8 py-4 bg-white text-black font-pixel text-xs hover:bg-yellow-400 transition-colors uppercase">
+          
+          <motion.button 
+            whileHover={{ 
+              y: -5,
+              backgroundColor: "#ffff00",
+              color: "#000000"
+            }}
+            transition={{ duration: 0.2 }}
+            className="px-8 py-4 bg-white text-black font-pixel text-xs transition-colors uppercase"
+          >
             Claim Your Spot
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

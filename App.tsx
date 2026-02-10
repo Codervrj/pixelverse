@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Quests from './components/Quests';
 import Timeline from './components/Timeline';
-// import PrizePool from './components/PrizePool';
+import PrizePool from './components/PrizePool';
 import RulesAndFaq from './components/RulesAndFaq';
 import Sponsors from './components/Sponsors';
 import Contact from './components/Contact';
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <About />
         <Quests />
         <Timeline />
-        {/* <PrizePool /> */}
+        <PrizePool />
         <Sponsors />
         <RulesAndFaq />
         <Contact />

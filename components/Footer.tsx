@@ -1,84 +1,95 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
 const Footer: React.FC = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-
-    setMouse({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    });
-  };
-
   return (
-    <footer
-      onMouseMove={handleMove}
-      className="relative bg-black text-white py-16 px-6 md:px-10 border-t-4 border-pink-theme/30 text-center overflow-hidden"
-    >
-
-      {/* ===== CYAN CURSOR GLOW ===== */}
-      <motion.div
-        animate={{
-          left: mouse.x,
-          top: mouse.y
-        }}
-        transition={{ type: "spring", stiffness: 80, damping: 25 }}
-        className="absolute w-[450px] h-[450px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,255,255,0.35) 0%, transparent 70%)",
-          filter: "blur(80px)",
-          transform: "translate(-50%, -50%)"
-        }}
+    <footer className="relative bg-[#F5F5DC] text-[#050008] py-24 px-6 md:px-10 border-t border-[#050008]/20 text-center overflow-hidden">
+      
+  
+      <div 
+        className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+        style={{ 
+          backgroundImage: 'radial-gradient(#050008 1px, transparent 1px)', 
+          backgroundSize: '20px 20px' 
+        }} 
       />
 
-      {/* ===== PINK TRAILING GLOW ===== */}
-      <motion.div
-        animate={{
-          left: mouse.x,
-          top: mouse.y
-        }}
-        transition={{ type: "spring", stiffness: 40, damping: 35 }}
-        className="absolute w-[450px] h-[450px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,0,255,0.25) 0%, transparent 70%)",
-          filter: "blur(100px)",
-          transform: "translate(-50%, -50%)"
-        }}
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{ 
+          backgroundImage: `
+            linear-gradient(to right, #ffd7004d 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 215, 0, 0.3) 1px, transparent 1px)
+          `, 
+          backgroundSize: '40px 40px',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          maskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          animation: 'blueprintMove 40s linear infinite'
+        }} 
       />
 
-      {/* DARK OVERLAY FOR READABILITY */}
-      <div className="absolute inset-0 bg-black/55 pointer-events-none" />
+      <style>{`
+        @keyframes blueprintMove {
+          0% { background-position: 0 0; }
+          100% { background-position: 40px 40px; }
+        }
+      `}</style>
 
-      {/* ===== CONTENT ===== */}
-      <div className="relative z-10">
 
-        <h2 className="text-3xl font-archivo tracking-tighter mb-8">
-          PIXELVERSE
-        </h2>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        
 
-        <div className="flex justify-center gap-8 mb-8">
-          <div className="w-8 h-8 bg-zinc-800 flex items-center justify-center hover:bg-pink-theme transition-colors cursor-pointer">
-            <span className="text-[10px] font-pixel">IG</span>
+        <div className="mb-16 relative inline-block group">
+
+          <div className="absolute -top-4 -left-6 w-3 h-3 border-t-2 border-l-2 border-[#FFD700] opacity-50 group-hover:opacity-100 transition-opacity" />
+          
+          <h2 className="text-4xl md:text-5xl font-archivo tracking-[0.6em] text-[#050008] font-black leading-none">
+            PIXELVERSE
+          </h2>
+  
+          <div className="absolute -bottom-6 left-0 w-full flex justify-between items-center px-1">
+
+            <div className="h-[1px] flex-grow mx-4 bg-[#FFD700]/30" />
+            <span className="font-pixel text-[8px] text-[#050008]/40 font-bold tracking-widest">VER 1.0</span>
           </div>
 
-          <div className="w-8 h-8 bg-zinc-800 flex items-center justify-center hover:bg-cyan-400 transition-colors cursor-pointer">
-            <span className="text-[10px] font-pixel">LI</span>
-          </div>
 
-          <div className="w-8 h-8 bg-zinc-800 flex items-center justify-center hover:bg-yellow-theme transition-colors cursor-pointer">
-            <span className="text-[10px] font-pixel">TW</span>
-          </div>
+          <div className="absolute -bottom-4 -right-6 w-3 h-3 border-b-2 border-r-2 border-[#FFD700] opacity-50 group-hover:opacity-100 transition-opacity" />
         </div>
 
-        <p className="text-zinc-500 font-pixel text-[10px] uppercase tracking-widest">
-          © 2025 PIXELVERSE. ALL RIGHTS RESERVED.
-        </p>
 
+        <div className="flex justify-center gap-8 mb-16 mt-8">
+          {['IG', 'LI', 'TW'].map((social) => (
+            <div 
+              key={social} 
+              className="w-12 h-12 bg-white border-2 border-[#050008] flex items-center justify-center hover:bg-[#FFD700] transition-all duration-300 cursor-pointer group relative shadow-[5px_5px_0px_0px_#050008] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+            >
+              <span className="text-[11px] font-pixel font-bold group-hover:scale-110 transition-transform">
+                {social}
+              </span>
+            </div>
+          ))}
+        </div>
+
+
+        <div className="pt-10 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-4">
+            <div className="w-2 h-2 bg-[#FFD700] animate-pulse" />
+         
+          </div>
+
+          <p className="text-[10px] font-pixel text-[#050008]/40 uppercase tracking-[0.3em]">
+            © 2026 PIXELVERSE // GDGoC_SIESGST
+          </p>
+
+
+          <div className="flex items-center gap-1 opacity-40">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="flex flex-col gap-1 items-center">
+                <div className={`bg-[#050008] w-[1px] ${i % 3 === 0 ? 'h-4' : 'h-2'}`} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );

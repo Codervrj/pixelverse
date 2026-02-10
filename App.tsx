@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,7 +14,8 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="relative bg-[#F5F5DC] min-h-screen">
+    <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
+      <Cursor />
       <Navbar />
       <main>
         <Hero />

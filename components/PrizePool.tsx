@@ -101,27 +101,7 @@ const PrizePool: React.FC = () => {
         </div>
 
         {/* Footer Note */}
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 p-8 border border-white/10 bg-white/[0.01]">
-          <div className="flex items-center gap-6">
-            <ShieldCheck className="w-8 h-8 text-zinc-500" />
-            <div>
-              <p className="font-pixel text-[10px] text-zinc-500 uppercase">ADDITIONAL_PERKS</p>
-              <p className="text-sm text-zinc-400">All participants get exclusive digital certificates & community badges.</p>
-            </div>
-          </div>
-          
-          <motion.button 
-            whileHover={{ 
-              y: -5,
-              backgroundColor: "#ffff00",
-              color: "#000000"
-            }}
-            transition={{ duration: 0.2 }}
-            className="px-8 py-4 bg-white text-black font-pixel text-xs transition-colors uppercase"
-          >
-            Claim Your Spot
-          </motion.button>
-        </div>
+
       </div>
     </div>
   );

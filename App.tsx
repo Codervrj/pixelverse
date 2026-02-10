@@ -11,6 +11,7 @@ import RulesAndFaq from './components/RulesAndFaq';
 import Sponsors from './components/Sponsors';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Guidelines from './components/Guidelines';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Timeline />
         <PrizePool />
         <Sponsors />
+        <Guidelines />
         <RulesAndFaq />
         <Contact />
       </main>

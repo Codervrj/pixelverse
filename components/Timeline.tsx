@@ -19,23 +19,41 @@ const timelineData = [
     color: "#FF4D4D"
   },
   {
-    time: "08:00 PM",
-    title: "MIDNIGHT PATCH",
-    desc: ["08:00: Mentorship sessions and technical audits."],
+    time: "10:30 AM – 01:00 PM",
+    title: "Sprint Phase 1 (UX & Lo-Fi)",
+    desc: ["11:00: Track Freeze. Teams must register their final choice of Problem Statement via a simple QR Code form.","11:30: Mentors (if available) do a Vibe Check round (no advice, just ensuring no technical issues).","12:30: Announcement: 30 Minutes to Lunch. Start finalizing your wireframes."],
     icon: Clock,
     color: "#4D4DFF"
   },
   {
-    time: "10:00 AM",
-    title: "FINAL SUBMISSION",
-    desc: ["10:00: Locking the repositories for evaluation."],
+    time: "01:00 PM – 01:30 PM",
+    title: "LUNCH BREAK",
+    desc: ["Logistics: Power strips are turned off/monitored to prevent overheating. Teams must exit the coding zone to refresh."],
     icon: Gamepad2,
     color: "#37A221"
   },
   {
-    time: "04:00 PM",
-    title: "VICTORY CEREMONY",
-    desc: ["04:00: Announcing the champions of PixelVerse."],
+    time: "01:30 PM – 03:30 PM",
+    title: "Sprint Phase 2 (UI & Hi-Fi)",
+    desc: ["01:30: Hacking resumes. Focus shifts to Visual Design, Color, Typography, and Prototyping interactions.","03:00: The Final Countdown. Teams must stop designing and start assembling their Pitch Deck (PDF) and ensuring the Figma link works.","03:30: SUBMISSION DEADLINE. Form closes. Hands off keyboards."],
+    icon: Trophy,
+    color: "#FFD700"
+  },{
+    time: "01:30 PM – 03:30 PM",
+    title: "The Parallel Screening",
+    desc: ["01:30: Hacking resumes. Focus shifts to Visual Design, Color, Typography, and Prototyping interactions.","03:00: The Final Countdown. Teams must stop designing and start assembling their Pitch Deck (PDF) and ensuring the Figma link works.","03:30: SUBMISSION DEADLINE. Form closes. Hands off keyboards."],
+    icon: Trophy,
+    color: "#FFD700"
+  },{
+    time: "04:15 PM – 05:45 PM",
+    title: "The Grand Finale (Pitching)",
+    desc: ["04:15: Finalists announced.","04:20: Pitching starts."],
+    icon: Trophy,
+    color: "#FFD700"
+  },{
+    time: "05:45 PM – 06:00 PM:",
+    title: "Closing Ceremony",
+    desc: ["Judges tally scores. Winners announced. Photo op."],
     icon: Trophy,
     color: "#FFD700"
   }

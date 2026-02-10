@@ -1,57 +1,103 @@
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, ArrowRight } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 
-const Contact: React.FC = () => {
+const ContactSection: React.FC = () => {
   return (
-    <section id="contact" className="bg-black py-24 md:py-40 px-6 md:px-12 relative overflow-hidden text-white border-t-2 border-white">
-      {/* Background Decorative Text - Responsive Visibility */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 text-[25vw] md:text-[20rem] font-archivo opacity-[0.05] pointer-events-none whitespace-nowrap select-none text-white">
-        REGISTER NOW REGISTER NOW REGISTER NOW
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="p-8 md:p-24 rounded-[40px] md:rounded-[80px] text-center border-4 border-white">
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-6xl md:text-8xl xl:text-[9rem] font-archivo tracking-tighter leading-[0.9] mb-12 uppercase text-white"
-          >
-            JOIN THE<br /><span className="text-[#FFD700]">REVOLUTION</span>
-          </motion.h2>
-
-          <p className="text-zinc-400 font-bold font-archivo text-xs md:text-sm uppercase tracking-[0.4em] mb-16">
-            // SEATS_ARE_LIMITED // INITIALIZE_ONBOARDING
-          </p>
-
-          <div className="max-w-xl mx-auto w-full space-y-6">
-            <div className="relative group">
-              <input
-                type="email"
-                placeholder="YOUR_EMAIL@DESIGN.COM"
-                className="w-full bg-white border-2 border-black pl-6 md:pl-10 pr-16 md:pr-24 py-5 md:py-8 rounded-full text-black font-archivo text-base md:text-2xl placeholder:text-zinc-400 focus:outline-none focus:ring-4 focus:ring-[#FFD700] transition-all uppercase shadow-[8px_8px_0px_0px_rgba(255,215,0,1)]"
-              />
-              <button className="absolute right-3 top-3 bottom-3 aspect-square bg-black rounded-full flex items-center justify-center text-white hover:bg-[#FFD700] hover:text-black transition-colors">
-                <ArrowRight size={24} className="md:size-32" />
-              </button>
+    <section className="min-h-screen bg-black py-20 px-6 md:px-12 flex items-center justify-center">
+      <div className="max-w-7xl w-full border-2 border-cyan-400/30 rounded-3xl p-8 md:p-16 bg-[#0a0a0a] backdrop-blur-sm shadow-[0_0_50px_rgba(6,182,212,0.15)]">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Left Side - Contact Info */}
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-5xl md:text-6xl font-bold text-cyan-400 mb-4 tracking-tight">
+                Get in Touch
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Any query, suggestion or comment?
+                <br />
+                Feel free to contact us.
+              </p>
             </div>
-            <p className="text-zinc-500 text-[10px] md:text-xs font-bold font-archivo uppercase tracking-widest px-4">
-              Access is granted based on design portfolio and quest compatibility.
-            </p>
+
+            {/* Phone Numbers */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4 group">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all group-hover:scale-110">
+                  <Phone className="text-white" size={24} />
+                </div>
+                <div className="space-y-1">
+                  <a 
+                    href="tel:+918828046919" 
+                    className="text-white text-xl font-medium hover:text-cyan-400 transition-colors block"
+                  >
+                    +91 88280 46919
+                  </a>
+                  <a 
+                    href="tel:+919833875297" 
+                    className="text-white text-xl font-medium hover:text-cyan-400 transition-colors block"
+                  >
+                    +91 98338 75297
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Email Section */}
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-cyan-400 mb-6 tracking-tight">
+                Any Queries?
+              </h3>
+              <div className="flex items-center gap-4 group">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-all group-hover:scale-110">
+                  <Mail className="text-white" size={24} />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Email us at:</p>
+                  <a 
+                    href="mailto:bytecamp@siesgst.ac.in" 
+                    className="text-white text-lg font-medium hover:text-cyan-400 transition-colors break-all"
+                  >
+                    pixelverse@siesgst.ac.in
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-20 flex flex-wrap justify-center gap-10">
-            <a href="mailto:hello@pixelverse.com" className="flex items-center gap-4 group">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center group-hover:bg-[#FFD700] transition-all border-2 border-transparent group-hover:border-white">
-                <Mail size={24} className="text-black group-hover:text-black md:size-28" />
+          {/* Right Side - Map */}
+          <div className="space-y-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Find us in Map
+            </h2>
+            
+            <div className="relative rounded-2xl overflow-hidden border-2 border-cyan-400/30 shadow-[0_0_30px_rgba(6,182,212,0.2)] group hover:shadow-[0_0_50px_rgba(6,182,212,0.4)] transition-all">
+              <div className="absolute top-4 left-4 z-10 bg-white rounded-xl px-4 py-3 shadow-lg">
+                <p className="text-sm font-semibold text-gray-900">SIES Graduate School...</p>
+                <a 
+                  href="https://maps.google.com/?q=SIES+Graduate+School+of+Technology" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-blue-600 hover:underline"
+                >
+                  View larger map
+                </a>
               </div>
-              <div className="text-left hidden sm:block">
-                <div className="text-[10px] font-bold font-archivo text-zinc-500 uppercase tracking-widest">SUPPORT_LINE</div>
-                <div className="font-archivo text-xl md:text-2xl text-white uppercase tracking-tighter group-hover:text-[#FFD700] transition-colors">HELLO@PIXELVERSE.COM</div>
-              </div>
-            </a>
+              
+              {/* Map iframe */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2977457084824!2d73.0156!3d19.0433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24cce39457b%3A0x8bd69eadb0bd749f!2sSIES%20Graduate%20School%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale-[30%] contrast-110 brightness-95"
+              />
+              
+              {/* Map overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent pointer-events-none" />
+            </div>
           </div>
         </div>
       </div>
@@ -59,4 +105,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default ContactSection;

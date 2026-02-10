@@ -94,7 +94,7 @@ const UnoReverseCard = ({ quest, index }) => {
       >
         {/* BACK SIDE - UNO Reverse Card */}
         <div
-          className="absolute inset-0 rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+          className="absolute inset-0 rounded-3xl border-2 border-white/10 shadow-[0_0_30px_rgba(0,242,255,0.15)]"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
@@ -163,10 +163,10 @@ const UnoReverseCard = ({ quest, index }) => {
             </div>
 
             {/* Corner Decorations */}
-            <div className="absolute top-4 left-4 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black">
+            <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border-2 border-white/20">
               <div className="w-6 h-6 rounded-full" style={{ backgroundColor: quest.color }} />
             </div>
-            <div className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-black rotate-180">
+            <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center border-2 border-white/20 rotate-180">
               <div className="w-6 h-6 rounded-full" style={{ backgroundColor: quest.color }} />
             </div>
           </div>
@@ -174,7 +174,7 @@ const UnoReverseCard = ({ quest, index }) => {
 
         {/* FRONT SIDE - Quest Information */}
         <div
-          className="absolute inset-0 rounded-3xl border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-white"
+          className="absolute inset-0 rounded-3xl border-2 border-white/10 shadow-[0_0_30px_rgba(0,242,255,0.15)] bg-[#0a0a0f]"
           style={{
             backfaceVisibility: 'hidden',
             WebkitBackfaceVisibility: 'hidden',
@@ -184,21 +184,21 @@ const UnoReverseCard = ({ quest, index }) => {
           <div className="w-full h-full rounded-[22px] p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
             {/* Background Icon */}
             <div className="absolute top-0 right-0 p-8 opacity-[0.05]">
-              <quest.icon size={200} className="text-black" />
+              <quest.icon size={200} className="text-white" />
             </div>
 
             {/* Content */}
             <div className="relative z-10">
               <div
-                className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                className="w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-8 border border-white/10 shadow-[0_0_20px_rgba(0,242,255,0.2)]"
                 style={{ backgroundColor: quest.color }}
               >
                 <quest.icon className="text-white" size={28} />
               </div>
-              <h3 className="text-3xl md:text-4xl xl:text-5xl font-black tracking-tighter uppercase mb-6 text-black">
+              <h3 className="text-3xl md:text-4xl xl:text-5xl font-black tracking-tighter uppercase mb-6 text-white">
                 {quest.title}
               </h3>
-              <p className="text-black/70 text-base md:text-lg font-bold uppercase tracking-tight max-w-md">
+              <p className="text-white/60 text-base md:text-lg font-bold uppercase tracking-tight max-w-md">
                 {quest.desc}
               </p>
             </div>
@@ -222,28 +222,32 @@ const UnoReverseCard = ({ quest, index }) => {
 
 export default function Quests() {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-12 bg-[#F5F5DC] relative text-black min-h-screen">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24 border-b-2 border-black pb-16">
+    <section className="py-24 md:py-40 px-6 md:px-12 bg-black relative text-white min-h-screen overflow-hidden">
+      {/* Background glow effects */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24 border-b border-white/10 pb-16">
           <div>
-            <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-bold text-xs mb-4 uppercase tracking-widest">
+            <div className="inline-block px-4 py-1 bg-white/5 border border-cyan-400/30 text-cyan-400 font-bold text-xs mb-4 uppercase tracking-widest">
               SELECT_MISSION
             </div>
-            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-black tracking-tighter uppercase leading-[0.85] text-black">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-black tracking-tighter uppercase leading-[0.85] text-white">
               THE<br />
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>
+              <span className="text-transparent" style={{ WebkitTextStroke: '2px rgba(0,242,255,0.6)' }}>
                 CHALLENGE
               </span>
             </h2>
           </div>
           <div className="max-w-sm text-right">
-            <p className="text-black font-medium text-lg md:text-xl uppercase tracking-tight">
+            <p className="text-white/60 font-medium text-lg md:text-xl uppercase tracking-tight">
               Four distinct paths. One final objective. Choose your specialty and conquer the mainframe.
             </p>
           </div>
         </div>
 
-        <div className="text-center mb-8 text-sm text-black/60 uppercase tracking-wider font-bold">
+        <div className="text-center mb-8 text-sm text-white/40 uppercase tracking-wider font-bold">
           Hover over the cards to reveal the quests
         </div>
 

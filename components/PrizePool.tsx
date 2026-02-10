@@ -1,136 +1,156 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { Trophy, Crown, Zap } from "lucide-react";
+// import GlobalPixelGrid from "./GlobalPixelGrid";
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Trophy, Star, ShieldCheck, Zap, Gem, Crown } from 'lucide-react';
+// /* ----------------------------
+//    Reusable Card Component
+// ----------------------------- */
 
-const PrizePool: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
+// const Card = ({
+//   children,
+//   accent = "default",
+//   center = false,
+// }: {
+//   children: React.ReactNode;
+//   accent?: "default" | "gold" | "pink";
+//   center?: boolean;
+// }) => {
+//   const border =
+//     accent === "gold"
+//       ? "border-yellow-400/40"
+//       : accent === "pink"
+//       ? "border-pink-400/40"
+//       : "border-white/10";
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 0]); // Center stays relatively stable or moves less
-  const y3 = useTransform(scrollYProgress, [0, 1], [100, -100]);
+//   const hoverBorder =
+//     accent === "gold"
+//       ? "hover:border-yellow-400/70"
+//       : accent === "pink"
+//       ? "hover:border-pink-400/70"
+//       : "hover:border-white/20";
 
-  return (
-    <div ref={containerRef} className="py-40 md:py-64 px-8 md:px-16 bg-black text-center relative overflow-visible border-t-2 border-white/20">
+//   return (
+//     <motion.div
+//       whileHover={{ y: -4 }}
+//       transition={{ type: "spring", stiffness: 200, damping: 18 }}
+//       className="relative"
+//     >
+//       <div
+//         className={`
+//           rounded-3xl border ${border} ${hoverBorder}
+//           transition-colors duration-300
+//           bg-white/[0.035] backdrop-blur-lg
+//           shadow-[0_0_0_1px_rgba(255,255,255,0.02)_inset]
+//           p-10
+//           ${center ? "text-center" : ""}
+//         `}
+//       >
+//         {children}
+//       </div>
+//     </motion.div>
+//   );
+// };
 
-      <div className="max-w-[1400px] mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="mb-32"
-        >
-          <div className="text-[#FFD700] font-archivo font-bold text-xs mb-8 uppercase tracking-[0.5em] flex items-center justify-center gap-4">
-            <div className="w-12 h-1 bg-[#FFD700]" />
-            REWARD_TIERS
-            <div className="w-12 h-1 bg-[#FFD700]" />
-          </div>
-          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-archivo tracking-tighter uppercase leading-[0.8] text-white">
-            VICTORY<br /><span className="text-[#FFD700]" style={{ WebkitTextStroke: "2px white" }}>LOOT</span>
-          </h2>
-        </motion.div>
+// /* ----------------------------
+//    Prize Pool Section
+// ----------------------------- */
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-end">
+// const PrizePool: React.FC = () => {
+//   return (
+//     <section className="relative py-32 px-6 text-white overflow-hidden">
 
-          {/* Runner Up - Side Tier */}
-          <motion.div
-            style={{ y: y1 }}
-            className="p-12 bg-[#1a1a1a] border-2 border-white rounded-[2rem] flex flex-col items-center justify-between text-center relative group lg:order-1 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"
-          >
-            <div className="relative z-10 w-full">
-              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-10 border-2 border-black">
-                <ShieldCheck className="text-black" size={40} />
-              </div>
-              <h3 className="text-2xl font-archivo uppercase text-white tracking-widest mb-4">RUNNER_UP</h3>
-              <div className="text-5xl xl:text-6xl font-archivo text-white tracking-tighter mb-10">₹3,000</div>
+//       {/* Pixel Grid Background */}
+//       <GlobalPixelGrid />
 
-              <div className="space-y-4 text-left border-t-2 border-white/20 pt-10">
-                {['Silver Merit Badge', 'Pro Toolkit Access', 'Job Referral Priority'].map((perk, i) => (
-                  <div key={i} className="flex items-center gap-3 text-xs font-bold font-archivo text-zinc-400 uppercase">
-                    <div className="w-2 h-2 bg-white rounded-none" /> {perk}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+//       {/* Grid blending mask */}
+//       <div className="absolute inset-0 bg-[#050008]/75" />
 
-          {/* Winner - Legendary Tier */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            style={{ y: y2 }}
-            className="p-8 md:p-12 lg:p-16 bg-[#FFD700] border-4 border-white rounded-[3rem] flex flex-col items-center justify-between text-center relative group lg:order-2 shadow-[12px_12px_0px_0px_rgba(255,255,255,1)] z-20 h-auto"
-          >
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-black text-[#FFD700] px-10 py-3 font-archivo font-bold text-xs uppercase tracking-[0.3em] z-30 border-2 border-white">
-              LEGENDARY_DROP
-            </div>
+//       {/* Subtle ambient glow */}
+//       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-yellow-400/10 blur-[180px]" />
 
-            <div className="relative z-10 w-full">
-              <div className="w-32 h-32 rounded-full bg-black flex items-center justify-center mx-auto mb-12 border-4 border-white">
-                <Trophy className="text-[#FFD700]" size={64} />
-              </div>
-              <h3 className="text-4xl md:text-5xl font-archivo uppercase text-black tracking-tight mb-6">CHAMPION</h3>
-              <div className="text-7xl xl:text-8xl font-archivo text-black tracking-tighter mb-12">₹5,000</div>
+//       <div className="relative z-10 max-w-6xl mx-auto">
 
-              <div className="space-y-6 text-left border-t-2 border-black/20 pt-12">
-                {[
-                  { icon: Crown, text: 'The Golden Pixel Trophy' },
-                  { icon: Gem, text: 'Exclusive Epic Swag Kit' },
-                  { icon: Zap, text: 'Direct Internship Interview' }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4 text-sm font-bold font-archivo text-black uppercase group-hover:translate-x-2 transition-transform">
-                    <item.icon size={20} className="text-black fill-white" /> {item.text}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+//         {/* Header */}
+//         <div className="mb-24 text-center">
+//           <p className="text-yellow-400 tracking-[0.3em] text-xs uppercase mb-4">
+//             Rewards
+//           </p>
+//           <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
+//             Prize Pool
+//           </h2>
+//         </div>
 
-          {/* Special Award - Side Tier */}
-          <motion.div
-            style={{ y: y3 }}
-            className="p-12 bg-[#1a1a1a] border-2 border-white rounded-[2rem] flex flex-col items-center justify-between text-center relative group lg:order-3 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"
-          >
-            <div className="relative z-10 w-full">
-              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-10 border-2 border-black">
-                <Zap className="text-black" size={40} />
-              </div>
-              <h3 className="text-2xl font-archivo uppercase text-white tracking-widest mb-4">MOST_CREATIVE</h3>
-              <div className="text-5xl xl:text-6xl font-archivo text-white tracking-tighter mb-10">₹2,000</div>
+//         {/* Winner */}
+//         <div className="mb-16">
+//           <Card accent="gold" center>
+//             <div className="flex justify-center mb-8">
+//               <div className="p-6 rounded-2xl bg-yellow-400 text-black">
+//                 <Trophy size={40} />
+//               </div>
+//             </div>
 
-              <div className="space-y-4 text-left border-t-2 border-white/20 pt-10">
-                {['Creative Merit Pass', 'Asset Pack Bundle', 'Mentorship Connection'].map((perk, i) => (
-                  <div key={i} className="flex items-center gap-3 text-xs font-bold font-archivo text-zinc-400 uppercase">
-                    <div className="w-2 h-2 bg-white rounded-none" /> {perk}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+//             <p className="uppercase text-xs tracking-[0.25em] text-yellow-400 mb-3">
+//               Winner
+//             </p>
 
-        </div>
+//             <h3 className="text-6xl font-bold mb-8">₹5,000</h3>
 
-        {/* Global Prize Note */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-32 pt-16 border-t-2 border-white/20 flex flex-col md:flex-row items-center justify-between gap-8"
-        >
-          <div className="text-left">
-            <div className="text-xs font-bold font-archivo text-zinc-400 mb-2 uppercase">ADDITIONAL_PERKS</div>
-            <p className="text-white uppercase text-sm tracking-widest font-archivo">All participants get exclusive digital certificates & community badges.</p>
-          </div>
-          <button className="px-12 py-6 bg-white text-black border-2 border-white rounded-xl text-xs font-bold font-archivo uppercase hover:bg-[#FFD700] hover:border-[#FFD700] transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-            FULL_LOOT_TABLE.PDF
-          </button>
-        </motion.div>
-      </div>
-    </div>
-  );
-};
+//             <div className="space-y-2 text-zinc-400 text-sm">
+//               <p>Golden Trophy</p>
+//               <p>Exclusive Swag Kit</p>
+//               <p>Internship Interview Opportunity</p>
+//             </div>
+//           </Card>
+//         </div>
 
-export default PrizePool;
+//         {/* Secondary Prizes */}
+//         <div className="grid md:grid-cols-2 gap-10">
+
+//           {/* Runner Up */}
+//           <Card>
+//             <Crown className="mb-6 text-zinc-300" size={28} />
+
+//             <p className="uppercase text-xs tracking-[0.2em] text-zinc-400 mb-2">
+//               Runner Up
+//             </p>
+
+//             <h4 className="text-4xl font-semibold mb-6">₹3,000</h4>
+
+//             <ul className="text-sm text-zinc-400 space-y-2">
+//               <li>Silver Badge</li>
+//               <li>Pro Toolkit Access</li>
+//               <li>Priority Job Referral</li>
+//             </ul>
+//           </Card>
+
+//           {/* Most Creative */}
+//           <Card accent="pink">
+//             <Zap className="mb-6 text-pink-400" size={28} />
+
+//             <p className="uppercase text-xs tracking-[0.2em] text-pink-400 mb-2">
+//               Most Creative
+//             </p>
+
+//             <h4 className="text-4xl font-semibold mb-6">₹2,000</h4>
+
+//             <ul className="text-sm text-zinc-400 space-y-2">
+//               <li>Creative Badge</li>
+//               <li>Asset Bundle</li>
+//               <li>Mentorship Access</li>
+//             </ul>
+//           </Card>
+
+//         </div>
+
+//         {/* Footer */}
+//         <div className="mt-20 text-center text-zinc-500 text-sm">
+//           All participants receive digital certificates and community badges.
+//         </div>
+
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default PrizePool;

@@ -5,37 +5,37 @@ import { Rocket, Gamepad2, Trophy, Clock, Code, Flag } from 'lucide-react';
 
 const timelineData = [
   {
-    time: "10:00 AM",
-    title: "MAINFRAME INITIALIZED",
-    desc: "Check-in and team assembly at the primary portal.",
+    time: "09:00 AM – 10:00 AM",
+    title: "Arrival & Infrastructure Check",
+    desc: ["09:00: Registration Desk opens. Teams collect badges/stickers.","09:30: Wi-Fi Stress Test (Ensure all 135 laptops can connect).","09:45: Seating Logic: Settle teams onto their seats."],
     icon: Rocket,
     color: "#FFD700"
   },
   {
-    time: "12:00 PM",
-    title: "THE QUEST BEGINS",
-    desc: "Opening ceremony and project briefing.",
+    time: "10:00 AM – 10:30 AM",
+    title: "Kickoff",
+    desc: ["10:00: Event starts. Welcome note.","10:10: The Reveal: Detailed walkthrough of the 3 Problem Statements.","10:25: Q&A: 5 minutes for teams to ask clarifying questions about the rules."],
     icon: Code,
     color: "#FF4D4D"
   },
   {
     time: "08:00 PM",
     title: "MIDNIGHT PATCH",
-    desc: "Mentorship sessions and technical audits.",
+    desc: ["08:00: Mentorship sessions and technical audits."],
     icon: Clock,
     color: "#4D4DFF"
   },
   {
     time: "10:00 AM",
     title: "FINAL SUBMISSION",
-    desc: "Locking the repositories for evaluation.",
+    desc: ["10:00: Locking the repositories for evaluation."],
     icon: Gamepad2,
     color: "#37A221"
   },
   {
     time: "04:00 PM",
     title: "VICTORY CEREMONY",
-    desc: "Announcing the champions of PixelVerse.",
+    desc: ["04:00: Announcing the champions of PixelVerse."],
     icon: Trophy,
     color: "#FFD700"
   }
@@ -58,6 +58,27 @@ const Timeline: React.FC = () => {
           <h2 className="text-5xl md:text-8xl font-archivo tracking-tighter uppercase leading-none text-black">
             EVENT<br /><span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>TIMELINE</span>
           </h2>
+        </div>
+
+        {/* Round Boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
+            <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_01</div>
+            <h3 className="text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-3">ONLINE ROUND</h3>
+            <p className="text-black/70 text-sm md:text-base font-archivo font-medium uppercase tracking-tight">Compete virtually from anywhere. Prove your skills in the digital arena.</p>
+          </div>
+          <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
+            <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_02</div>
+            <h3 className="text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-3">OFFLINE ROUND</h3>
+            <p className="text-black/70 text-sm md:text-base font-archivo font-medium uppercase tracking-tight">The finalists battle on-site. Show up and claim your victory.</p>
+          </div>
+        </div>
+
+        <div className="mb-16 text-center">
+          <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">OFFLINE_SCHEDULE</div>
+          <h3 className="text-4xl md:text-6xl font-archivo tracking-tighter uppercase leading-none text-black">
+           THE OPERATIONAL TIMELINE
+          </h3>
         </div>
 
         <div className="relative">
@@ -96,9 +117,14 @@ const Timeline: React.FC = () => {
                       <h3 className="text-2xl md:text-3xl font-archivo text-black uppercase tracking-tighter mb-4">
                         {item.title}
                       </h3>
-                      <p className="text-black/80 text-sm md:text-lg uppercase max-w-sm font-archivo font-medium">
-                        {item.desc}
-                      </p>
+                      <ul className="text-black/80 text-xs md:text-sm uppercase max-w-sm font-archivo font-medium space-y-3 text-left">
+                        {item.desc.map((point, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-black/80 shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

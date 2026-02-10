@@ -13,8 +13,37 @@ const RulesAndFaq: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="py-32 px-6 md:px-10 bg-[#F5F5DC] text-black border-t-2 border-black">
-      <div className="max-w-4xl mx-auto">
+    <div className="py-32 px-6 md:px-10 bg-[#F5F5DC] text-black border-t-2 border-black relative overflow-hidden">
+      {/* Background dot pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(#050008 1px, transparent 1px)',
+          backgroundSize: '20px 20px'
+        }}
+      />
+      {/* Background gold grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #ffd7004d 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 215, 0, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          maskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          animation: 'blueprintMove 40s linear infinite'
+        }}
+      />
+      <style>{`
+        @keyframes blueprintMove {
+          0% { background-position: 0 0; }
+          100% { background-position: 40px 40px; }
+        }
+      `}</style>
+
+      <div className="max-w-4xl mx-auto relative z-10">
         <h2 className="text-black font-archivo text-4xl md:text-7xl mb-16 text-center tracking-tighter uppercase">FAQ</h2>
         <div className="space-y-6">
           {faqs.map((faq, idx) => (

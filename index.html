@@ -16,6 +16,9 @@
             --neon-yellow: #ffff00;
             --deep-purple: #050008;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--deep-purple);
@@ -24,8 +27,70 @@
             margin: 0;
             cursor: none; /* Custom cursor in React */
         }
+        /* =====================
+   GLASSMORPHISM SYSTEM
+===================== */
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px rgba(0, 242, 255, 0.08),
+        inset 0 0 15px rgba(255, 255, 255, 0.04);
+}
+
+.glass-hover {
+    transition: all 0.35s ease;
+}
+
+.glass-hover:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 40px rgba(0, 242, 255, 0.25),
+        0 0 60px rgba(255, 0, 255, 0.15);
+}
+
+.section-wrapper {
+    position: relative;
+    padding: 6rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
         .font-archivo { font-family: 'Archivo Black', sans-serif; }
         .font-pixel { font-family: 'Press Start 2P', cursive; }
+        
+        /* Button smooth transitions */
+        button, a {
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        /* Smooth scroll for links */
+        *:focus-visible {
+            outline: 2px solid var(--neon-cyan);
+            outline-offset: 2px;
+        }
+        
+        /* Enhanced scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 242, 255, 0.4);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 242, 255, 0.7);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+        }
         
         /* CRT & Cinematic Overlay */
         .cinematic-overlay {
@@ -39,7 +104,34 @@
                 linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
             background-size: 100% 100%, 100% 4px, 3px 100%;
         }
+        .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px rgba(0, 242, 255, 0.08),
+        inset 0 0 15px rgba(255, 255, 255, 0.04);
+}
 
+.glass-hover {
+    transition: all 0.35s ease;
+}
+
+.glass-hover:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 40px rgba(0, 242, 255, 0.25),
+        0 0 60px rgba(255, 0, 255, 0.15);
+}
+
+.section-wrapper {
+    position: relative;
+    padding: 6rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
         /* Starfield Warp Effect */
         .starfield {
             position: fixed;
@@ -103,7 +195,45 @@
             z-index: 10000;
             transform: translate(-50%, -50%);
             mix-blend-mode: difference;
+
         }
+        @keyframes pixelSweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes footerGlowMove {
+  0% {
+    transform: translateX(-20%) translateY(0);
+  }
+  50% {
+    transform: translateX(20%) translateY(-10%);
+  }
+  100% {
+    transform: translateX(-20%) translateY(0);
+  }
+}
+
+.footer-glow-bg::before,
+.footer-glow-bg::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,255,255,0.25) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: footerGlowMove 18s ease-in-out infinite;
+}
+
+.footer-glow-bg::after {
+  left: 60%;
+  top: 40%;
+  animation-delay: 6s;
+}
     </style>
 <script type="importmap">
 {

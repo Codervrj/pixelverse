@@ -81,15 +81,7 @@ const PrizePool: React.FC = () => {
                 <div className="text-5xl font-archivo text-white">{prize.amount}</div>
               </div>
 
-              {/* Perks List */}
-              <div className="space-y-4">
-                <div className="font-pixel text-[10px] text-zinc-600 border-b border-white/5 pb-2">INCLUDED_ASSETS:</div>
-                {prize.perks.map((perk, i) => (
-                  <div key={i} className="flex items-center gap-3 font-pixel text-[11px] text-zinc-400 uppercase">
-                    <div className="w-1 h-1 bg-yellow-400" /> {perk}
-                  </div>
-                ))}
-              </div>
+
 
               {/* Decorative Corners - All four now included */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />

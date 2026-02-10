@@ -204,7 +204,7 @@ const UnoReverseCard = ({ quest, index }) => {
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between relative z-10 pt-8 border-t-2 border-black/10">
+            {/* <div className="flex items-center justify-between relative z-10 pt-8 border-t-2 border-black/10">
               <div className="flex gap-4 items-center">
                 <div className="w-3 h-3 rounded-full bg-green-500 border border-black animate-pulse" />
                 <span className="text-xs font-bold text-black uppercase tracking-widest">QUEST_AVAILABLE</span>
@@ -212,7 +212,7 @@ const UnoReverseCard = ({ quest, index }) => {
               <button className="flex items-center gap-2 text-xs font-bold text-black hover:text-yellow-500 transition-colors uppercase">
                 ENTER <ArrowUpRight size={16} strokeWidth={3} />
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -247,7 +247,7 @@ export default function Quests() {
           Hover over the cards to reveal the quests
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {questList.map((quest, idx) => (
             <UnoReverseCard key={idx} quest={quest} index={idx} />
           ))}

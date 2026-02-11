@@ -1,3 +1,6 @@
+*{
+  cursor: none;
+}
 :root {
   --color-cream: #F5F5DC;
   --color-gold: #FFD700;
@@ -13,6 +16,11 @@ body {
   color: var(--color-black);
   margin: 0;
   overflow-x: hidden;
+  cursor: none;
+}
+
+a, button, [role="button"], input, select, textarea, .cursor-target {
+  cursor: none;
 }
 
 h1, h2, h3, h4, h5, h6 {

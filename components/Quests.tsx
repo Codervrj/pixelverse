@@ -139,6 +139,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
 
   return (
     <div
+     id="quests"
       className="perspective-1000 transition-all duration-1000 ease-out"
       style={{ 
         ...getEntranceStyle(),

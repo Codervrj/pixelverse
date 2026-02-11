@@ -4,7 +4,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative bg-[#F5F5DC] text-[#050008] pt-10 pb-16 px-6 md:px-12 text-center overflow-hidden cursor-none">
       
-      {/* Background dot pattern */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none" 
         style={{ 
@@ -13,7 +12,7 @@ const Footer: React.FC = () => {
         }} 
       />
 
-      {/* Background gold grid */}
+
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ 
@@ -61,7 +60,7 @@ const Footer: React.FC = () => {
           {['IG', 'LI', 'TW'].map((social) => (
             <div 
               key={social} 
-              // Removed cursor-pointer and added cursor-none + cursor-target
+
               className="w-12 h-12 bg-white border-2 border-[#050008] flex items-center justify-center hover:bg-[#FFD700] transition-all duration-300 cursor-none cursor-target group relative shadow-[5px_5px_0px_0px_#050008] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
             >
               <span className="text-[11px] font-pixel font-bold group-hover:scale-110 transition-transform">

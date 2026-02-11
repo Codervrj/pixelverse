@@ -2,7 +2,7 @@ import React from "react";
 
 const Guidelines: React.FC = () => {
   return (
-    <section id="guidelines" className="relative py-32 px-6 bg-[rgb(245,245,220)] text-[#050008] overflow-hidden border-t-2 border-[#050008]">
+    <section id="guidelines" className="relative pt-32 pb-12 px-6 bg-[rgb(245,245,220)] text-[#050008] overflow-hidden border-t-2 border-[#050008]">
       
       {/* YELLOW GRID BACKGROUND */}
       <div 

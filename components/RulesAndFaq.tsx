@@ -13,7 +13,7 @@ const RulesAndFaq: React.FC = () => {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="py-32 px-6 md:px-10 bg-[#F5F5DC] text-black border-t-2 border-black relative overflow-hidden">
+    <div className="pt-12 pb-32 px-6 md:px-10 bg-[#F5F5DC] text-black relative overflow-hidden">
       {/* Background dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

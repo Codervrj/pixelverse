@@ -13,7 +13,6 @@ const RulesAndFaq: React.FC = () => {
 
   return (
     <div className="pt-12 pb-32 px-6 md:px-10 bg-[#F5F5DC] text-black relative overflow-hidden cursor-none">
-      {/* Background dot pattern */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
@@ -21,7 +20,6 @@ const RulesAndFaq: React.FC = () => {
           backgroundSize: '20px 20px'
         }}
       />
-      {/* Background gold grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

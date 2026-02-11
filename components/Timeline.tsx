@@ -109,12 +109,11 @@ const Timeline: React.FC = () => {
           </h2>
         </div>
 
-        {/* Round Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 md:mb-24">
-          <div className="bg-white border-2 border-black p-5 sm:p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl sm:rounded-2xl text-center">
-            <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">ROUND_01</div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-2 sm:mb-3">ONLINE ROUND</h3>
-            <p className="text-black/70 text-xs sm:text-sm md:text-base font-archivo font-medium uppercase tracking-tight">Compete virtually from anywhere. Prove your skills in the digital arena.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
+            <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_01</div>
+            <h3 className="text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-3">ONLINE ROUND</h3>
+            <p className="text-black/70 text-sm md:text-base font-archivo font-medium uppercase tracking-tight">Compete virtually from anywhere. Prove your skills in the digital arena.</p>
           </div>
           <div className="bg-white border-2 border-black p-5 sm:p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl sm:rounded-2xl text-center">
             <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">ROUND_02</div>
@@ -131,10 +130,8 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="relative">
-          {/* Vertical Line Background */}
-          <div className="absolute left-4 sm:left-6 md:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-black/10" />
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-black/10" />
 
-          {/* Animated Vertical Line */}
           <motion.div
             style={{ height: lineHeight }}
             className="absolute left-4 sm:left-6 md:left-1/2 top-0 w-0.5 sm:w-1 bg-black origin-top"
@@ -150,11 +147,9 @@ const Timeline: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className={`relative flex items-center gap-6 sm:gap-12 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
-                {/* Connector Dot */}
-                <div className="absolute left-4 sm:left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#F5F5DC] z-10 border-[3px] sm:border-4 border-black shadow-[rgba(0,0,0,1)]" />
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F5F5DC] z-10 border-4 border-black shadow-[rgba(0,0,0,1)]" />
 
-                {/* Content Box */}
-                <div className={`w-full md:w-5/12 ml-8 sm:ml-12 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
                     <div
                       className="px-2.5 py-1 sm:px-4 sm:py-1.5 font-bold font-archivo text-[10px] sm:text-xs uppercase tracking-widest mb-3 sm:mb-4 inline-block border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
@@ -178,7 +173,6 @@ const Timeline: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Empty spacer for desktop */}
                 <div className="hidden md:block md:w-2/12" />
                 <div className="hidden md:block md:w-5/12" />
               </motion.div>

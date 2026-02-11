@@ -4,8 +4,9 @@ const Guidelines: React.FC = () => {
   return (
     <section 
       id="guidelines" 
-      className="relative pt-20 md:pt-32 pb-12 px-4 md:px-10 bg-[rgb(245,245,220)] text-[#050008] overflow-hidden border-t-2 border-[#050008] cursor-none"
+      className="relative pt-20 md:pt-32 pb-24 px-4 md:px-10 bg-[rgb(245,245,220)] text-[#050008] overflow-hidden border-t-2 border-[#050008] cursor-none"
     >
+      
       <div 
         className="absolute inset-0 opacity-20 pointer-events-none" 
         style={{ 
@@ -19,32 +20,43 @@ const Guidelines: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-        <div className="mb-12 md:mb-20">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-2 h-2 bg-[#FFD700]" />
-            <span className="font-pixel text-[10px] tracking-[0.3em] text-[#050008]/50 uppercase">Protocols</span>
+        <div className="mb-16 md:mb-24 flex flex-col items-center text-center">
+          <div className="bg-[#050008] px-4 py-1 mb-4">
+            <span className="font-pixel text-[10px] md:text-xs tracking-[0.4em] text-[#FFD700] uppercase font-bold">
+              RULES_PROTOCOL
+            </span>
           </div>
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-archivo font-black tracking-tighter uppercase leading-[0.9]">
-            Rules & <br />
-            <span className="text-[#FFD700]">Guidelines</span>
+          
+          <h2 className="text-7xl md:text-9xl font-archivo font-black tracking-tighter uppercase leading-none">
+            RULES &
+          </h2>
+          <h2 
+            className="text-7xl md:text-9xl font-archivo font-black tracking-tighter uppercase leading-none text-transparent"
+            style={{ WebkitTextStroke: '2px #050008' }}
+          >
+            GUIDELINES
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
-          
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
           <TechBox id="01" title="Originality">
             <div className="space-y-4">
-              <h4 className="text-lg md:text-xl font-bold uppercase leading-tight">No Pre-built UI Kits</h4>
-              <p className="text-sm md:text-base text-[#050008]/70 font-medium leading-relaxed">
-                You cannot open a previously saved Figma file. All frames and layouts must be created after <span className="text-[#050008] font-black underline decoration-[#FFD700]">the event has started</span>.
+              <h4 className="text-xl font-archivo font-black uppercase leading-tight tracking-tight border-b-2 border-[#FFD700] inline-block">
+                No Pre-built UI Kits
+              </h4>
+              <p className="text-sm md:text-base text-[#050008] font-bold uppercase tracking-tight leading-relaxed">
+                You cannot open a previously saved Figma file. All frames and layouts must be created after <span className="underline decoration-[#FFD700] decoration-4 font-black">the event has started</span>.
               </p>
             </div>
           </TechBox>
 
           <TechBox id="02" title="Assets">
             <div className="space-y-4">
-              <h4 className="text-lg md:text-xl font-bold uppercase leading-tight">Allowed Resources</h4>
-              <p className="text-sm md:text-base text-[#050008]/70 font-medium leading-relaxed">
+              <h4 className="text-xl font-archivo font-black uppercase leading-tight tracking-tight border-b-2 border-[#FFD700] inline-block">
+                Allowed Resources
+              </h4>
+              <p className="text-sm md:text-base text-[#050008] font-bold uppercase tracking-tight leading-relaxed">
                 You MAY use open-source icon packs (Phosphor, Material, etc.), stock photos (Unsplash), and 3D illustrations.
               </p>
             </div>
@@ -53,17 +65,21 @@ const Guidelines: React.FC = () => {
           <TechBox id="03" title="AI Policy">
             <div className="space-y-6">
               <div className="cursor-target">
-                <span className="font-pixel text-[9px] text-green-600 block mb-1">● ALLOWED</span>
-                <p className="text-sm font-bold leading-snug">
+                <span className="font-pixel text-[10px] text-green-600 block mb-2 font-bold uppercase tracking-widest">
+                  [ STATUS: ALLOWED ]
+                </span>
+                <p className="text-sm font-archivo font-black leading-snug uppercase tracking-tight">
                   Generating images (Midjourney) or text (ChatGPT).
                 </p>
               </div>
-              <div className="pt-4 border-t border-[#050008]/10 cursor-target">
-                <span className="font-pixel text-[9px] text-red-600 block mb-1">● BANNED</span>
-                <p className="text-sm font-bold leading-snug mb-2">
+              <div className="pt-6 border-t-2 border-[#050008]/10 cursor-target">
+                <span className="font-pixel text-[10px] text-red-600 block mb-2 font-bold uppercase tracking-widest">
+                  [ STATUS: BANNED ]
+                </span>
+                <p className="text-sm font-archivo font-black leading-snug mb-3 uppercase tracking-tight">
                   UI Layouts/Wireframes (Uizard, Galileo AI).
                 </p>
-                <p className="text-[10px] italic opacity-60 font-medium leading-tight uppercase">
+                <p className="text-[10px] font-pixel italic text-[#050008]/50 leading-tight uppercase tracking-tighter">
                   "We want to see your design skills, not the bot's."
                 </p>
               </div>
@@ -78,19 +94,15 @@ const Guidelines: React.FC = () => {
 
 const TechBox = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
   <div className="cursor-target group relative flex w-full">
-    <div className="absolute inset-0 bg-[#FFD700] translate-x-1.5 translate-y-1.5 md:translate-x-2 md:translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
-    
-    <div className="relative bg-white border-[3px] md:border-4 border-[#050008] p-5 md:p-8 flex flex-col w-full">
-
-      <div className="absolute top-0 right-0 bg-[#050008] text-[#F5F5DC] px-2 md:px-3 py-0.5 md:py-1 font-pixel text-[8px] md:text-[9px]">
+    <div className="absolute inset-0 bg-[#FFD700] translate-x-2 translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+    <div className="relative bg-white border-4 border-[#050008] p-6 md:p-10 flex flex-col w-full shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
+      <div className="absolute top-0 right-0 bg-[#050008] text-[#FFD700] px-3 py-1 font-pixel text-[10px] font-bold">
         {id}
       </div>
-
-      <h3 className="text-lg md:text-xl font-archivo font-black mb-4 md:mb-6 uppercase tracking-tighter border-b-2 border-[#FFD700] self-start">
+      <h3 className="text-2xl font-archivo font-black mb-8 uppercase tracking-tighter self-start leading-none">
         {title}
       </h3>
-
-      <div className="relative z-10 font-archivo flex-grow">
+      <div className="relative z-10 flex-grow">
         {children}
       </div>
     </div>

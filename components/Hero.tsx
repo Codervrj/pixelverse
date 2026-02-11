@@ -191,29 +191,14 @@ const Countdown = () => {
 };
 
 export default function Hero() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-[200vh] bg-[#F5F5DC]">
-      <section className="sticky top-0 min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
-        <AnimatedBackground />
+    <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
+      <AnimatedBackground />
 
-        {/* Main Content */}
-        <div 
-          className="relative z-30 flex flex-col items-center text-center px-4 w-full max-w-7xl mx-auto transition-all duration-300"
-          style={{
-            transform: scrolled ? 'translateY(50px)' : 'translateY(0)',
-            opacity: scrolled ? 0.5 : 1
-          }}
-        >
+      {/* Main Content */}
+      <div 
+        className="relative z-30 flex flex-col items-center text-center px-4 w-full max-w-7xl mx-auto"
+      >
           {/* Status Badge */}
           <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Sparkles size={16} className="text-black fill-[#FFD700]" />
@@ -229,10 +214,6 @@ export default function Hero() {
             </h1>
             <div
               className="absolute -top-10 -right-4 md:right-10 bg-[#FFD700] text-black text-xl md:text-3xl px-4 py-2 rotate-[-6deg] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-              style={{
-                transform: scrolled ? 'translateY(-40px) rotate(-6deg)' : 'translateY(0) rotate(-6deg)',
-                transition: 'transform 0.3s ease-out'
-              }}
             >
               DESIGNATHON
             </div>
@@ -272,19 +253,9 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div 
           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-black animate-bounce"
-          style={{
-            opacity: scrolled ? 0 : 1,
-            transition: 'opacity 0.3s ease-out'
-          }}
         >
           <ChevronDown size={32} strokeWidth={3} />
         </div>
       </section>
-
-      {/* Content below to enable scrolling */}
-      <div className="min-h-screen bg-[#F5F5DC] flex items-center justify-center">
-        <p className="text-2xl font-bold text-black">Scroll up to see the parallax effect!</p>
-      </div>
-    </div>
   );
 }

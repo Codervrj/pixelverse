@@ -124,7 +124,7 @@ const UnoReverseCard = ({ quest, index }) => {
             {/* REVERSE Text */}
             <div className="relative z-10 mb-8">
               <h3 
-                className="text-5xl md:text-6xl font-black tracking-tighter text-center"
+                className="text-4xl md:text-5xl font-black tracking-tighter text-center"
                 style={{ 
                   color: quest.color,
                   textShadow: '3px 3px 0px rgba(0,0,0,0.2)'
@@ -216,6 +216,10 @@ const UnoReverseCard = ({ quest, index }) => {
 export default function Quests() {
   return (
     <section className="py-24 md:py-40 px-6 md:px-12 bg-black relative text-white min-h-screen overflow-hidden">
+      {/* Structural Grid Background */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none"
+           style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+
       {/* Background glow effects */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[120px] pointer-events-none" />

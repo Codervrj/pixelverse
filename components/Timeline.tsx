@@ -70,6 +70,37 @@ const Timeline: React.FC = () => {
 
   return (
     <section id="timeline" ref={containerRef} className="py-24 md:py-40 px-6 bg-[#F5F5DC] relative overflow-hidden text-black border-t-2 border-black">
+      {/* Dot pattern background */}
+      <div 
+        className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+        style={{ 
+          backgroundImage: 'radial-gradient(#050008 1px, transparent 1px)', 
+          backgroundSize: '20px 20px' 
+        }} 
+      />
+
+      {/* Yellow grid background */}
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{ 
+          backgroundImage: `
+            linear-gradient(to right, #ffd7004d 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 215, 0, 0.3) 1px, transparent 1px)
+          `, 
+          backgroundSize: '40px 40px',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          maskImage: 'radial-gradient(circle at center, black 70%, transparent 100%)',
+          animation: 'blueprintMove 40s linear infinite'
+        }} 
+      />
+
+      <style>{`
+        @keyframes blueprintMove {
+          0% { background-position: 0 0; }
+          100% { background-position: 40px 40px; }
+        }
+      `}</style>
+
       <div className="max-w-6xl mx-auto">
         <div className="mb-24 text-center">
           <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">SYSTEM_SCHEDULE</div>

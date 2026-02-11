@@ -213,13 +213,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
             </div>
             
             {/* Footer */}
-            <div className="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between">
-              <span className="text-green-400 text-xs font-mono">QUEST_AVAILABLE</span>
-              <div className="flex items-center gap-1 text-white text-sm font-bold">
-                ENTER
-                <ArrowUpRight size={16} strokeWidth={3} />
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>

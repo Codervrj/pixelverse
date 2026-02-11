@@ -15,11 +15,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] bg-black/90 backdrop-blur-sm border-b-2 border-white px-6 md:px-12 py-5 flex justify-between items-center transition-all">
       <div className="flex items-center gap-4">
-        {/* <img src="../public/logo.png" alt="Pixelverse Logo" className=" h-10"/> */}
          <img src="../public/logo.png" alt="Pixelverse Logo" className=" h-10"/>
       </div>
 
-      {/* Desktop Nav */}
       <div className="hidden lg:flex gap-10 items-center text-sm font-bold font-archivo text-white uppercase tracking-tight">
         {navLinks.map((item) => (
           <a
@@ -39,7 +37,6 @@ const Navbar: React.FC = () => {
         </a>
       </div>
 
-      {/* Mobile Toggle */}
       <button
         className="lg:hidden text-white"
         onClick={() => setIsOpen(!isOpen)}
@@ -47,7 +44,6 @@ const Navbar: React.FC = () => {
         {isOpen ? <X size={32} strokeWidth={3} /> : <Menu size={32} strokeWidth={3} />}
       </button>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

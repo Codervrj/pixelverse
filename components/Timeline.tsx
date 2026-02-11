@@ -78,7 +78,6 @@ const Timeline: React.FC = () => {
           </h2>
         </div>
 
-        {/* Round Boxes */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
           <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
             <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_01</div>
@@ -100,10 +99,8 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="relative">
-          {/* Vertical Line Background */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-black/10" />
 
-          {/* Animated Vertical Line */}
           <motion.div
             style={{ height: lineHeight }}
             className="absolute left-6 md:left-1/2 top-0 w-1 bg-black origin-top"
@@ -119,10 +116,8 @@ const Timeline: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className={`relative flex items-center gap-12 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
-                {/* Connector Dot */}
                 <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F5F5DC] z-10 border-4 border-black shadow-[rgba(0,0,0,1)]" />
 
-                {/* Content Box */}
                 <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
                     <div
@@ -147,7 +142,6 @@ const Timeline: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Empty spacer for desktop */}
                 <div className="hidden md:block md:w-2/12" />
                 <div className="hidden md:block md:w-5/12" />
               </motion.div>

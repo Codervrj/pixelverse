@@ -8,7 +8,6 @@ const Sponsors: React.FC = () => {
         <div className="text-xs font-bold font-archivo text-black uppercase tracking-[0.3em] cursor-target">Our Allies</div>
       </div>
 
-      {/* Infinite Marquee */}
       <div className="flex whitespace-nowrap overflow-hidden group bg-white border-y-2 border-black py-8 cursor-none">
         <motion.div
           animate={{ x: [0, -1000] }}

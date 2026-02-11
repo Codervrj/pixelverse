@@ -4,12 +4,12 @@ import { Phone, Mail } from 'lucide-react';
 const ContactSection: React.FC = () => {
   return (
     <section className="py-24 md:py-40 px-6 md:px-12 bg-[#050008] relative text-white min-h-screen overflow-hidden">
-      {/* Structural Grid Background (same as PrizePool) */}
+
       <div className="absolute inset-0 opacity-10 pointer-events-none"
            style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        {/* Section Header */}
+
         <div className="mb-24 space-y-4">
           <div className="flex items-center gap-4">
             <div className="h-[1px] w-12 bg-yellow-400" />
@@ -21,14 +21,13 @@ const ContactSection: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Side - Contact Info */}
+
           <div className="space-y-10">
             <div className="p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors relative group">
               <p className="text-zinc-500 text-base md:text-lg font-bold uppercase tracking-tight mb-8">
                 Any query, suggestion or comment? Feel free to contact us.
               </p>
 
-              {/* Phone Numbers */}
               <div className="space-y-6 mb-10">
                 <div className="flex items-center gap-4 group/phone">
                   <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/phone:border-yellow-400/50 transition-colors">
@@ -51,7 +50,6 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Email Section */}
               <div>
                 <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest mb-6">
                   Any Queries?
@@ -72,7 +70,6 @@ const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Decorative Corners */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
@@ -80,7 +77,6 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side - Map */}
           <div className="space-y-6">
             <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest">
               LOCATION_DATA
@@ -99,7 +95,6 @@ const ContactSection: React.FC = () => {
                 </a>
               </div>
 
-              {/* Map iframe */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2977457084824!2d73.0156!3d19.0433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24cce39457b%3A0x8bd69eadb0bd749f!2sSIES%20Graduate%20School%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
@@ -111,10 +106,8 @@ const ContactSection: React.FC = () => {
                 className="grayscale-[50%] contrast-110 brightness-75"
               />
 
-              {/* Map overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#050008]/40 to-transparent pointer-events-none" />
 
-              {/* Decorative Corners */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
               <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />

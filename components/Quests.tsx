@@ -2,33 +2,62 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Simple icons as SVG components
 const Brain = ({ size = 24, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
-    <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
-    <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
-    <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
-    <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
-    <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
-    <path d="M19.938 10.5a4 4 0 0 1 .585.396" />
-    <path d="M6 18a4 4 0 0 1-1.967-.516" />
-    <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M12 5a3 3 0 1 0-6 0 4 4 0 0 0-2 7 4 4 0 0 0 4 6h8a4 4 0 0 0 4-6 4 4 0 0 0-2-7 3 3 0 1 0-6 0Z" />
+    <path d="M8 10h8" />
+    <path d="M9 14h6" />
   </svg>
 );
 
 const HeartPulse = ({ size = 24, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-    <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27" />
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <rect x="3" y="4" width="18" height="14" rx="2" />
+    <path d="M6 12h3l2-3 2 6 2-3h3" />
+    <path d="M8 20h8" />
   </svg>
 );
 
 const Sparkles = ({ size = 24, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={className}>
-    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-    <path d="M5 3v4" />
-    <path d="M19 17v4" />
-    <path d="M3 5h4" />
-    <path d="M17 19h4" />
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v4" />
+    <path d="M12 18v4" />
+    <path d="M2 12h4" />
+    <path d="M18 12h4" />
+    <path d="M4.9 4.9l2.8 2.8" />
+    <path d="M16.3 16.3l2.8 2.8" />
+    <path d="M4.9 19.1l2.8-2.8" />
+    <path d="M16.3 7.7l2.8-2.8" />
   </svg>
 );
 
@@ -49,22 +78,22 @@ const ArrowUpRight = ({ size = 24, strokeWidth = 2 }) => (
 
 const questList = [
   {
-    title: 'GAMIFIED LEARNING',
-    desc: 'Engineer an education platform where leveling up is as rewarding as learning.',
+    title: 'Consumer & Gen Z (Mobile App) ',
+    desc: 'Digital Wellness & Social Health',
     icon: Brain,
     color: '#FF5555',
     cardColor: 'bg-red-600'
   },
   {
-    title: 'WELLNESS RPG',
-    desc: 'Build health ecosystems where mindfulness is rewarded with digital progression.',
+    title: 'B2B & Efficiency (Tablet/Web) ',
+    desc: 'The Gig Worker’s Cockpit',
     icon: HeartPulse,
     color: '#FFD700',
     cardColor: 'bg-yellow-400'
   },
   {
-    title: 'NARRATIVE DESIGN',
-    desc: 'Create branching storytelling interfaces that respond to user choices.',
+    title: 'Social Good & Accessibility (Mobile App) ',
+    desc: 'Hyper-Local Civic Action',
     icon: Sparkles,
     color: '#55AA55',
     cardColor: 'bg-green-600'
@@ -134,9 +163,10 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           {/* UNO Card White Circle Background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
           
-          {/* Reverse Arrows - Top */}
-          <div className="absolute top-10 sm:top-14 md:top-16 left-1/2 -translate-x-1/2 z-10">
-            <svg width="80" height="80" viewBox="0 0 100 100" className="drop-shadow-lg">
+          {/* Centered content wrapper */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+            {/* Reverse Arrows - Top */}
+            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg -mb-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
               <path 
                 d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
                 fill="none" 
@@ -149,19 +179,17 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
                 fill={quest.color}
               />
             </svg>
-          </div>
-          
-          {/* REVERSE Text */}
-          <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-2xl sm:text-3xl md:text-4xl z-10 tracking-wider"
-            style={{ color: quest.color }}
-          >
-            REVERSE
-          </div>
-          
-          {/* Reverse Arrows - Bottom */}
-          <div className="absolute bottom-10 sm:bottom-14 md:bottom-16 left-1/2 -translate-x-1/2 z-10 rotate-180">
-            <svg width="80" height="80" viewBox="0 0 100 100" className="drop-shadow-lg">
+            
+            {/* REVERSE Text */}
+            <div 
+              className="font-black text-2xl sm:text-3xl md:text-4xl tracking-wider my-1"
+              style={{ color: quest.color }}
+            >
+              REVERSE
+            </div>
+            
+            {/* Reverse Arrows - Bottom */}
+            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg rotate-180 -mt-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
               <path 
                 d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
                 fill="none" 

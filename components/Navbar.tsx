@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed top-0 left-0 w-full z-[100] bg-black/90 backdrop-blur-sm border-b-2 border-white px-6 md:px-12 py-5 flex justify-between items-center transition-all">
       <div className="flex items-center gap-4">
         {/* <img src="../public/logo.png" alt="Pixelverse Logo" className=" h-10"/> */}
-         <img src="../public/logo.png" alt="Pixelverse Logo" className=" h-10"/>
+         <img src="../logo.png" alt="Pixelverse Logo" className=" h-10"/>
       </div>
 
       {/* Desktop Nav */}

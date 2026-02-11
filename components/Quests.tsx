@@ -115,11 +115,12 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
         ...getEntranceStyle(),
         transitionDelay: isVisible ? `${index * 200}ms` : `${(2 - index) * 200}ms` // Reverse order on exit
       }}
+      onClick={() => setIsFlipped(!isFlipped)}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
       <div 
-        className="relative w-80 h-[480px] transition-transform duration-700 preserve-3d cursor-pointer"
+        className="relative w-60 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[480px] transition-transform duration-700 preserve-3d cursor-pointer"
         style={{
           transformStyle: 'preserve-3d',
           transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
@@ -131,10 +132,10 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           style={{ backfaceVisibility: 'hidden' }}
         >
           {/* UNO Card White Circle Background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
           
           {/* Reverse Arrows - Top */}
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 z-10">
+          <div className="absolute top-10 sm:top-14 md:top-16 left-1/2 -translate-x-1/2 z-10">
             <svg width="80" height="80" viewBox="0 0 100 100" className="drop-shadow-lg">
               <path 
                 d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
@@ -152,14 +153,14 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           
           {/* REVERSE Text */}
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-4xl z-10 tracking-wider"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-black text-2xl sm:text-3xl md:text-4xl z-10 tracking-wider"
             style={{ color: quest.color }}
           >
             REVERSE
           </div>
           
           {/* Reverse Arrows - Bottom */}
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 rotate-180">
+          <div className="absolute bottom-10 sm:bottom-14 md:bottom-16 left-1/2 -translate-x-1/2 z-10 rotate-180">
             <svg width="80" height="80" viewBox="0 0 100 100" className="drop-shadow-lg">
               <path 
                 d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
@@ -203,11 +204,11 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
                 QUEST_{index + 1}
               </div>
               
-              <h3 className="text-2xl font-black mb-3 text-white tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black mb-3 text-white tracking-tight">
                 {quest.title}
               </h3>
               
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 {quest.desc}
               </p>
             </div>
@@ -251,7 +252,7 @@ export default function Quests() {
   return (
     <div 
       ref={sectionRef}
-      className="relative min-h-screen bg-black py-20 px-8 overflow-hidden"
+      className="relative min-h-screen bg-black py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-8 overflow-hidden"
     >
       {/* Structural Grid Background */}
       <div 
@@ -263,29 +264,30 @@ export default function Quests() {
       />
       
       {/* Background glow effects */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl" />
+      <div className="absolute top-10 left-10 md:top-20 md:left-20 w-64 h-64 md:w-96 md:h-96 bg-purple-600/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 w-64 h-64 md:w-96 md:h-96 bg-blue-600/20 rounded-full blur-3xl" />
       
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-500/50 rounded-full text-cyan-400 text-sm font-mono mb-6">
+        <div className="text-center mb-10 md:mb-16">
+          <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/20 border border-cyan-500/50 rounded-full text-cyan-400 text-xs sm:text-sm font-mono mb-4 sm:mb-6">
             SELECT_MISSION
           </div>
           
-          <h2 className="text-6xl font-black text-white mb-6 tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6 tracking-tight">
             THE CHALLENGE
           </h2>
           
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto mb-4">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-3 sm:mb-4 px-2">
             Four distinct paths. One final objective. Choose your specialty and conquer the mainframe.
           </p>
           
-          <p className="text-cyan-400 text-sm font-mono">
-            → Hover over the cards to reveal the quests
+          <p className="text-cyan-400 text-xs sm:text-sm font-mono">
+            <span className="hidden sm:inline">→ Hover over the cards to reveal the quests</span>
+            <span className="sm:hidden">→ Tap the cards to reveal the quests</span>
           </p>
         </div>
         
-        <div className="flex justify-center items-center gap-8 flex-wrap">
+        <div className="flex justify-center items-center gap-6 sm:gap-8 flex-wrap">
           {questList.map((quest, idx) => (
             <UnoReverseCard 
               key={idx} 

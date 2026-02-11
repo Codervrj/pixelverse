@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#F5F5DC] text-[#050008] pt-10 pb-16 px-6 md:px-12 text-center overflow-hidden cursor-none">
+    <footer className="relative bg-[#F5F5DC] text-[#050008] pt-8 pb-12 sm:pt-10 sm:pb-16 px-4 sm:px-6 md:px-12 text-center overflow-hidden cursor-none">
       
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none" 
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
 
           <div className="absolute -top-4 -left-6 w-3 h-3 border-t-2 border-l-2 border-[#FFD700] opacity-50 group-hover:opacity-100 transition-opacity" />
           
-          <h2 className="text-4xl md:text-5xl font-archivo tracking-[0.6em] text-[#050008] font-black leading-none cursor-target">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-archivo tracking-[0.3em] sm:tracking-[0.6em] text-[#050008] font-black leading-none cursor-target">
             PIXELVERSE
           </h2>
   
@@ -56,14 +56,14 @@ const Footer: React.FC = () => {
         </div>
 
 
-        <div className="flex justify-center gap-8 mb-6 mt-4">
+        <div className="flex justify-center gap-5 sm:gap-8 mb-6 mt-4">
           {['IG', 'LI', 'TW'].map((social) => (
             <div 
               key={social} 
 
-              className="w-12 h-12 bg-white border-2 border-[#050008] flex items-center justify-center hover:bg-[#FFD700] transition-all duration-300 cursor-none cursor-target group relative shadow-[5px_5px_0px_0px_#050008] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-white border-2 border-[#050008] flex items-center justify-center hover:bg-[#FFD700] transition-all duration-300 cursor-none cursor-target group relative shadow-[3px_3px_0px_0px_#050008] sm:shadow-[5px_5px_0px_0px_#050008] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
             >
-              <span className="text-[11px] font-pixel font-bold group-hover:scale-110 transition-transform">
+              <span className="text-[10px] sm:text-[11px] font-pixel font-bold group-hover:scale-110 transition-transform">
                 {social}
               </span>
             </div>
@@ -71,12 +71,12 @@ const Footer: React.FC = () => {
         </div>
 
 
-        <div className="pt-6 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="pt-4 sm:pt-6 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-8">
           <div className="flex items-center gap-4">
             <div className="w-2 h-2 bg-[#FFD700] animate-pulse" />
           </div>
 
-          <p className="text-[10px] font-pixel text-[#050008]/40 uppercase tracking-[0.3em] cursor-target">
+          <p className="text-[8px] sm:text-[10px] font-pixel text-[#050008]/40 uppercase tracking-[0.2em] sm:tracking-[0.3em] cursor-target">
             © 2026 PIXELVERSE // GDGoC_SIESGST
           </p>
 

@@ -69,7 +69,7 @@ const Timeline: React.FC = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="py-24 md:py-40 px-6 bg-[#F5F5DC] relative overflow-hidden text-black border-t-2 border-black">
+    <section id="timeline" ref={containerRef} className="py-16 sm:py-24 md:py-40 px-4 sm:px-6 bg-[#F5F5DC] relative overflow-hidden text-black border-t-2 border-black">
       {/* Dot pattern background */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none" 
@@ -102,71 +102,71 @@ const Timeline: React.FC = () => {
       `}</style>
 
       <div className="max-w-6xl mx-auto">
-        <div className="mb-24 text-center">
-          <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">SYSTEM_SCHEDULE</div>
-          <h2 className="text-5xl md:text-8xl font-archivo tracking-tighter uppercase leading-none text-black">
+        <div className="mb-12 sm:mb-16 md:mb-24 text-center">
+          <div className="inline-block px-3 py-1 sm:px-4 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">SYSTEM_SCHEDULE</div>
+          <h2 className="text-3xl sm:text-5xl md:text-8xl font-archivo tracking-tighter uppercase leading-none text-black">
             EVENT<br /><span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>TIMELINE</span>
           </h2>
         </div>
 
         {/* Round Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
-            <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_01</div>
-            <h3 className="text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-3">ONLINE ROUND</h3>
-            <p className="text-black/70 text-sm md:text-base font-archivo font-medium uppercase tracking-tight">Compete virtually from anywhere. Prove your skills in the digital arena.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16 md:mb-24">
+          <div className="bg-white border-2 border-black p-5 sm:p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl sm:rounded-2xl text-center">
+            <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">ROUND_01</div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-2 sm:mb-3">ONLINE ROUND</h3>
+            <p className="text-black/70 text-xs sm:text-sm md:text-base font-archivo font-medium uppercase tracking-tight">Compete virtually from anywhere. Prove your skills in the digital arena.</p>
           </div>
-          <div className="bg-white border-2 border-black p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl text-center">
-            <div className="inline-block px-4 py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">ROUND_02</div>
-            <h3 className="text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-3">OFFLINE ROUND</h3>
-            <p className="text-black/70 text-sm md:text-base font-archivo font-medium uppercase tracking-tight">The finalists battle on-site. Show up and claim your victory.</p>
+          <div className="bg-white border-2 border-black p-5 sm:p-8 md:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl sm:rounded-2xl text-center">
+            <div className="inline-block px-3 sm:px-4 py-1 sm:py-1.5 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">ROUND_02</div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-archivo text-black uppercase tracking-tighter mb-2 sm:mb-3">OFFLINE ROUND</h3>
+            <p className="text-black/70 text-xs sm:text-sm md:text-base font-archivo font-medium uppercase tracking-tight">The finalists battle on-site. Show up and claim your victory.</p>
           </div>
         </div>
 
-        <div className="mb-16 text-center">
-          <div className="inline-block px-4 py-1 bg-black text-[#FFD700] font-archivo font-bold text-xs mb-4 uppercase tracking-widest">OFFLINE_SCHEDULE</div>
-          <h3 className="text-4xl md:text-6xl font-archivo tracking-tighter uppercase leading-none text-black">
+        <div className="mb-10 sm:mb-12 md:mb-16 text-center">
+          <div className="inline-block px-3 py-1 sm:px-4 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">OFFLINE_SCHEDULE</div>
+          <h3 className="text-2xl sm:text-4xl md:text-6xl font-archivo tracking-tighter uppercase leading-none text-black">
            THE OPERATIONAL TIMELINE
           </h3>
         </div>
 
         <div className="relative">
           {/* Vertical Line Background */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-black/10" />
+          <div className="absolute left-4 sm:left-6 md:left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-black/10" />
 
           {/* Animated Vertical Line */}
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-6 md:left-1/2 top-0 w-1 bg-black origin-top"
+            className="absolute left-4 sm:left-6 md:left-1/2 top-0 w-0.5 sm:w-1 bg-black origin-top"
           />
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-10 sm:space-y-16 md:space-y-24">
             {timelineData.map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5 }}
-                className={`relative flex items-center gap-12 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                className={`relative flex items-center gap-6 sm:gap-12 md:gap-0 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Connector Dot */}
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-[#F5F5DC] z-10 border-4 border-black shadow-[rgba(0,0,0,1)]" />
+                <div className="absolute left-4 sm:left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#F5F5DC] z-10 border-[3px] sm:border-4 border-black shadow-[rgba(0,0,0,1)]" />
 
                 {/* Content Box */}
-                <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <div className={`w-full md:w-5/12 ml-8 sm:ml-12 md:ml-0 ${idx % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
                     <div
-                      className="px-4 py-1.5 font-bold font-archivo text-xs uppercase tracking-widest mb-4 inline-block border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+                      className="px-2.5 py-1 sm:px-4 sm:py-1.5 font-bold font-archivo text-[10px] sm:text-xs uppercase tracking-widest mb-3 sm:mb-4 inline-block border-2 border-black bg-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
                       style={{ color: "black" }}
                     >
                       {item.time}
                     </div>
-                    <div className={`bg-white border-2 border-black p-6 md:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl w-full ${idx % 2 === 0 ? 'rounded-tr-none' : 'rounded-tl-none'}`}>
-                      <h3 className="text-2xl md:text-3xl font-archivo text-black uppercase tracking-tighter mb-4">
+                    <div className={`bg-white border-2 border-black p-4 sm:p-6 md:p-8 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-xl sm:rounded-2xl w-full ${idx % 2 === 0 ? 'sm:rounded-tr-none' : 'sm:rounded-tl-none'}`}>
+                      <h3 className="text-lg sm:text-2xl md:text-3xl font-archivo text-black uppercase tracking-tighter mb-2 sm:mb-4">
                         {item.title}
                       </h3>
-                      <ul className="text-black/80 text-xs md:text-sm uppercase max-w-sm font-archivo font-medium space-y-3 text-left">
+                      <ul className="text-black/80 text-[10px] sm:text-xs md:text-sm uppercase max-w-sm font-archivo font-medium space-y-2 sm:space-y-3 text-left">
                         {item.desc.map((point, i) => (
                           <li key={i} className="flex gap-2">
                             <span className="mt-1.5 min-w-[6px] h-[6px] rounded-full bg-black/80 shrink-0" />

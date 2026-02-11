@@ -3,47 +3,47 @@ import { Phone, Mail } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="py-24 md:py-40 px-6 md:px-12 bg-[#050008] relative text-white min-h-screen overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-40 px-4 sm:px-6 md:px-12 bg-[#050008] relative text-white min-h-screen overflow-hidden">
       {/* Structural Grid Background (same as PrizePool) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none"
            style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="mb-24 space-y-4">
-          <div className="flex items-center gap-4">
-            <div className="h-[1px] w-12 bg-yellow-400" />
-            <span className="font-pixel text-yellow-400 text-xs tracking-[0.3em]">COMM_LINK</span>
+        <div className="mb-12 sm:mb-16 md:mb-24 space-y-3 sm:space-y-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="h-[1px] w-8 sm:w-12 bg-yellow-400" />
+            <span className="font-pixel text-yellow-400 text-[10px] sm:text-xs tracking-[0.3em]">COMM_LINK</span>
           </div>
-          <h2 className="text-5xl md:text-8xl font-archivo text-white uppercase tracking-tighter">
+          <h2 className="text-3xl sm:text-5xl md:text-8xl font-archivo text-white uppercase tracking-tighter">
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500">GET IN TOUCH</span>
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
           {/* Left Side - Contact Info */}
           <div className="space-y-10">
-            <div className="p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors relative group">
-              <p className="text-zinc-500 text-base md:text-lg font-bold uppercase tracking-tight mb-8">
+            <div className="p-5 sm:p-8 md:p-10 border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-colors relative group">
+              <p className="text-zinc-500 text-sm sm:text-base md:text-lg font-bold uppercase tracking-tight mb-6 sm:mb-8">
                 Any query, suggestion or comment? Feel free to contact us.
               </p>
 
               {/* Phone Numbers */}
-              <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 group/phone">
-                  <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/phone:border-yellow-400/50 transition-colors">
-                    <Phone className="text-yellow-400" size={24} />
+              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
+                <div className="flex items-center gap-3 sm:gap-4 group/phone">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center p-2 sm:p-3 bg-white/5 border border-white/10 group-hover/phone:border-yellow-400/50 transition-colors shrink-0">
+                    <Phone className="text-yellow-400" size={20} />
                   </div>
                   <div className="space-y-1">
                     <a
                       href="tel:+918828046919"
-                      className="text-white text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
+                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 88280 46919
                     </a>
                     <a
                       href="tel:+919833875297"
-                      className="text-white text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
+                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 98338 75297
                     </a>
@@ -53,18 +53,18 @@ const ContactSection: React.FC = () => {
 
               {/* Email Section */}
               <div>
-                <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest mb-6">
+                <h3 className="font-pixel text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest mb-4 sm:mb-6">
                   Any Queries?
                 </h3>
-                <div className="flex items-center gap-4 group/mail">
-                  <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/mail:border-yellow-400/50 transition-colors">
-                    <Mail className="text-yellow-400" size={24} />
+                <div className="flex items-center gap-3 sm:gap-4 group/mail">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center p-2 sm:p-3 bg-white/5 border border-white/10 group-hover/mail:border-yellow-400/50 transition-colors shrink-0">
+                    <Mail className="text-yellow-400" size={20} />
                   </div>
-                  <div>
-                    <p className="text-zinc-600 text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
+                  <div className="min-w-0">
+                    <p className="text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
                       href="mailto:pixelverse@siesgst.ac.in"
-                      className="text-white text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
+                      className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
                       pixelverse@siesgst.ac.in
                     </a>
@@ -81,14 +81,14 @@ const ContactSection: React.FC = () => {
           </div>
 
           {/* Right Side - Map */}
-          <div className="space-y-6">
-            <h3 className="font-pixel text-xs text-zinc-500 uppercase tracking-widest">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="font-pixel text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest">
               LOCATION_DATA
             </h3>
 
             <div className="relative overflow-hidden border border-white/10 hover:border-yellow-400/30 transition-all group">
-              <div className="absolute top-4 left-4 z-10 bg-[#050008]/90 border border-white/10 px-4 py-3">
-                <p className="text-sm font-bold text-white uppercase tracking-tight">SIES Graduate School...</p>
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 bg-[#050008]/90 border border-white/10 px-3 py-2 sm:px-4 sm:py-3">
+                <p className="text-xs sm:text-sm font-bold text-white uppercase tracking-tight">SIES Graduate School...</p>
                 <a
                   href="https://maps.google.com/?q=SIES+Graduate+School+of+Technology"
                   target="_blank"
@@ -103,12 +103,12 @@ const ContactSection: React.FC = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2977457084824!2d73.0156!3d19.0433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24cce39457b%3A0x8bd69eadb0bd749f!2sSIES%20Graduate%20School%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
-                height="450"
+                height="300"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale-[50%] contrast-110 brightness-75"
+                className="grayscale-[50%] contrast-110 brightness-75 sm:h-[450px]"
               />
 
               {/* Map overlay gradient */}

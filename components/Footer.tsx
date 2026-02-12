@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
     },
     { 
       id: 'TW', 
-      url: 'https://x.com/' 
+      url: 'https://x.com/gdgsiesgst' 
     }
   ];
 

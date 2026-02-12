@@ -10,7 +10,7 @@ const prizes = [
     glowColor: "rgba(229, 231, 235, 0.4)",
     sparkColor: "#E5E7EB",
     // mobile: vertical stack; desktop: fan-out
-    offset: { desktop: { x: -380, y: -140, rotate: -10 }, mobile: { x: 0, y: -420, rotate: 0 } }
+    offset: { desktop: { x: -380, y: -140, rotate: -10 }, mobile: { x: 0, y: -520, rotate: 0 } }
   },
   {
     rank: "01",
@@ -19,7 +19,7 @@ const prizes = [
     shadowColor: "#FFD700", 
     glowColor: "rgba(255, 215, 0, 0.6)",
     sparkColor: "#FFD700",
-    offset: { desktop: { x: 0, y: -220, rotate: 0 }, mobile: { x: 0, y: -200, rotate: 0 } },
+    offset: { desktop: { x: 0, y: -220, rotate: 0 }, mobile: { x: 0, y: -260, rotate: 0 } },
     hasSpecialEffect: true 
   },
   {
@@ -29,7 +29,8 @@ const prizes = [
     shadowColor: "#CD7F32", 
     glowColor: "rgba(205, 127, 50, 0.4)",
     sparkColor: "#CD7F32",
-    offset: { desktop: { x: 380, y: -140, rotate: 10 }, mobile: { x: 0, y: -640, rotate: 0 } }
+    // ADJUSTED MOBILE Y OFFSET: Increased from -640 to -660 for better spacing
+    offset: { desktop: { x: 380, y: -140, rotate: 10 }, mobile: { x: 0, y: -780, rotate: 0 } }
   }
 ];
 

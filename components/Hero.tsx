@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EVENT_DATE = new Date("2026-03-08T09:00:00");
+const EVENT_DATE = new Date("2026-02-08T09:00:00"); //2026-03-08T09:00:00
 
 // Simple icons as SVG components
 const Zap = ({ size = 24, className = "" }) => (
@@ -165,10 +165,15 @@ const Countdown = () => {
     };
   };
 
+  
+
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  
 
   useEffect(() => {
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -191,8 +196,31 @@ const Countdown = () => {
 };
 
 export default function Hero() {
+
+  const checkdis=()=>{
+    const now = new Date().getTime();
+    const target = EVENT_DATE.getTime();
+    const diff = target - now;
+    if(diff<=0){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
+
+  const [isActive, setIsActive] = useState(checkdis());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsActive(checkdis());
+      console.log(isActive);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
+  
+  <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
       <AnimatedBackground />
 
       {/* Main Content */}
@@ -242,11 +270,27 @@ export default function Hero() {
               </span>
             </button>
 
-            <button className="relative px-10 py-5 bg-white text-black font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
-              <span className="flex items-center gap-2 justify-center">
-                Problem Statements <Terminal size={20} />
-              </span>
-            </button>
+                    <button
+          disabled={isActive}
+          className={`relative px-10 py-5 font-bold text-xl uppercase tracking-tight border-2 transition-all
+          ${isActive 
+            ? "bg-[#F5F5DC] border-black/30 text-black/30 cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]" 
+            : "bg-white border-black text-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+          }`}
+        >
+          <a
+            href={!isActive ? "/problem.pdf" : undefined}
+            target="_blank"
+            className={`flex items-center gap-2 justify-center ${isActive ? "pointer-events-none" : ""}`}
+          >
+            {isActive ? "Locked Until Event" : "Problem Statements"} <Terminal size={20} />
+          </a>
+          {isActive && (
+            <span className="absolute -top-3 -right-3 px-2 py-0.5 bg-[#FFD700] text-black text-[10px] font-bold uppercase tracking-wider border-2 border-black/30 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]">
+              SOON
+            </span>
+          )}
+</button>
           </div>
         </div>
 

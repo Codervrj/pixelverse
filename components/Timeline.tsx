@@ -130,11 +130,11 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="relative">
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-black/10" />
+          <div className="absolute left-6 md:left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-black/10" />
 
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-4 sm:left-6 md:left-1/2 top-0 w-0.5 sm:w-1 bg-black origin-top"
+            className="absolute left-6 md:left-1/2 -translate-x-1/2 top-0 w-0.5 sm:w-1 bg-black origin-top"
           />
 
           <div className="space-y-10 sm:space-y-16 md:space-y-24">

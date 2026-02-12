@@ -27,11 +27,11 @@ const Guidelines: React.FC = () => {
             </span>
           </div>
           
-          <h2 className="text-7xl md:text-9xl font-archivo font-black tracking-tighter uppercase leading-none">
+          <h2 className="text-5xl sm:text-8xl md:text-8xl font-archivo font-black tracking-tighter uppercase leading-none">
             RULES &
           </h2>
           <h2 
-            className="text-7xl md:text-9xl font-archivo font-black tracking-tighter uppercase leading-none text-transparent"
+            className="text-4xl sm:text-7xl md:text-9xl font-archivo font-black tracking-tighter uppercase leading-none text-transparent"
             style={{ WebkitTextStroke: '2px #050008' }}
           >
             GUIDELINES

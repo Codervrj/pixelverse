@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EVENT_DATE = new Date("2026-02-08T09:00:00"); //2026-03-08T09:00:00
+const EVENT_DATE = new Date("2026-03-08T09:00:00"); //2026-03-08T09:00:00
 
 // Simple icons as SVG components
 const Zap = ({ size = 24, className = "" }) => (
@@ -279,7 +279,7 @@ export default function Hero() {
           }`}
         >
           <a
-            href={!isActive ? "/problem.pdf" : undefined}
+            href={!isActive ? "/problemstatement.pdf" : undefined}
             target="_blank"
             className={`flex items-center gap-2 justify-center ${isActive ? "pointer-events-none" : ""}`}
           >

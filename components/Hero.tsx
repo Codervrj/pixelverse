@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const EVENT_DATE = new Date("2026-02-22T09:00:00");
+const EVENT_DATE = new Date("2026-03-08T09:00:00");
 
 // Simple icons as SVG components
 const Zap = ({ size = 24, className = "" }) => (

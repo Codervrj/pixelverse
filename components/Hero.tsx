@@ -203,7 +203,7 @@ export default function Hero() {
           <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Sparkles size={16} className="text-black fill-[#FFD700]" />
             <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
-              Design_Connect_2025
+              Design_Connect_2026
             </span>
           </div>
 

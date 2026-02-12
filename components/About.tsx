@@ -19,15 +19,15 @@ const About: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl md:text-6xl lg:text-[10vw] xl:text-[11rem] font-archivo leading-[0.85] tracking-tighter uppercase mb-8 sm:mb-12 text-black cursor-target"
+              className="text-5xl sm:text-7xl md:text-[5.5vw] lg:text-[6vw] xl:text-[11rem] font-archivo leading-[0.85] tracking-tighter uppercase mb-8 sm:mb-12 text-black cursor-target"
             >
               DESIGN<br />AS A<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FFA500] drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">CORE</span>
             </motion.h2>
           </div>
 
-          <div className="w-full md:col-span-6 md:pt-16 lg:pt-32 xl:pt-48">
+          <div className="w-full md:col-span-6 md:pt-8 lg:pt-20 xl:pt-48">
             <div className="space-y-10 sm:space-y-16 xl:space-y-24">
-              <p className="text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-6xl font-medium leading-[1.15] tracking-tight text-black uppercase max-w-3xl font-archivo cursor-target">
+              <p className="text-xl sm:text-2xl md:text-xl lg:text-3xl xl:text-6xl font-medium leading-[1.15] tracking-tight text-black uppercase max-w-3xl font-archivo cursor-target">
                 PixelVerse is a high-stakes arena where we dismantle the boundaries between <span className="text-[#FFD700] bg-black px-1 sm:px-2 italic">Logic</span> and <span className="underline decoration-2 sm:decoration-4 decoration-[#FFD700]">Aesthetic</span>.
               </p>
 
@@ -39,7 +39,7 @@ const About: React.FC = () => {
                   className="cursor-target"
                 >
                   <div className="text-[10px] sm:text-xs font-bold font-archivo text-black mb-3 sm:mb-6 uppercase tracking-widest">MAX_PARTICIPANTS</div>
-                  <div className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">500+</div>
+                  <div className="text-4xl sm:text-6xl md:text-4xl lg:text-6xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">500+</div>
                   <div className="text-[10px] sm:text-sm font-bold uppercase mt-2 sm:mt-4 tracking-widest text-black/60">PLAYERS_READY</div>
                 </motion.div>
                 <motion.div
@@ -49,7 +49,7 @@ const About: React.FC = () => {
                   className="cursor-target"
                 >
                   <div className="text-[10px] sm:text-xs font-bold font-archivo text-black mb-3 sm:mb-6 uppercase tracking-widest">UPTIME_WINDOW</div>
-                  <div className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">48H</div>
+                  <div className="text-4xl sm:text-6xl md:text-4xl lg:text-6xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">48H</div>
                   <div className="text-[10px] sm:text-sm font-bold uppercase mt-2 sm:mt-4 tracking-widest text-black/60">NON_STOP_BUILD</div>
                 </motion.div>
               </div>

@@ -117,6 +117,103 @@ export function initGlobalHaptics(): () => void {
         document.removeEventListener('touchmove', onGestureMove);
     });
 
+    // 4. Mac Taptic Engine — Enhanced visual haptics for MacBooks
+    //    Safari cannot programmatically trigger the Taptic Engine, BUT the
+    //    trackpad physically clicks on mousedown. We amplify the experience
+    //    with dramatic visual feedback that makes every click FEEL impactful.
+    const isMac = typeof navigator !== 'undefined' &&
+        /Mac/.test(navigator.platform ?? '');
+
+    if (isMac) {
+        // Inject spring-back keyframes once
+        if (!document.getElementById('haptic-mac-styles')) {
+            const style = document.createElement('style');
+            style.id = 'haptic-mac-styles';
+            style.textContent = `
+                @keyframes hapticPulse {
+                    0%   { transform: scale(1); }
+                    15%  { transform: scale(0.97); }
+                    40%  { transform: scale(1.01); }
+                    100% { transform: scale(1); }
+                }
+                @keyframes hapticForceSlam {
+                    0%   { transform: scale(1); }
+                    15%  { transform: scale(0.94); }
+                    40%  { transform: scale(1.02); }
+                    70%  { transform: scale(0.99); }
+                    100% { transform: scale(1); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        const INTERACTIVE = 'a, button, [role="button"], .card, [data-target], .cursor-target';
+
+        // Every normal click → spring-back pulse animation
+        const onMouseDown = (e: MouseEvent) => {
+            const target = (e.target as HTMLElement)?.closest(INTERACTIVE) as HTMLElement | null;
+            if (!target) return;
+            target.style.animation = 'none';
+            // Force reflow to restart animation
+            void target.offsetHeight;
+            target.style.animation = 'hapticPulse 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards';
+        };
+        document.addEventListener('mousedown', onMouseDown);
+        cleanups.push(() => document.removeEventListener('mousedown', onMouseDown));
+
+        // Prevent default force-click behavior (dictionary lookup, etc.)
+        const onForceWillBegin = (e: Event) => {
+            const target = (e.target as HTMLElement)?.closest(INTERACTIVE);
+            if (target) e.preventDefault();
+        };
+        document.addEventListener('webkitmouseforcewillbegin', onForceWillBegin);
+        cleanups.push(() =>
+            document.removeEventListener('webkitmouseforcewillbegin', onForceWillBegin)
+        );
+
+        // Force click → deep slam animation (much stronger than normal click)
+        const onForceDown = (e: Event) => {
+            const target = (e.target as HTMLElement)?.closest(INTERACTIVE) as HTMLElement | null;
+            if (!target) return;
+            target.style.animation = 'none';
+            void target.offsetHeight;
+            target.style.animation = 'hapticForceSlam 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards';
+            triggerHaptic('heavy');
+        };
+        document.addEventListener('webkitmouseforcedown', onForceDown);
+        cleanups.push(() =>
+            document.removeEventListener('webkitmouseforcedown', onForceDown)
+        );
+
+        // Force pressure → live proportional squeeze (deep range: 1 → 0.85)
+        const onForceChanged = (e: any) => {
+            const force: number = e.webkitForce ?? 0;
+            const target = (e.target as HTMLElement)?.closest(INTERACTIVE) as HTMLElement | null;
+            if (!target) return;
+            const normalizedForce = Math.min(force / 3, 1);
+            const scale = 1 - normalizedForce * 0.05; // 1 → 0.95
+            target.style.animation = 'none';
+            target.style.transform = `scale(${scale})`;
+        };
+        document.addEventListener('webkitmouseforcechanged', onForceChanged);
+        cleanups.push(() =>
+            document.removeEventListener('webkitmouseforcechanged', onForceChanged)
+        );
+
+        // Reset transform on mouse up so elements bounce back
+        const onMouseUp = (e: MouseEvent) => {
+            const target = (e.target as HTMLElement)?.closest(INTERACTIVE) as HTMLElement | null;
+            if (!target) return;
+            target.style.transform = 'scale(1)';
+            target.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            setTimeout(() => {
+                target.style.transition = '';
+            }, 200);
+        };
+        document.addEventListener('mouseup', onMouseUp);
+        cleanups.push(() => document.removeEventListener('mouseup', onMouseUp));
+    }
+
     // Return unified cleanup
     return () => cleanups.forEach((fn) => fn());
 }

@@ -151,16 +151,21 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
       onMouseLeave={() => setIsFlipped(false)}
     >
       <div
-        className="relative w-60 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[480px] transition-transform duration-700 preserve-3d cursor-pointer"
+        className="relative w-60 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[480px] cursor-pointer"
         style={{
-          transformStyle: 'preserve-3d',
-          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+          perspective: '1000px'
         }}
       >
-        {/* BACK SIDE - UNO Reverse Card */}
+        {/* BACK SIDE - UNO Reverse Card (visible when NOT flipped) */}
         <div
-          className={`absolute inset-0 ${quest.cardColor} rounded-2xl shadow-2xl backface-hidden border-8 border-white overflow-hidden`}
-          style={{ backfaceVisibility: 'hidden' }}
+          className={`absolute inset-0 ${quest.cardColor} rounded-2xl shadow-2xl border-8 border-white overflow-hidden transition-all duration-700`}
+          style={{
+            transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+            opacity: isFlipped ? 0 : 1,
+            visibility: isFlipped ? 'hidden' as const : 'visible' as const,
+            zIndex: isFlipped ? 1 : 2,
+            transitionProperty: 'transform, opacity',
+          }}
         >
           {/* UNO Card White Circle Background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
@@ -211,12 +216,15 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           <div className="absolute bottom-4 right-4 font-bold text-2xl text-white rotate-180">↻</div>
         </div>
 
-        {/* FRONT SIDE - Quest Information */}
+        {/* FRONT SIDE - Quest Information (visible when flipped) */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl shadow-2xl backface-hidden border border-gray-700 p-6 flex flex-col"
+          className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl shadow-2xl border border-gray-700 p-6 flex flex-col transition-all duration-700"
           style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)'
+            transform: isFlipped ? 'rotateY(0deg)' : 'rotateY(-180deg)',
+            opacity: isFlipped ? 1 : 0,
+            visibility: isFlipped ? 'visible' as const : 'hidden' as const,
+            zIndex: isFlipped ? 2 : 1,
+            transitionProperty: 'transform, opacity',
           }}
         >
           {/* Background Icon */}
@@ -248,7 +256,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -33,8 +33,14 @@ const patterns: Record<HapticType, number | number[]> = {
 /**
  * Trigger a haptic vibration pattern.
  * Safe to call anywhere — no-ops if vibration API is unavailable.
+ * Throttled to ~50ms to prevent console spam from rapid events.
  */
+let lastHapticTime = 0;
 export function triggerHaptic(type: HapticType = 'light'): void {
+    const now = Date.now();
+    if (now - lastHapticTime < 50) return; // throttle
+    lastHapticTime = now;
+
     if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
         try {
             navigator.vibrate(patterns[type] ?? patterns.light);

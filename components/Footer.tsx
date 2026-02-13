@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   const socials = [
     { 
       id: 'IG', 
-      url: 'https://www.instagram.com/gdgoncampus.siesgst_?igsh=cTUxeXJtbmxzeHRr' 
+      url: 'https://www.instagram.com/gdgoncampus.siesgst_/' 
     },
     { 
       id: 'LI', 

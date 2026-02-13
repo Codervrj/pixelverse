@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { triggerHaptic } from '../hooks/useHaptic';
 
 // Simple icons as SVG components
 const Brain = ({ size = 24, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <path d="M12 5a3 3 0 1 0-6 0 4 4 0 0 0-2 7 4 4 0 0 0 4 6h8a4 4 0 0 0 4-6 4 4 0 0 0-2-7 3 3 0 1 0-6 0Z" />
@@ -20,15 +21,15 @@ const Brain = ({ size = 24, className = "" }) => (
 );
 
 const HeartPulse = ({ size = 24, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <rect x="3" y="4" width="18" height="14" rx="2" />
@@ -38,15 +39,15 @@ const HeartPulse = ({ size = 24, className = "" }) => (
 );
 
 const Sparkles = ({ size = 24, className = "" }) => (
-  <svg 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     className={className}
   >
     <circle cx="12" cy="12" r="4" />
@@ -102,7 +103,7 @@ const questList = [
 
 const UnoReverseCard = ({ quest, index, isVisible }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  
+
   // Different entrance directions for each card
   const getEntranceStyle = () => {
     if (isVisible) {
@@ -111,9 +112,9 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
         opacity: 1
       };
     }
-    
+
     // Different entrance/exit animations for each card
-    switch(index) {
+    switch (index) {
       case 0: // From/to left
         return {
           transform: 'translateX(-200%) rotate(-45deg)',
@@ -139,17 +140,17 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
 
   return (
     <div
-     id="quests"
+      id="quests"
       className="perspective-1000 transition-all duration-1000 ease-out"
-      style={{ 
+      style={{
         ...getEntranceStyle(),
         transitionDelay: isVisible ? `${index * 200}ms` : `${(2 - index) * 200}ms` // Reverse order on exit
       }}
-      onClick={() => setIsFlipped(!isFlipped)}
-      onMouseEnter={() => setIsFlipped(true)}
+      onClick={() => { setIsFlipped(!isFlipped); triggerHaptic('immersive'); }}
+      onMouseEnter={() => { setIsFlipped(true); triggerHaptic('immersive'); }}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      <div 
+      <div
         className="relative w-60 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[480px] transition-transform duration-700 preserve-3d cursor-pointer"
         style={{
           transformStyle: 'preserve-3d',
@@ -157,63 +158,63 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
         }}
       >
         {/* BACK SIDE - UNO Reverse Card */}
-        <div 
+        <div
           className={`absolute inset-0 ${quest.cardColor} rounded-2xl shadow-2xl backface-hidden border-8 border-white overflow-hidden`}
           style={{ backfaceVisibility: 'hidden' }}
         >
           {/* UNO Card White Circle Background */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
-          
+
           {/* Centered content wrapper */}
           <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
             {/* Reverse Arrows - Top */}
             <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg -mb-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path 
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
-                fill="none" 
-                stroke={quest.color} 
-                strokeWidth="12" 
+              <path
+                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
+                fill="none"
+                stroke={quest.color}
+                strokeWidth="12"
                 strokeLinecap="round"
               />
-              <path 
-                d="M 25 45 L 30 30 L 45 35" 
+              <path
+                d="M 25 45 L 30 30 L 45 35"
                 fill={quest.color}
               />
             </svg>
-            
+
             {/* REVERSE Text */}
-            <div 
+            <div
               className="font-black text-2xl sm:text-3xl md:text-4xl tracking-wider my-1"
               style={{ color: quest.color }}
             >
               REVERSE
             </div>
-            
+
             {/* Reverse Arrows - Bottom */}
             <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg rotate-180 -mt-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path 
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50" 
-                fill="none" 
-                stroke={quest.color} 
-                strokeWidth="12" 
+              <path
+                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
+                fill="none"
+                stroke={quest.color}
+                strokeWidth="12"
                 strokeLinecap="round"
               />
-              <path 
-                d="M 25 45 L 30 30 L 45 35" 
+              <path
+                d="M 25 45 L 30 30 L 45 35"
                 fill={quest.color}
               />
             </svg>
           </div>
-          
+
           {/* Corner Decorations */}
           <div className="absolute top-4 left-4 font-bold text-2xl text-white">↻</div>
           <div className="absolute bottom-4 right-4 font-bold text-2xl text-white rotate-180">↻</div>
         </div>
 
         {/* FRONT SIDE - Quest Information */}
-        <div 
+        <div
           className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl shadow-2xl backface-hidden border border-gray-700 p-6 flex flex-col"
-          style={{ 
+          style={{
             backfaceVisibility: 'hidden',
             transform: 'rotateY(180deg)'
           }}
@@ -222,28 +223,28 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           <div className="absolute top-4 right-4 opacity-10">
             <quest.icon size={120} className="text-white" />
           </div>
-          
+
           {/* Content */}
           <div className="flex-1 flex flex-col justify-between z-10">
             <div>
-              <div 
+              <div
                 className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
                 style={{ backgroundColor: quest.color, color: '#000' }}
               >
                 QUEST_{index + 1}
               </div>
-              
+
               <h3 className="text-xl sm:text-2xl font-black mb-3 text-white tracking-tight">
                 {quest.title}
               </h3>
-              
+
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 {quest.desc}
               </p>
             </div>
-            
+
             {/* Footer */}
-           
+
           </div>
         </div>
       </div>
@@ -279,48 +280,48 @@ export default function Quests() {
   }, []);
 
   return (
-    <div 
+    <div
       ref={sectionRef}
       className="relative min-h-screen bg-black py-12 px-4 sm:py-16 sm:px-6 md:py-20 md:px-8 overflow-hidden"
     >
       {/* Structural Grid Background */}
-      <div 
+      <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
           backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }}
       />
-      
+
       {/* Background glow effects */}
       <div className="absolute top-10 left-10 md:top-20 md:left-20 w-64 h-64 md:w-96 md:h-96 bg-purple-600/20 rounded-full blur-3xl" />
       <div className="absolute bottom-10 right-10 md:bottom-20 md:right-20 w-64 h-64 md:w-96 md:h-96 bg-blue-600/20 rounded-full blur-3xl" />
-      
+
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
           <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/20 border border-cyan-500/50 rounded-full text-cyan-400 text-xs sm:text-sm font-mono mb-4 sm:mb-6">
             SELECT_MISSION
           </div>
-          
+
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6 tracking-tight">
             THE CHALLENGE
           </h2>
-          
+
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-3 sm:mb-4 px-2">
             Four distinct paths. One final objective. Choose your specialty and conquer the mainframe.
           </p>
-          
+
           <p className="text-cyan-400 text-xs sm:text-sm font-mono">
             <span className="hidden sm:inline">→ Hover over the cards to reveal the quests</span>
             <span className="sm:hidden">→ Tap the cards to reveal the quests</span>
           </p>
         </div>
-        
+
         <div className="flex justify-center items-center gap-6 sm:gap-8 flex-wrap">
           {questList.map((quest, idx) => (
-            <UnoReverseCard 
-              key={idx} 
-              quest={quest} 
+            <UnoReverseCard
+              key={idx}
+              quest={quest}
               index={idx}
               isVisible={isVisible}
             />

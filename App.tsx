@@ -1,5 +1,6 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initGlobalHaptics } from './hooks/useHaptic';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,6 +15,10 @@ import Footer from './components/Footer';
 import Guidelines from './components/Guidelines';
 
 const App: React.FC = () => {
+  useEffect(() => {
+    const cleanup = initGlobalHaptics();
+    return cleanup;
+  }, []);
   return (
     <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
       <Cursor />

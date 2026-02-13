@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { initGlobalHaptics } from './hooks/useHaptic';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
@@ -13,6 +14,21 @@ import Sponsors from './components/Sponsors';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Guidelines from './components/Guidelines';
+import TeamPage from './components/TeamPage';
+
+const HomePage: React.FC = () => (
+  <main>
+    <Hero />
+    <About />
+    <Quests />
+    <Timeline />
+    <PrizePool />
+    <Sponsors />
+    <Guidelines />
+    <RulesAndFaq />
+    <Contact />
+  </main>
+);
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -20,22 +36,17 @@ const App: React.FC = () => {
     return cleanup;
   }, []);
   return (
-    <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
-      <Cursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Quests />
-        <Timeline />
-        <PrizePool />
-        <Sponsors />
-        <Guidelines />
-        <RulesAndFaq />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
+        <Cursor />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/team" element={<TeamPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 

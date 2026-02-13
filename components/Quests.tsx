@@ -129,14 +129,20 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
     }
   };
 
-  const handleTouch = () => {
+  const handleTouchStart = () => {
+    // Set flag BEFORE mouseenter/click fire (touchstart is always first)
     isTouchDevice.current = true;
+  };
+
+  const handleClick = () => {
+    // Only toggle on touch devices — desktop uses hover
+    if (!isTouchDevice.current) return;
     setIsFlipped(f => !f);
     triggerHaptic('immersive');
   };
 
   const handleMouseEnter = () => {
-    if (isTouchDevice.current) return; // skip on touch devices
+    if (isTouchDevice.current) return;
     setIsFlipped(true);
     triggerHaptic('immersive');
   };
@@ -154,7 +160,8 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
         ...getEntranceStyle(),
         transitionDelay: isVisible ? `${index * 200}ms` : `${(2 - index) * 200}ms`
       }}
-      onClick={handleTouch}
+      onTouchStart={handleTouchStart}
+      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

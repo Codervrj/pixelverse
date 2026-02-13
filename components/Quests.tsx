@@ -106,6 +106,7 @@ const questList = [
 
 const UnoReverseCard = ({ quest, index, isVisible }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const isTouchDevice = useRef(false);
 
   // Different entrance directions for each card
   const getEntranceStyle = () => {
@@ -116,29 +117,33 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
       };
     }
 
-    // Different entrance/exit animations for each card
     switch (index) {
-      case 0: // From/to left
-        return {
-          transform: 'translateX(-200%) rotate(-45deg)',
-          opacity: 0
-        };
-      case 1: // From/to top
-        return {
-          transform: 'translateY(-200%) rotate(180deg)',
-          opacity: 0
-        };
-      case 2: // From/to right
-        return {
-          transform: 'translateX(200%) rotate(45deg)',
-          opacity: 0
-        };
+      case 0:
+        return { transform: 'translateX(-200%) rotate(-45deg)', opacity: 0 };
+      case 1:
+        return { transform: 'translateY(-200%) rotate(180deg)', opacity: 0 };
+      case 2:
+        return { transform: 'translateX(200%) rotate(45deg)', opacity: 0 };
       default:
-        return {
-          transform: 'translateX(-200%) rotate(-45deg)',
-          opacity: 0
-        };
+        return { transform: 'translateX(-200%) rotate(-45deg)', opacity: 0 };
     }
+  };
+
+  const handleTouch = () => {
+    isTouchDevice.current = true;
+    setIsFlipped(f => !f);
+    triggerHaptic('immersive');
+  };
+
+  const handleMouseEnter = () => {
+    if (isTouchDevice.current) return; // skip on touch devices
+    setIsFlipped(true);
+    triggerHaptic('immersive');
+  };
+
+  const handleMouseLeave = () => {
+    if (isTouchDevice.current) return;
+    setIsFlipped(false);
   };
 
   return (
@@ -147,11 +152,11 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
       className="perspective-1000 transition-all duration-1000 ease-out"
       style={{
         ...getEntranceStyle(),
-        transitionDelay: isVisible ? `${index * 200}ms` : `${(2 - index) * 200}ms` // Reverse order on exit
+        transitionDelay: isVisible ? `${index * 200}ms` : `${(2 - index) * 200}ms`
       }}
-      onClick={() => { setIsFlipped(!isFlipped); triggerHaptic('immersive'); }}
-      onMouseEnter={() => { setIsFlipped(true); triggerHaptic('immersive'); }}
-      onMouseLeave={() => setIsFlipped(false)}
+      onClick={handleTouch}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         className="relative w-60 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[480px] cursor-pointer"

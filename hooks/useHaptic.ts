@@ -72,31 +72,22 @@ interface AudioHapticConfig {
 
 // Apple HIG-inspired audio haptic configs
 const audioHaptics: Record<HapticType, AudioHapticConfig | AudioHapticConfig[]> = {
-    // Impact: Light — small lightweight collision
-    light: { frequency: 4000, duration: 0.008, volume: 0.08, type: 'sine' },
-    // Impact: Medium — medium weight collision
-    medium: { frequency: 2500, duration: 0.015, volume: 0.12, type: 'sine' },
-    // Impact: Heavy — large heavyweight collision
-    heavy: { frequency: 1200, duration: 0.025, volume: 0.18, type: 'triangle' },
-    // Selection — UI value changing
-    navigation: { frequency: 3200, duration: 0.01, volume: 0.1, type: 'sine' },
-    // Impact: Soft — flexible object collision
-    card: { frequency: 3500, duration: 0.012, volume: 0.09, type: 'sine' },
-    // Selection toggle
-    toggle: { frequency: 2800, duration: 0.018, volume: 0.13, type: 'sine' },
-    // Notification: Success — task completed
+    light: { frequency: 4000, duration: 0.006, volume: 0.03, type: 'sine' },
+    medium: { frequency: 2500, duration: 0.01, volume: 0.04, type: 'sine' },
+    heavy: { frequency: 1200, duration: 0.015, volume: 0.06, type: 'triangle' },
+    navigation: { frequency: 3200, duration: 0.008, volume: 0.03, type: 'sine' },
+    card: { frequency: 3500, duration: 0.008, volume: 0.03, type: 'sine' },
+    toggle: { frequency: 2800, duration: 0.01, volume: 0.04, type: 'sine' },
     success: [
-        { frequency: 3000, duration: 0.012, volume: 0.1, type: 'sine' },
-        { frequency: 4000, duration: 0.012, volume: 0.12, type: 'sine' },
+        { frequency: 3000, duration: 0.008, volume: 0.03, type: 'sine' },
+        { frequency: 4000, duration: 0.008, volume: 0.04, type: 'sine' },
     ],
-    // Notification: Celebration — multi-burst escalation
     confetti: [
-        { frequency: 2000, duration: 0.01, volume: 0.08, type: 'sine' },
-        { frequency: 3000, duration: 0.015, volume: 0.12, type: 'sine' },
-        { frequency: 4200, duration: 0.02, volume: 0.16, type: 'triangle' },
+        { frequency: 2000, duration: 0.006, volume: 0.03, type: 'sine' },
+        { frequency: 3000, duration: 0.008, volume: 0.04, type: 'sine' },
+        { frequency: 4200, duration: 0.01, volume: 0.05, type: 'triangle' },
     ],
-    // Impact: Rigid — hard inflexible collision
-    immersive: { frequency: 1500, duration: 0.03, volume: 0.15, type: 'triangle' },
+    immersive: { frequency: 1500, duration: 0.015, volume: 0.05, type: 'triangle' },
 };
 
 function playAudioHaptic(type: HapticType): void {

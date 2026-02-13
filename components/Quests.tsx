@@ -83,21 +83,24 @@ const questList = [
     desc: 'Digital Wellness & Social Health',
     icon: Brain,
     color: '#FF5555',
-    cardColor: 'bg-red-600'
+    cardColor: 'bg-red-600',
+    image: '/reduno.png'
   },
   {
     title: 'B2B & Efficiency (Tablet/Web) ',
     desc: 'The Gig Worker’s Cockpit',
     icon: HeartPulse,
-    color: '#FFD700',
-    cardColor: 'bg-yellow-400'
+    color: '#001aff',
+    cardColor: 'bg-yellow-400',
+    image: '/blueuno.png'
   },
   {
     title: 'Social Good & Accessibility (Mobile App) ',
     desc: 'Hyper-Local Civic Action',
     icon: Sparkles,
     color: '#55AA55',
-    cardColor: 'bg-green-600'
+    cardColor: 'bg-green-600',
+    image: '/greenuno.png'
   }
 ];
 
@@ -159,56 +162,66 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
       >
         {/* BACK SIDE - UNO Reverse Card */}
         <div
-          className={`absolute inset-0 ${quest.cardColor} rounded-2xl shadow-2xl backface-hidden border-8 border-white overflow-hidden`}
+          className={`absolute inset-0 ${quest.image ? '' : quest.cardColor} rounded-2xl shadow-2xl backface-hidden ${quest.image ? '' : 'border-8 border-white'} overflow-hidden`}
           style={{ backfaceVisibility: 'hidden' }}
         >
-          {/* UNO Card White Circle Background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
+          {quest.image ? (
+            <img
+              src={quest.image}
+              alt={quest.title}
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            />
+          ) : (
+            <>
+              {/* UNO Card White Circle Background */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
 
-          {/* Centered content wrapper */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-            {/* Reverse Arrows - Top */}
-            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg -mb-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
-                fill="none"
-                stroke={quest.color}
-                strokeWidth="12"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 25 45 L 30 30 L 45 35"
-                fill={quest.color}
-              />
-            </svg>
+              {/* Centered content wrapper */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                {/* Reverse Arrows - Top */}
+                <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg -mb-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
+                  <path
+                    d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
+                    fill="none"
+                    stroke={quest.color}
+                    strokeWidth="12"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 25 45 L 30 30 L 45 35"
+                    fill={quest.color}
+                  />
+                </svg>
 
-            {/* REVERSE Text */}
-            <div
-              className="font-black text-2xl sm:text-3xl md:text-4xl tracking-wider my-1"
-              style={{ color: quest.color }}
-            >
-              REVERSE
-            </div>
+                {/* REVERSE Text */}
+                <div
+                  className="font-black text-2xl sm:text-3xl md:text-4xl tracking-wider my-1"
+                  style={{ color: quest.color }}
+                >
+                  REVERSE
+                </div>
 
-            {/* Reverse Arrows - Bottom */}
-            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg rotate-180 -mt-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
-                fill="none"
-                stroke={quest.color}
-                strokeWidth="12"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 25 45 L 30 30 L 45 35"
-                fill={quest.color}
-              />
-            </svg>
-          </div>
+                {/* Reverse Arrows - Bottom */}
+                <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg rotate-180 -mt-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
+                  <path
+                    d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
+                    fill="none"
+                    stroke={quest.color}
+                    strokeWidth="12"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M 25 45 L 30 30 L 45 35"
+                    fill={quest.color}
+                  />
+                </svg>
+              </div>
 
-          {/* Corner Decorations */}
-          <div className="absolute top-4 left-4 font-bold text-2xl text-white">↻</div>
-          <div className="absolute bottom-4 right-4 font-bold text-2xl text-white rotate-180">↻</div>
+              {/* Corner Decorations */}
+              <div className="absolute top-4 left-4 font-bold text-2xl text-white">↻</div>
+              <div className="absolute bottom-4 right-4 font-bold text-2xl text-white rotate-180">↻</div>
+            </>
+          )}
         </div>
 
         {/* FRONT SIDE - Quest Information */}

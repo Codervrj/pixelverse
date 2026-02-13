@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { triggerHaptic } from '../hooks/useHaptic';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -28,7 +29,7 @@ const Navbar: React.FC = () => {
             {/* Close button inside overlay */}
             <button
               className="absolute top-3 right-4 sm:top-5 sm:right-6 md:right-12 text-white z-[110]"
-              onClick={() => setIsOpen(false)}
+              onClick={() => { setIsOpen(false); triggerHaptic('toggle'); }}
             >
               <X size={28} strokeWidth={3} />
             </button>
@@ -37,7 +38,7 @@ const Navbar: React.FC = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
+                onClick={() => { setIsOpen(false); triggerHaptic('navigation'); }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.08 }}
@@ -48,7 +49,7 @@ const Navbar: React.FC = () => {
             ))}
             <motion.a
               href="#contact"
-              onClick={() => setIsOpen(false)}
+              onClick={() => { setIsOpen(false); triggerHaptic('medium'); }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navLinks.length * 0.08 }}
@@ -62,7 +63,7 @@ const Navbar: React.FC = () => {
 
       <nav className="fixed top-0 left-0 w-full z-[100] bg-black/90 backdrop-blur-sm border-b-2 border-white px-4 sm:px-6 md:px-12 py-3 sm:py-5 flex justify-between items-center transition-all">
         <div className="flex items-center gap-4">
-          <img src="../public/logo.png" alt="Pixelverse Logo" className="h-8 sm:h-10"/>
+          <img src="../public/logo.png" alt="Pixelverse Logo" className="h-8 sm:h-10" />
         </div>
 
         <div className="hidden lg:flex gap-10 items-center text-sm font-bold font-archivo text-white uppercase tracking-tight">
@@ -86,7 +87,7 @@ const Navbar: React.FC = () => {
 
         <button
           className="lg:hidden text-white z-[110] relative"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => { setIsOpen(!isOpen); triggerHaptic('toggle'); }}
         >
           <Menu size={28} strokeWidth={3} />
         </button>

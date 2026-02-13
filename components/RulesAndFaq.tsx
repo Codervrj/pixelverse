@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { triggerHaptic } from '../hooks/useHaptic';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
@@ -46,7 +47,7 @@ const RulesAndFaq: React.FC = () => {
           {faqs.map((faq, idx) => (
             <div key={idx}>
               <button
-                onClick={() => setOpen(open === idx ? null : idx)}
+                onClick={() => { setOpen(open === idx ? null : idx); triggerHaptic('confetti'); }}
                 className="w-full bg-white p-6 md:p-8 flex justify-between items-center text-left border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all cursor-none cursor-target"
               >
                 <span className="text-black font-archivo font-bold text-lg md:text-xl uppercase text-left">{faq.q}</span>

@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from 'react';
+import { triggerHaptic } from '../hooks/useHaptic';
 
 const EVENT_DATE = new Date("2026-03-08T09:00:00"); //2026-03-08T09:00:00
 
 // Simple icons as SVG components
 const Zap = ({ size = 24, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
   </svg>
 );
 
 const Terminal = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="4 17 10 11 4 5"/>
-    <line x1="12" y1="19" x2="20" y2="19"/>
+    <polyline points="4 17 10 11 4 5" />
+    <line x1="12" y1="19" x2="20" y2="19" />
   </svg>
 );
 
 const ChevronDown = ({ size = 24, strokeWidth = 2 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="6 9 12 15 18 9"/>
+    <polyline points="6 9 12 15 18 9" />
   </svg>
 );
 
 const Sparkles = ({ size = 24, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-    <path d="M5 3v4"/>
-    <path d="M19 17v4"/>
-    <path d="M3 5h4"/>
-    <path d="M17 19h4"/>
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+    <path d="M5 3v4" />
+    <path d="M19 17v4" />
+    <path d="M3 5h4" />
+    <path d="M17 19h4" />
   </svg>
 );
 
@@ -49,15 +50,15 @@ const AnimatedBackground = () => {
 
       {/* Floating Geometric Shapes */}
       <div className="absolute top-20 left-[10%] w-20 h-20 border-4 border-[#FFD700] opacity-30 animate-[float1_15s_linear_infinite]" />
-      
+
       <div className="absolute top-40 right-[15%] w-16 h-16 bg-black opacity-20 rounded-full animate-[float2_12s_linear_infinite]" />
 
-      <div 
+      <div
         className="absolute bottom-32 left-[20%] w-24 h-24 border-4 border-black opacity-20 animate-[float3_18s_ease-in-out_infinite]"
         style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}
       />
 
-      <div 
+      <div
         className="absolute top-1/3 right-[25%] w-20 h-20 border-4 border-[#FFD700] opacity-25 animate-[float4_10s_ease-in-out_infinite]"
         style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }}
       />
@@ -84,7 +85,7 @@ const AnimatedBackground = () => {
 
       {/* Gradient Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#F5F5DC]/0 via-[#F5F5DC]/50 to-[#F5F5DC]" />
-      
+
       {/* Pulsing Radial Glow */}
       <div
         className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full animate-[glowPulse_8s_ease-in-out_infinite]"
@@ -165,10 +166,10 @@ const Countdown = () => {
     };
   };
 
-  
+
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -197,14 +198,14 @@ const Countdown = () => {
 
 export default function Hero() {
 
-  const checkdis=()=>{
+  const checkdis = () => {
     const now = new Date().getTime();
     const target = EVENT_DATE.getTime();
     const diff = target - now;
-    if(diff<=0){
+    if (diff <= 0) {
       return false;
     }
-    else{
+    else {
       return true;
     }
   }
@@ -219,87 +220,88 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
   return (
-  
-  <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
+
+    <section className="relative min-h-screen w-full flex flex-col items-center pt-32 pb-48 overflow-hidden bg-[#F5F5DC] text-black">
       <AnimatedBackground />
 
       {/* Main Content */}
-      <div 
+      <div
         className="relative z-30 flex flex-col items-center text-center px-4 w-full max-w-7xl mx-auto"
       >
-          {/* Status Badge */}
-          <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            <Sparkles size={16} className="text-black fill-[#FFD700]" />
-            <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
-              Design_Connect_2026
-            </span>
-          </div>
+        {/* Status Badge */}
+        <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <Sparkles size={16} className="text-black fill-[#FFD700]" />
+          <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
+            Design_Connect_2026
+          </span>
+        </div>
 
-          {/* Big Title */}
-          <div className="mb-6 relative">
-            <h1 className="text-[12vw] sm:text-[100px] md:text-[130px] font-black tracking-tighter leading-[0.85] text-black drop-shadow-sm">
-              PIXELVERSE
-            </h1>
-            <div
-              className="absolute -top-10 -right-4 md:right-10 bg-[#FFD700] text-black text-xl md:text-3xl px-4 py-2 rotate-[-6deg] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-            >
-              DESIGNATHON
-            </div>
-          </div>
-
-          {/* Subtitle */}
-          <div className="mb-10 flex flex-col items-center justify-center gap-2">
-            <p className="text-lg md:text-2xl font-bold text-black/80 max-w-2xl uppercase">
-              Where Logic Meets Aesthetic.
-            </p>
-            <p className="text-sm md:text-base text-black font-medium tracking-wide border-b-2 border-[#FFD700]">
-              The UI/UX & Frontend Hackathon
-            </p>
-          </div>
-
-          {/* Countdown */}
-          <div className="mb-14">
-            <Countdown />
-          </div>
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto relative z-40">
-            <button className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
-              <span className="flex items-center gap-2 justify-center">
-                Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
-              </span>
-            </button>
-
-                    <button
-          disabled={isActive}
-          className={`relative px-10 py-5 font-bold text-xl uppercase tracking-tight border-2 transition-all
-          ${isActive 
-            ? "bg-[#F5F5DC] border-black/30 text-black/30 cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]" 
-            : "bg-white border-black text-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-          }`}
-        >
-          <a
-            href={!isActive ? "/problemstatement.pdf" : undefined}
-            target="_blank"
-            className={`flex items-center gap-2 justify-center ${isActive ? "pointer-events-none" : ""}`}
+        {/* Big Title */}
+        <div className="mb-6 relative">
+          <h1 className="text-[12vw] sm:text-[100px] md:text-[130px] font-black tracking-tighter leading-[0.85] text-black drop-shadow-sm">
+            PIXELVERSE
+          </h1>
+          <div
+            className="absolute -top-10 -right-4 md:right-10 bg-[#FFD700] text-black text-xl md:text-3xl px-4 py-2 rotate-[-6deg] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
           >
-            {isActive ? "Locked Until Event" : "Problem Statements"} <Terminal size={20} />
-          </a>
-          {isActive && (
-            <span className="absolute -top-3 -right-3 px-2 py-0.5 bg-[#FFD700] text-black text-[10px] font-bold uppercase tracking-wider border-2 border-black/30 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]">
-              SOON
-            </span>
-          )}
-</button>
+            DESIGNATHON
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-black animate-bounce"
-        >
-          <ChevronDown size={32} strokeWidth={3} />
+        {/* Subtitle */}
+        <div className="mb-10 flex flex-col items-center justify-center gap-2">
+          <p className="text-lg md:text-2xl font-bold text-black/80 max-w-2xl uppercase">
+            Where Logic Meets Aesthetic.
+          </p>
+          <p className="text-sm md:text-base text-black font-medium tracking-wide border-b-2 border-[#FFD700]">
+            The UI/UX & Frontend Hackathon
+          </p>
         </div>
-      </section>
+
+        {/* Countdown */}
+        <div className="mb-14">
+          <Countdown />
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto relative z-40">
+          <button onClick={() => triggerHaptic('medium')} className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+            <span className="flex items-center gap-2 justify-center">
+              Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
+            </span>
+          </button>
+
+          <button
+            onClick={() => triggerHaptic('medium')}
+            disabled={isActive}
+            className={`relative px-10 py-5 font-bold text-xl uppercase tracking-tight border-2 transition-all
+          ${isActive
+                ? "bg-[#F5F5DC] border-black/30 text-black/30 cursor-not-allowed shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]"
+                : "bg-white border-black text-black hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+              }`}
+          >
+            <a
+              href={!isActive ? "/problemstatement.pdf" : undefined}
+              target="_blank"
+              className={`flex items-center gap-2 justify-center ${isActive ? "pointer-events-none" : ""}`}
+            >
+              {isActive ? "Locked Until Event" : "Problem Statements"} <Terminal size={20} />
+            </a>
+            {isActive && (
+              <span className="absolute -top-3 -right-3 px-2 py-0.5 bg-[#FFD700] text-black text-[10px] font-bold uppercase tracking-wider border-2 border-black/30 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.15)]">
+                SOON
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-black animate-bounce"
+      >
+        <ChevronDown size={32} strokeWidth={3} />
+      </div>
+    </section>
   );
 }

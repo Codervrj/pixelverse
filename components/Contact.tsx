@@ -1,4 +1,5 @@
 import React from 'react';
+import { triggerHaptic } from '../hooks/useHaptic';
 import { Phone, Mail } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
@@ -6,7 +7,7 @@ const ContactSection: React.FC = () => {
     <section className="py-24 md:py-40 px-6 md:px-12 bg-[#050008] relative text-white min-h-screen overflow-hidden">
 
       <div className="absolute inset-0 opacity-10 pointer-events-none"
-           style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-[1400px] mx-auto relative z-10">
 
@@ -36,12 +37,14 @@ const ContactSection: React.FC = () => {
                   <div className="space-y-1">
                     <a
                       href="tel:+918828046919"
+                      onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 88280 46919
                     </a>
                     <a
                       href="tel:+919833875297"
+                      onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
                     >
                       +91 98338 75297
@@ -62,6 +65,7 @@ const ContactSection: React.FC = () => {
                     <p className="text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
                       href="mailto:pixelverse@siesgst.ac.in"
+                      onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
                       pixelverse@siesgst.ac.in

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { triggerHaptic } from '../hooks/useHaptic';
 
 /* ─── Team Data ────────────────────────────────────────── */
 
@@ -184,14 +185,17 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: '-20px' }}
+            transition={{ duration: 0.35, delay: (index % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
             className="group relative bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-300"
         >
             {/* 1. Image Section (Rectangular 4:5) */}
-            <div className="relative w-full aspect-[4/5] overflow-hidden border-b-2 border-black bg-gray-100">
+            <div
+                className="relative w-full aspect-[4/5] overflow-hidden border-b-2 border-black bg-gray-100 cursor-pointer active:scale-95 transition-transform duration-200"
+                onClick={() => triggerHaptic('portrait')}
+            >
                 {hasImage ? (
                     <img
                         src={member.image}
@@ -348,7 +352,7 @@ const TeamPage: React.FC = () => {
                         {/* Members grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {section.members.map((member, mIdx) => (
-                                <MemberCard key={member.name} member={member} index={sIdx * 4 + mIdx} />
+                                <MemberCard key={member.name} member={member} index={mIdx} />
                             ))}
                         </div>
                     </div>

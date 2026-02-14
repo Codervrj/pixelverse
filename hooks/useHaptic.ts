@@ -17,7 +17,8 @@ export type HapticType =
     | 'toggle'
     | 'success'
     | 'confetti'
-    | 'immersive';
+    | 'immersive'
+    | 'portrait';
 
 // ── Android vibration patterns ──────────────────────────────────────
 const patterns: Record<HapticType, number | number[]> = {
@@ -30,6 +31,7 @@ const patterns: Record<HapticType, number | number[]> = {
     success: [10, 30, 10, 30, 10],
     confetti: [5, 30, 12, 25, 20, 20, 30, 15, 8, 40, 15, 30, 25],
     immersive: [8, 20, 15, 15, 25, 10, 35],
+    portrait: [6, 40, 12],
 };
 
 // ── Platform detection ──────────────────────────────────────────────
@@ -88,6 +90,11 @@ const audioHaptics: Record<HapticType, AudioHapticConfig | AudioHapticConfig[]> 
         { frequency: 4200, duration: 0.01, volume: 0.05, type: 'triangle' },
     ],
     immersive: { frequency: 1500, duration: 0.015, volume: 0.05, type: 'triangle' },
+    portrait: [
+        { frequency: 800, duration: 0.018, volume: 0.06, type: 'triangle' },
+        { frequency: 2800, duration: 0.012, volume: 0.06, type: 'sine' },
+        { frequency: 3800, duration: 0.008, volume: 0.07, type: 'sine' },
+    ],
 };
 
 function playAudioHaptic(type: HapticType): void {

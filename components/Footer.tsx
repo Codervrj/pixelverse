@@ -86,9 +86,7 @@ const Footer: React.FC = () => {
         <div className="pt-4 sm:pt-6 border-t border-[#050008]/10 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-8">
           <div className="flex items-center gap-4">
             {/* Pulsing status indicator for tech feel */}
-            <div className="w-2 h-2 bg-[#FFD700] animate-pulse rounded-full" />
-            <span className="font-pixel text-[8px] text-[#050008]/40 tracking-widest uppercase italic">GDG_LINK_ESTABLISHED</span>
-          </div>
+                    </div>
 
           <p className="text-[8px] sm:text-[10px] font-pixel text-[#050008]/40 uppercase tracking-[0.2em] sm:tracking-[0.3em] cursor-target">
             © 2026 PIXELVERSE // GDGoC_SIESGST

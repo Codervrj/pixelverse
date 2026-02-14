@@ -7,6 +7,7 @@ const faqs = [
   { q: "Online or Offline?", a: "PivelVerse 2026 hackathon will consist of 2 rounds: Elimination Round (Online) and Final Round (Offline)" },
   { q: "What tools can we use?", a: "Figma, Adobe XD, Sketch, or any design tool of your choice." },
   { q: "How will judging be done?", a: "Based on Empathy & UX, Visual Design (UI), Problem Solving, Innovation, Presentation" },
+  { q: "How many members can be in a team?", a: "Each team must consist of 2 to 3 members." },
 ];
 
 const RulesAndFaq: React.FC = () => {

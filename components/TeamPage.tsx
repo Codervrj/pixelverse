@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 /* ─── Team Data ────────────────────────────────────────── */
@@ -8,7 +8,7 @@ interface TeamMember {
     name: string;
     role: string;
     tag: string;
-    instagram?: string;
+    image?: string;
     linkedin?: string;
 }
 
@@ -23,43 +23,40 @@ const teamSections: TeamSection[] = [
         title: 'Organizer',
         label: 'The masterminds behind PixelVerse',
         members: [
-            { name: 'Shreya Patil', role: 'Organiser', tag: 'GDGoC Lead', instagram: '#', linkedin: '#' },
-
+            { name: 'Shreya Patil', role: 'Organiser', tag: 'GDGoC Lead', linkedin: '#', image: '/images/shreya_patil.jpg' },
         ],
     },
     {
         title: 'The CORE',
         label: 'The pixel-pushers & aesthetic architects',
         members: [
-
-            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-' },
-            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/' },
-            { name: 'Atharva Gadekar', role: 'UI UX Lead', tag: 'UX_LEAD', instagram: 'https://www.instagram.com/atharva.02_', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/' },
-            { name: 'Varun Jain', role: 'Web Lead', tag: 'WEB_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/' },
-            { name: 'Abbas Shaikh', role: 'App Lead', tag: 'APP_LEAD', instagram: 'https://www.instagram.com/abbas_05s_', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16' },
-            { name: 'Dwithi Poojary', role: 'UI UX Coordinator', tag: 'UX_COORD', instagram: 'https://www.instagram.com/dwithi_09', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305' },
-            { name: 'Atharva Chauhan', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08' },
-            { name: 'Chandrayan Paul', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322' },
-            { name: 'Sushmita Das', role: 'Web Coordinator', tag: 'COORD', instagram: 'https://www.instagram.com/ssusheyy', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216' },
-            { name: 'Shatakshi Marathe', role: 'App Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351' },
+            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-', image: 'https://placehold.co/400x500/png' },
+            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/', image: 'https://placehold.co/400x500/png' },
+            { name: 'Atharva Gadekar', role: 'UI UX Lead', tag: 'UX_LEAD', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/', image: 'https://placehold.co/400x500/png' },
+            { name: 'Varun Jain', role: 'Web Lead', tag: 'WEB_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/', image: 'https://placehold.co/400x500/png' },
+            { name: 'Abbas Shaikh', role: 'App Lead', tag: 'APP_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16', image: 'https://placehold.co/400x500/png' },
+            { name: 'Dwithi Poojary', role: 'UI UX Coordinator', tag: 'UX_COORD', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305', image: 'https://placehold.co/400x500/png' },
+            { name: 'Atharva Chauhan', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08', image: 'https://placehold.co/400x500/png' },
+            { name: 'Chandrayan Paul', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322', image: 'https://placehold.co/400x500/png' },
+            { name: 'Sushmita Das', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216', image: 'https://placehold.co/400x500/png' },
+            { name: 'Shatakshi Marathe', role: 'App Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351', image: 'https://placehold.co/400x500/png' },
         ],
     },
     {
         title: 'Crew',
         label: 'The builders shipping the experience',
         members: [
-            { name: 'Arjun Mehta', role: 'Tech Lead', tag: 'TECH_CMD', instagram: '#', linkedin: '#' },
-            { name: 'Emily Zhang', role: 'Frontend Dev', tag: 'CODE_CRF', instagram: '#', linkedin: '#' },
-            { name: 'Noah Rodrigues', role: 'Backend Dev', tag: 'SYS_ARCH', instagram: '#', linkedin: '#' },
-            { name: 'Noah Rodrigues', role: 'Backend Dev', tag: 'SYS_ARCH', instagram: '#', linkedin: '#' },
+            { name: 'Arjun Mehta', role: 'Tech Lead', tag: 'TECH_CMD', linkedin: '#', image: 'https://placehold.co/400x500/png' },
+            { name: 'Emily Zhang', role: 'Frontend Dev', tag: 'CODE_CRF', linkedin: '#', image: 'https://placehold.co/400x500/png' },
+            { name: 'Noah Rodrigues', role: 'Backend Dev', tag: 'SYS_ARCH', linkedin: '#', image: 'https://placehold.co/400x500/png' },
         ],
     },
     {
         title: 'MARKETING_CELL',
         label: 'Getting the word out to every pixel',
         members: [
-            { name: 'Isha Verma', role: 'Marketing Lead', tag: 'HYPE_ENG', instagram: '#', linkedin: '#' },
-            { name: 'Chris Santos', role: 'Content Creator', tag: 'WORD_SMT', instagram: '#', linkedin: '#' },
+            { name: 'Isha Verma', role: 'Marketing Lead', tag: 'HYPE_ENG', linkedin: '#', image: 'https://placehold.co/400x500/png' },
+            { name: 'Chris Santos', role: 'Content Creator', tag: 'WORD_SMT', linkedin: '#', image: 'https://placehold.co/400x500/png' },
         ],
     },
 ];
@@ -133,13 +130,7 @@ const TeamBackground = () => (
 
 /* ─── Social Icon SVGs ─────────────────────────────────── */
 
-const InstagramIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-);
+
 
 const LinkedInIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -152,10 +143,41 @@ const LinkedInIcon = () => (
 /* ─── Member Card ──────────────────────────────────────── */
 
 const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, index }) => {
-    // Generate a deterministic colour based on index for the avatar
+    // 3D Tilt Hook Setup
+    const ref = useRef<HTMLDivElement>(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7deg', '-7deg']);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7deg', '7deg']);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    // Generate a deterministic colour based on index for the avatar (fallback if no image)
     const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9', '#F8C471'];
     const bgColor = colors[index % colors.length];
-    const initials = member.name.split(' ').map((n) => n[0]).join('');
+
+    // Get initials for fallback avatar
+    const initials = member.name.split(' ').map(n => n[0]).join('').toUpperCase();
 
     return (
         <motion.div
@@ -163,53 +185,60 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative bg-white border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-300"
+            className="group relative bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-300"
         >
-            {/* Tag ribbon */}
-            <div className="absolute -top-3 -right-3 px-3 py-1 bg-[#FFD700] text-black text-[9px] font-bold uppercase tracking-widest border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] z-10">
-                {member.tag}
+            {/* 1. Image Section (Rectangular 4:5) */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden border-b-2 border-black bg-gray-100">
+                {member.image ? (
+                    <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: bgColor }}>
+                        <span className="text-4xl font-black opacity-20">{initials}</span>
+                    </div>
+                )}
+
+                {/* Minimal Tag Badge */}
+                <div className="absolute top-4 right-4">
+                    <span className="px-2 py-1 bg-[#FFD700] text-black text-[10px] font-bold uppercase tracking-widest border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                        {member.tag}
+                    </span>
+                </div>
             </div>
 
-            <div className="p-6 pt-8 flex flex-col items-center text-center">
-                {/* Avatar */}
-                <div
-                    className="w-20 h-20 rounded-full border-3 border-black flex items-center justify-center mb-4 text-xl font-black text-black uppercase shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] group-hover:scale-105 transition-transform"
-                    style={{ backgroundColor: bgColor }}
-                >
-                    {initials}
+            {/* 2. Content Section (Minimal Information) */}
+            <div className="p-6 flex flex-col justify-between bg-white relative">
+                <div>
+                    {/* Name */}
+                    <h3 className="font-archivo text-xl font-black uppercase tracking-tight text-black mb-1 group-hover:text-[#FFD700] transition-colors">
+                        {member.name}
+                    </h3>
+
+                    {/* Role */}
+                    <p className="text-xs font-bold uppercase tracking-[0.15em] text-black/50 mb-4">
+                        {member.role}
+                    </p>
                 </div>
 
-                {/* Name */}
-                <h3 className="font-archivo text-lg font-black uppercase tracking-tight text-black mb-1">
-                    {member.name}
-                </h3>
+                {/* LinkedIn / Action */}
+                <div className="flex items-center justify-end pt-4 border-t-2 border-black/5">
+                    {/* Decorative Line or ID */}
+                    {/* <span className="text-[10px] font-mono text-black/30">#{String(index + 1).padStart(3, '0')}</span> */}
 
-                {/* Role */}
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-black/60 mb-4 border-b-2 border-[#FFD700] pb-2 inline-block">
-                    {member.role}
-                </p>
-
-                {/* Socials */}
-                <div className="flex gap-3 mt-1">
-                    {member.instagram && (
-                        <a
-                            href={member.instagram}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center hover:bg-[#FFD700] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
-                        >
-                            <InstagramIcon />
-                        </a>
-                    )}
-                    {member.linkedin && (
+                    {member.linkedin ? (
                         <a
                             href={member.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-8 h-8 bg-white border-2 border-black flex items-center justify-center hover:bg-[#FFD700] transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[1px] hover:translate-y-[1px]"
+                            className="w-8 h-8 flex items-center justify-center border-2 border-black bg-black text-white hover:bg-[#0077B5] hover:border-[#0077B5] hover:rotate-6 transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
                         >
                             <LinkedInIcon />
                         </a>
+                    ) : (
+                        <div className="w-8 h-8" /> // Spacer
                     )}
                 </div>
             </div>

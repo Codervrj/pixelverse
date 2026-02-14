@@ -264,7 +264,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
                 className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
                 style={{ backgroundColor: quest.color, color: '#000' }}
               >
-                QUEST_{index + 1}
+                VARIANT_{index + 1}
               </div>
 
               <h3 className="text-xl sm:text-2xl font-black mb-3 text-white tracking-tight">

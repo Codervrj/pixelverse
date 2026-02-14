@@ -237,14 +237,59 @@ export default function Hero() {
         </div>
 
         {/* Big Title */}
-        <div className="mb-6 relative">
-          <h1 className="text-[12vw] sm:text-[100px] md:text-[130px] font-black tracking-tighter leading-[0.85] text-black drop-shadow-sm">
-            PIXELVERSE
-          </h1>
-          <div
-            className="absolute -top-10 -right-4 md:right-10 bg-[#FFD700] text-black text-xl md:text-3xl px-4 py-2 rotate-[-6deg] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
-          >
-            DESIGNATHON
+        <div className="mb-6">
+          {/* PIXELVERSE — main title (shared) */}
+          <div className="relative" style={{ isolation: 'isolate' }}>
+            {/* sm+ Layer 1: Yellow plate behind PIXELVERSE */}
+            <div
+              className="hidden sm:block absolute -top-6 -right-2 md:-top-8 md:right-6 bg-[#FFD700] px-5 py-2 md:px-6 md:py-2.5 rotate-[-6deg] border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              style={{ zIndex: 1 }}
+            >
+              <span className="text-2xl md:text-4xl font-extrabold tracking-wider uppercase invisible" style={{ fontFamily: 'Inter, sans-serif' }}>
+                DESIGNATHON
+              </span>
+            </div>
+
+            {/* Layer 2: PIXELVERSE */}
+            <h1
+              className="relative text-[12vw] sm:text-[100px] md:text-[130px] font-black tracking-tighter leading-[0.85] text-black drop-shadow-sm"
+              style={{ zIndex: 2 }}
+            >
+              PIXELVERSE
+            </h1>
+
+            {/* sm+ Layer 3: DESIGNATHON white text on top */}
+            <div
+              className="hidden sm:block absolute -top-6 -right-2 md:-top-8 md:right-6 px-5 py-2 md:px-6 md:py-2.5 rotate-[-6deg] pointer-events-none"
+              style={{ zIndex: 3 }}
+            >
+              <span
+                className="text-2xl md:text-4xl font-extrabold tracking-wider text-white uppercase"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  WebkitTextStroke: '1px rgba(0,0,0,0.5)',
+                  textShadow: '2px 2px 0px rgba(0,0,0,0.3)'
+                }}
+              >
+                DESIGNATHON
+              </span>
+            </div>
+          </div>
+
+          {/* === MOBILE: straight badge below PIXELVERSE === */}
+          <div className="flex justify-end sm:hidden mt-3">
+            <div className="bg-[#FFD700] px-2 py-1 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+              <span
+                className="text-xs font-extrabold tracking-wider text-white uppercase"
+                style={{
+                  fontFamily: 'Inter, sans-serif',
+                  WebkitTextStroke: '1px rgba(0,0,0,0.5)',
+                  textShadow: '2px 2px 0px rgba(0,0,0,0.3)'
+                }}
+              >
+                DESIGNATHON
+              </span>
+            </div>
           </div>
         </div>
 

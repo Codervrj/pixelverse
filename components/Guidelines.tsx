@@ -6,8 +6,7 @@ const Guidelines: React.FC = () => {
       id="guidelines"
       className="relative pt-16 md:pt-32 pb-24 px-4 sm:px-6 md:px-10 bg-[rgb(245,245,220)] text-[#050008] overflow-hidden border-t-2 border-[#050008] lg:cursor-none"
     >
-
-      {/* Grid Background - Preserved original gold color logic */}
+      {/* Grid Background */}
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
@@ -20,7 +19,6 @@ const Guidelines: React.FC = () => {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-
         {/* Responsive Header Section */}
         <div className="mb-12 md:mb-24 flex flex-col items-center text-center">
           <div className="bg-[#050008] px-4 py-1 mb-4 shadow-[4px_4px_0px_0px_#FFD700]">
@@ -40,9 +38,9 @@ const Guidelines: React.FC = () => {
           </h2>
         </div>
 
-        {/* Responsive Grid: 1 col on mobile, 3 cols on md+ */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-stretch">
-
+        {/* Responsive Grid: Updated to 4 cols on large screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-6 items-stretch">
+          
           <TechBox id="01" title="Originality">
             <div className="space-y-4">
               <h4 className="text-lg md:text-xl font-archivo font-black uppercase leading-tight tracking-tight border-b-4 border-[#FFD700] inline-block">
@@ -65,7 +63,26 @@ const Guidelines: React.FC = () => {
             </div>
           </TechBox>
 
-          <TechBox id="03" title="AI Policy">
+          <TechBox id="03" title="Team Size">
+            <div className="space-y-4">
+              <h4 className="text-lg md:text-xl font-archivo font-black uppercase leading-tight tracking-tight border-b-4 border-[#FFD700] inline-block">
+                Collaboration
+              </h4>
+          <p className="text-xs md:text-sm text-[#050008] font-bold uppercase tracking-tight leading-relaxed">
+                EACH TEAM MUST CONSIST OF:
+                <br />
+                <span className="text-[#050008] bg-[#FFD700] px-1 mt-2 inline-block">
+                  MINIMUM - 2 members
+                </span>
+                <br />
+                <span className="text-[#050008] bg-[#FFD700] px-1 mt-1 inline-block"> 
+                  MAXIMUM - 3 members
+                </span>
+              </p>
+            </div>
+          </TechBox>
+
+          <TechBox id="04" title="AI Policy">
             <div className="space-y-6">
               <div className="cursor-target">
                 <span className="font-pixel text-[9px] md:text-[10px] text-green-600 block mb-2 font-bold uppercase tracking-widest bg-green-50 w-fit px-2 py-0.5 border border-green-200">
@@ -97,14 +114,13 @@ const Guidelines: React.FC = () => {
 
 const TechBox = ({ id, title, children }: { id: string; title: string; children: React.ReactNode }) => (
   <div className="cursor-target group relative flex w-full">
-    {/* Shadow: Hidden on mobile to prevent overflow, visible on sm+ */}
     <div className="hidden sm:block absolute inset-0 bg-[#FFD700] translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 border-2 border-[#050008]" />
 
     <div className="relative bg-white border-4 border-[#050008] p-6 sm:p-8 md:p-10 flex flex-col w-full shadow-[6px_6px_0px_0px_#050008] sm:shadow-none transition-transform group-hover:scale-[1.01]">
       <div className="absolute top-0 right-0 bg-[#050008] text-[#FFD700] px-3 py-1 font-pixel text-[10px] font-bold uppercase">
         REF_{id}
       </div>
-      <h3 className="text-2xl md:text-3xl font-archivo font-black mb-6 md:mb-8 uppercase tracking-tighter self-start leading-none italic italic">
+      <h3 className="text-2xl md:text-3xl font-archivo font-black mb-6 md:mb-8 uppercase tracking-tighter self-start leading-none italic">
         {title}
       </h3>
       <div className="relative z-10 flex-grow">

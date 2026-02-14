@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
         {/* DEVELOPED BY SECTION */}
         <div className="mt-8 pt-4">
           <p className="font-pixel text-[9px] sm:text-[10px] text-[#050008]/60 uppercase tracking-[0.2em] cursor-target">
-            Developed with <span className="text-red-500 inline-block"> ❤️</span> by GDGoC Team
+            Developed with <span className="text-red-500 inline-block "> ❤️</span> by GDGoC Team
           </p>
         </div>
       </div>

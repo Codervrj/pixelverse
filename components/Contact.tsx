@@ -100,7 +100,7 @@ const ContactSection: React.FC = () => {
               </div>
 
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2977457084824!2d73.0156!3d19.0433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24cce39457b%3A0x8bd69eadb0bd749f!2sSIES%20Graduate%20School%20of%20Technology!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://maps.google.com/maps?q=SIES+Graduate+School+of+Technology,+Nerul,+Navi+Mumbai&t=&z=16&ie=UTF8&iwloc=B&output=embed"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

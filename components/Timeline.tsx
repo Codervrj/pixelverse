@@ -76,7 +76,7 @@ const Timeline: React.FC = () => {
         }
       `}</style>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-12 sm:mb-16 md:mb-24 text-center">
           <div className="inline-block px-3 py-1 sm:px-4 bg-black text-[#FFD700] font-archivo font-bold text-[10px] sm:text-xs mb-3 sm:mb-4 uppercase tracking-widest">JOURNEY_MAP</div>
           <h2 className="text-3xl sm:text-5xl md:text-8xl font-archivo tracking-tighter uppercase leading-none text-black">

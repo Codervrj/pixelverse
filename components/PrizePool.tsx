@@ -6,7 +6,7 @@ const prizes = [
   {
     rank: "02",
     title: "RUNNER UP",
-    amount: "₹5,000",
+    // amount: "₹5,000",
     shadowColor: "#E5E7EB",
     glowColor: "rgba(229, 231, 235, 0.4)",
     sparkColor: "#E5E7EB",
@@ -16,7 +16,7 @@ const prizes = [
   {
     rank: "01",
     title: "GRAND CHAMPION",
-    amount: "₹10,000",
+    // amount: "₹10,000",
     shadowColor: "#FFD700",
     glowColor: "rgba(255, 215, 0, 0.6)",
     sparkColor: "#FFD700",
@@ -26,7 +26,7 @@ const prizes = [
   {
     rank: "03",
     title: "BRONZE TIER",
-    amount: "₹2,000",
+    // amount: "₹2,000",
     shadowColor: "#CD7F32",
     glowColor: "rgba(205, 127, 50, 0.4)",
     sparkColor: "#CD7F32",
@@ -153,7 +153,7 @@ const PrizePool: React.FC = () => {
 
                 <div className="flex-grow flex items-center justify-start overflow-hidden w-full">
                   <div className="text-[2rem] sm:text-[2.6rem] md:text-[2.8rem] font-archivo font-black text-[#050008] italic leading-none tracking-tighter whitespace-nowrap min-w-0 pr-2">
-                    {prize.amount}
+                    {/* {prize.amount} */}
                   </div>
                 </div>
 

@@ -83,21 +83,24 @@ const questList = [
     desc: 'Digital Wellness & Social Health',
     icon: Brain,
     color: '#FF5555',
-    cardColor: 'bg-red-600'
+    cardColor: 'bg-red-600',
+    image: '/images/uno-cards/image 2.png'
   },
   {
     title: 'B2B & Efficiency (Tablet/Web) ',
     desc: 'The Gig Worker’s Cockpit',
     icon: HeartPulse,
     color: '#FFD700',
-    cardColor: 'bg-yellow-400'
+    cardColor: 'bg-yellow-400',
+    image: '/images/uno-cards/image 3.png'
   },
   {
     title: 'Social Good & Accessibility (Mobile App) ',
     desc: 'Hyper-Local Civic Action',
     icon: Sparkles,
     color: '#55AA55',
-    cardColor: 'bg-green-600'
+    cardColor: 'bg-green-600',
+    image: '/images/uno-cards/image 4.png'
   }
 ];
 
@@ -157,58 +160,17 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
           transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
         }}
       >
-        {/* BACK SIDE - UNO Reverse Card */}
+        {/* BACK SIDE - UNO Reverse Card (PNG Image) */}
         <div
-          className={`absolute inset-0 ${quest.cardColor} rounded-2xl shadow-2xl backface-hidden border-8 border-white overflow-hidden`}
+          className="absolute inset-0 rounded-2xl shadow-2xl backface-hidden overflow-hidden"
           style={{ backfaceVisibility: 'hidden' }}
         >
-          {/* UNO Card White Circle Background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white rounded-full" />
-
-          {/* Centered content wrapper */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-            {/* Reverse Arrows - Top */}
-            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg -mb-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
-                fill="none"
-                stroke={quest.color}
-                strokeWidth="12"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 25 45 L 30 30 L 45 35"
-                fill={quest.color}
-              />
-            </svg>
-
-            {/* REVERSE Text */}
-            <div
-              className="font-black text-2xl sm:text-3xl md:text-4xl tracking-wider my-1"
-              style={{ color: quest.color }}
-            >
-              REVERSE
-            </div>
-
-            {/* Reverse Arrows - Bottom */}
-            <svg width="60" height="60" viewBox="0 0 100 100" className="drop-shadow-lg rotate-180 -mt-1 sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
-              <path
-                d="M 30 50 Q 30 30, 50 30 Q 70 30, 70 50"
-                fill="none"
-                stroke={quest.color}
-                strokeWidth="12"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 25 45 L 30 30 L 45 35"
-                fill={quest.color}
-              />
-            </svg>
-          </div>
-
-          {/* Corner Decorations */}
-          <div className="absolute top-4 left-4 font-bold text-2xl text-white">↻</div>
-          <div className="absolute bottom-4 right-4 font-bold text-2xl text-white rotate-180">↻</div>
+          <img
+            src={quest.image}
+            alt="UNO Reverse Card"
+            className="w-full h-full object-cover rounded-2xl"
+            draggable={false}
+          />
         </div>
 
         {/* FRONT SIDE - Quest Information */}
@@ -300,7 +262,7 @@ export default function Quests() {
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
           <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/20 border border-cyan-500/50 rounded-full text-cyan-400 text-xs sm:text-sm font-mono mb-4 sm:mb-6">
-            SELECT_MISSION
+            SELECT_COMPONENT
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6 tracking-tight">
@@ -312,8 +274,8 @@ export default function Quests() {
           </p>
 
           <p className="text-cyan-400 text-xs sm:text-sm font-mono">
-            <span className="hidden sm:inline">→ Hover over the cards to reveal the quests</span>
-            <span className="sm:hidden">→ Tap the cards to reveal the quests</span>
+            <span className="hidden sm:inline">→ Hover over the cards to reveal the variants</span>
+            <span className="sm:hidden">→ Tap the cards to reveal the variants</span>
           </p>
         </div>
 

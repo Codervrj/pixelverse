@@ -23,19 +23,25 @@ const teamSections: TeamSection[] = [
         title: 'Organizer',
         label: 'The masterminds behind PixelVerse',
         members: [
-            { name: 'Shreya Patil', role: 'Organiser', tag: 'CAPTAIN', instagram: '#', linkedin: '#' },
-            // { name: 'Priya Sharma', role: 'Co-Lead', tag: 'STRATEGIST', instagram: '#', linkedin: '#' },
-            // { name: 'Ryan Chen', role: 'Operations Head', tag: 'OPS_CHIEF', instagram: '#', linkedin: '#' },
-            // { name: 'Sara Williams', role: 'Treasurer', tag: 'FINANCE', instagram: '#', linkedin: '#' },
+            { name: 'Shreya Patil', role: 'Organiser', tag: 'GDGoC Lead', instagram: '#', linkedin: '#' },
+
         ],
     },
     {
-        title: 'Event_Leads',
+        title: 'The CORE',
         label: 'The pixel-pushers & aesthetic architects',
         members: [
-            { name: 'Maya Patel', role: 'Design Lead', tag: 'ART_DIR', instagram: '#', linkedin: '#' },
-            { name: 'Liam Foster', role: 'UI Designer', tag: 'PIXEL_MKR', instagram: '#', linkedin: '#' },
-            { name: 'Zara Khan', role: 'UX Researcher', tag: 'UX_BRAIN', instagram: '#', linkedin: '#' },
+
+            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-' },
+            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/' },
+            { name: 'Atharva Gadekar', role: 'UI UX Lead', tag: 'UX_LEAD', instagram: 'https://www.instagram.com/atharva.02_', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/' },
+            { name: 'Varun Jain', role: 'Web Lead', tag: 'WEB_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/' },
+            { name: 'Abbas Shaikh', role: 'App Lead', tag: 'APP_LEAD', instagram: 'https://www.instagram.com/abbas_05s_', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16' },
+            { name: 'Dwithi Poojary', role: 'UI UX Coordinator', tag: 'UX_COORD', instagram: 'https://www.instagram.com/dwithi_09', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305' },
+            { name: 'Atharva Chauhan', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08' },
+            { name: 'Chandrayan Paul', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322' },
+            { name: 'Sushmita Das', role: 'Web Coordinator', tag: 'COORD', instagram: 'https://www.instagram.com/ssusheyy', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216' },
+            { name: 'Shatakshi Marathe', role: 'App Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351' },
         ],
     },
     {
@@ -295,7 +301,7 @@ const TeamPage: React.FC = () => {
                             className="mb-10 sm:mb-14"
                         >
                             <div className="inline-block px-4 py-1.5 bg-[#FFD700] text-black font-archivo font-bold text-[10px] sm:text-xs uppercase tracking-[0.2em] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] mb-4">
-                                DIVISION_{String(sIdx + 1).padStart(2, '0')}
+                                LAYER_{String(sIdx + 1).padStart(2, '0')}
                             </div>
                             <h2 className="text-4xl sm:text-5xl md:text-6xl font-archivo font-black tracking-tighter uppercase text-black leading-[0.9]">
                                 {section.title.replace(/_/g, ' ')}

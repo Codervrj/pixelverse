@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 /* ─── Team Data ────────────────────────────────────────── */
@@ -21,42 +21,73 @@ interface TeamSection {
 const teamSections: TeamSection[] = [
     {
         title: 'Organizer',
-        label: 'The masterminds behind PixelVerse',
+        label: 'TheVisionary',
         members: [
-            { name: 'Shreya Patil', role: 'Organiser', tag: 'GDGoC Lead', linkedin: '#', image: '/images/shreya_patil.jpg' },
+            { name: 'Shreya Patil', role: 'Organizer', tag: 'GDGoC Lead', linkedin: 'https://www.linkedin.com/in/shreya-patil-9b83352a7', image: '/images/shreya_patil.jpg' },
         ],
     },
     {
         title: 'The CORE',
-        label: 'The pixel-pushers & aesthetic architects',
+        label: 'The Architects & Strategists',
         members: [
-            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-', image: 'https://placehold.co/400x500/png' },
-            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/', image: 'https://placehold.co/400x500/png' },
-            { name: 'Atharva Gadekar', role: 'UI UX Lead', tag: 'UX_LEAD', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/', image: 'https://placehold.co/400x500/png' },
-            { name: 'Varun Jain', role: 'Web Lead', tag: 'WEB_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/', image: 'https://placehold.co/400x500/png' },
-            { name: 'Abbas Shaikh', role: 'App Lead', tag: 'APP_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16', image: 'https://placehold.co/400x500/png' },
-            { name: 'Dwithi Poojary', role: 'UI UX Coordinator', tag: 'UX_COORD', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305', image: 'https://placehold.co/400x500/png' },
-            { name: 'Atharva Chauhan', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08', image: 'https://placehold.co/400x500/png' },
-            { name: 'Chandrayan Paul', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322', image: 'https://placehold.co/400x500/png' },
-            { name: 'Sushmita Das', role: 'Web Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216', image: 'https://placehold.co/400x500/png' },
-            { name: 'Shatakshi Marathe', role: 'App Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351', image: 'https://placehold.co/400x500/png' },
+            // Secretaries
+            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-' },
+            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/' },
+            // Event Leads
+            { name: 'Atharva Gadekar', role: 'Lead UI/UX', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/' },
+            { name: 'Varun Jain', role: 'Lead Web', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/' },
+            { name: 'Abbas Shaikh', role: 'Lead App', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16' },
+            // Core Coordinators
+            { name: 'Sushmita Das', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216' },
+            { name: 'Atharva Matale', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/atharvamatale' },
+            { name: 'Shreya Kanchan', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/shreya-kanchan-79850631b/' },
+            { name: 'Venisha Pitchaiya', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/venisha-pitchaiya' },
+            { name: 'Prathamesh Bhagwat', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/prathamesh-bhagwat' },
+            { name: 'Adya Poojary', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/adya-poojary-4775ba37b' },
+            { name: 'Farheen Patel', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/farheen-patel-897b78318/' },
+            { name: 'Eshan Uday Lavate', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/eshan-lavate' },
         ],
     },
     {
-        title: 'Crew',
-        label: 'The builders shipping the experience',
+        title: 'The CREW',
+        label: 'Domain Leads & Coordinators',
         members: [
-            { name: 'Arjun Mehta', role: 'Tech Lead', tag: 'TECH_CMD', linkedin: '#', image: 'https://placehold.co/400x500/png' },
-            { name: 'Emily Zhang', role: 'Frontend Dev', tag: 'CODE_CRF', linkedin: '#', image: 'https://placehold.co/400x500/png' },
-            { name: 'Noah Rodrigues', role: 'Backend Dev', tag: 'SYS_ARCH', linkedin: '#', image: 'https://placehold.co/400x500/png' },
+            // Domain Leads
+            { name: 'Koshik Mehta', role: 'Lead Agentic AI', tag: 'AI_LEAD', linkedin: 'https://www.linkedin.com/in/koshik-mehta-9271b0258/' },
+            { name: 'Abhinav Tiwari', role: 'Lead Cloud', tag: 'CLOUD_LEAD', linkedin: 'https://www.linkedin.com/in/abhinav-tiwari-3468b0318/' },
+            { name: 'Ayush Ghadge', role: 'Lead Social Media', tag: 'SOCIAL_LEAD', linkedin: 'https://www.linkedin.com/in/ayush-ghadge-4747a6321' },
+            { name: 'Roshan Ajith', role: 'Lead CyberSecurity', tag: 'CYBER_LEAD', linkedin: 'https://www.linkedin.com/in/roshanajith' },
+            { name: 'Poornaya Pardeshi', role: 'Lead DS & ML', tag: 'ML_LEAD', linkedin: 'https://www.linkedin.com/in/poornaya-pardeshi-46043631a' },
+
+            // Coordinators
+            { name: 'Dwithi Poojary', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305' },
+            { name: 'Atharva Chauhan', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08' },
+            { name: 'Chandrayan Paul', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322' },
+            { name: 'Shatakshi Marathe', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351' },
+            { name: 'Anushka Mali', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/anushka-mali-486857297/' },
+            { name: 'Khushi Khanna', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/khushi-khanna-00a849313' },
+            { name: 'Elamurugu Shanmugavel', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/elamurugu-shanmugavel-985428288' },
+            { name: 'Atharva Jadhav', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/atharva-jadhav-72b6b32b3' },
+            { name: 'Rutik Manish Kore', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/rutik-kore-8903ba317/' },
+            { name: 'Srusti Ponnaganti', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/srusti-ponnaganti-2a7b55348' },
+            { name: 'Ujair Inamdar', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/ujairinamdar/' },
+            { name: 'Omkar Dewasi', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/omkar-dewasi/' },
+            { name: 'Arohi Pathak', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/arohi-pathak-a793b4350/' },
+            { name: 'Daksh Thakur', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/daksh-thakur-79152532a' },
+            { name: 'Devanshu Bansode', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/devanshu-bansode-bb6a84320/' },
+            { name: 'Sanchita Gupta', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/sanchitagupta-aiml' },
+            { name: 'Mohit Naidu', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mohit-naidu-12b8a1268/' },
         ],
     },
     {
-        title: 'MARKETING_CELL',
-        label: 'Getting the word out to every pixel',
+        title: 'Volunteers',
+        label: 'The Helping Hands',
         members: [
-            { name: 'Isha Verma', role: 'Marketing Lead', tag: 'HYPE_ENG', linkedin: '#', image: 'https://placehold.co/400x500/png' },
-            { name: 'Chris Santos', role: 'Content Creator', tag: 'WORD_SMT', linkedin: '#', image: 'https://placehold.co/400x500/png' },
+            { name: 'Mayuri D. Gade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
+            { name: 'Pranjali Rane', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
+            { name: 'Pritam P. Kharade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
+            { name: 'Atharva A. Khandagale', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
+            { name: 'Zubiya Mhaisker', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
         ],
     },
 ];
@@ -130,8 +161,6 @@ const TeamBackground = () => (
 
 /* ─── Social Icon SVGs ─────────────────────────────────── */
 
-
-
 const LinkedInIcon = () => (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -143,35 +172,6 @@ const LinkedInIcon = () => (
 /* ─── Member Card ──────────────────────────────────────── */
 
 const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, index }) => {
-    // 3D Tilt Hook Setup
-    const ref = useRef<HTMLDivElement>(null);
-    const x = useMotionValue(0);
-    const y = useMotionValue(0);
-
-    const mouseXSpring = useSpring(x);
-    const mouseYSpring = useSpring(y);
-
-    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7deg', '-7deg']);
-    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7deg', '7deg']);
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!ref.current) return;
-        const rect = ref.current.getBoundingClientRect();
-        const width = rect.width;
-        const height = rect.height;
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-        const xPct = mouseX / width - 0.5;
-        const yPct = mouseY / height - 0.5;
-        x.set(xPct);
-        y.set(yPct);
-    };
-
-    const handleMouseLeave = () => {
-        x.set(0);
-        y.set(0);
-    };
-
     // Generate a deterministic colour based on index for the avatar (fallback if no image)
     const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9', '#F8C471'];
     const bgColor = colors[index % colors.length];
@@ -179,30 +179,35 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
     // Get initials for fallback avatar
     const initials = member.name.split(' ').map(n => n[0]).join('').toUpperCase();
 
+    // Check if image is a placeholder or actual image
+    const hasImage = member.image && member.image.trim() !== '' && !member.image.includes('placehold.co');
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
             className="group relative bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-300"
         >
             {/* 1. Image Section (Rectangular 4:5) */}
             <div className="relative w-full aspect-[4/5] overflow-hidden border-b-2 border-black bg-gray-100">
-                {member.image ? (
+                {hasImage ? (
                     <img
                         src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
                     />
                 ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: bgColor }}>
-                        <span className="text-4xl font-black opacity-20">{initials}</span>
+                    <div className="w-full h-full flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: bgColor }}>
+                        {/* Noise texture overlay */}
+                        <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+                        <span className="text-4xl font-black opacity-20 relative z-10">{initials}</span>
                     </div>
                 )}
 
                 {/* Minimal Tag Badge */}
-                <div className="absolute top-4 right-4">
+                <div className="absolute top-4 right-4 z-20">
                     <span className="px-2 py-1 bg-[#FFD700] text-black text-[10px] font-bold uppercase tracking-widest border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         {member.tag}
                     </span>
@@ -213,7 +218,7 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
             <div className="p-6 flex flex-col justify-between bg-white relative">
                 <div>
                     {/* Name */}
-                    <h3 className="font-archivo text-xl font-black uppercase tracking-tight text-black mb-1 group-hover:text-[#FFD700] transition-colors">
+                    <h3 className="font-archivo text-xl font-black uppercase tracking-tight text-black mb-1 group-hover:text-[#FFD700] transition-colors leading-tight">
                         {member.name}
                     </h3>
 
@@ -225,10 +230,7 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
 
                 {/* LinkedIn / Action */}
                 <div className="flex items-center justify-end pt-4 border-t-2 border-black/5">
-                    {/* Decorative Line or ID */}
-                    {/* <span className="text-[10px] font-mono text-black/30">#{String(index + 1).padStart(3, '0')}</span> */}
-
-                    {member.linkedin ? (
+                    {member.linkedin && member.linkedin !== '#' ? (
                         <a
                             href={member.linkedin}
                             target="_blank"
@@ -238,7 +240,9 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
                             <LinkedInIcon />
                         </a>
                     ) : (
-                        <div className="w-8 h-8" /> // Spacer
+                        <div className="w-8 h-8 opacity-20 grayscale flex items-center justify-center border-2 border-black/20 rounded-sm">
+                            <div className="w-2 h-2 bg-black/20 rounded-full" />
+                        </div>
                     )}
                 </div>
             </div>

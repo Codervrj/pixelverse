@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { initGA } from "./src/analytics";
+initGA();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

@@ -16,6 +16,10 @@ import Footer from './components/Footer';
 import Guidelines from './components/Guidelines';
 import TeamPage from './components/TeamPage';
 
+import { useLocation } from "react-router-dom";
+import { trackPageView } from "./src/analytics";
+
+
 const HomePage: React.FC = () => (
   <main>
     <Hero />
@@ -31,6 +35,11 @@ const HomePage: React.FC = () => (
 );
 
 const App: React.FC = () => {
+  const location = useLocation();
+
+      useEffect(() => {
+        trackPageView(location.pathname);
+      }, [location]);
   useEffect(() => {
     const cleanup = initGlobalHaptics();
     return cleanup;

@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { initGlobalHaptics } from './hooks/useHaptic';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
@@ -15,10 +14,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Guidelines from './components/Guidelines';
 import TeamPage from './components/TeamPage';
-
-import { useLocation } from "react-router-dom";
 import { trackPageView } from "./src/analytics";
-
 
 const HomePage: React.FC = () => (
   <main>
@@ -37,25 +33,25 @@ const HomePage: React.FC = () => (
 const App: React.FC = () => {
   const location = useLocation();
 
-      useEffect(() => {
-        trackPageView(location.pathname);
-      }, [location]);
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location]);
+
   useEffect(() => {
     const cleanup = initGlobalHaptics();
     return cleanup;
   }, []);
+
   return (
-    <BrowserRouter>
-      <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
-        <Cursor />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/team" element={<TeamPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <div className="relative bg-[#F5F5DC] min-h-screen cursor-none">
+      <Cursor />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/team" element={<TeamPage />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 };
 

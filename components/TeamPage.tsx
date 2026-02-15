@@ -40,11 +40,11 @@ const teamSections: TeamSection[] = [
             { name: 'Abbas Shaikh', role: 'Lead App', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16', image: '/images/pixelverseTeam/eventLeads/Mohammed Abbas Shaikh _AppLead.jpg' },
             // Core Coordinators
             { name: 'Sushmita Das', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216', image: '/images/pixelverseTeam/web/Shusmita_WebCoord.jpg' },
-            { name: 'Atharva Matale', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/atharvamatale' },
+            { name: 'Atharva Matale', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/atharvamatale', image: '/images/pixelverseTeam/agentic/Atharva_AgenticAIcoord.jpg' },
             { name: 'Shreya Kanchan', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/shreya-kanchan-79850631b/', image: '/images/pixelverseTeam/management/Shreya kanchan_Management.jpg' },
             { name: 'Venisha Pitchaiya', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/venisha-pitchaiya', image: '/images/pixelverseTeam/management/VenishaPitchaiya_Management.jpg' },
             { name: 'Prathamesh Bhagwat', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/prathamesh-bhagwat', image: '/images/pixelverseTeam/management/PrathameshBhagwat_ManagementCoord.jpg' },
-            { name: 'Adya Poojary', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/adya-poojary-4775ba37b' },
+            { name: 'Adya Poojary', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/adya-poojary-4775ba37b', image: '/images/pixelverseTeam/misc/Adya.jpg' },
             { name: 'Farheen Patel', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/farheen-patel-897b78318/', image: '/images/pixelverseTeam/ds&ml/Farheen_Ds&ML coord.jpg' },
             { name: 'Eshan Uday Lavate', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/eshan-lavate', image: '/images/pixelverseTeam/management/EshanLavate_ManagementCoord.jpeg' },
         ],
@@ -57,7 +57,7 @@ const teamSections: TeamSection[] = [
             { name: 'Koshik Mehta', role: 'Lead Agentic AI', tag: 'AI_LEAD', linkedin: 'https://www.linkedin.com/in/koshik-mehta-9271b0258/', image: '/images/pixelverseTeam/agentic/Koshik_AgenticAiLead.jpg' },
             { name: 'Abhinav Tiwari', role: 'Lead Cloud', tag: 'CLOUD_LEAD', linkedin: 'https://www.linkedin.com/in/abhinav-tiwari-3468b0318/', image: '/images/pixelverseTeam/cloud/Abhinav_Tiwari_Cloud_Lead.jpg' },
             { name: 'Ayush Ghadge', role: 'Lead Social Media', tag: 'SOCIAL_LEAD', linkedin: 'https://www.linkedin.com/in/ayush-ghadge-4747a6321', image: '/images/pixelverseTeam/socialMedia/AyushGhadge_SMLead.jpg' },
-            { name: 'Roshan Ajith', role: 'Lead CyberSecurity', tag: 'CYBER_LEAD', linkedin: 'https://www.linkedin.com/in/roshanajith' },
+            { name: 'Roshan Ajith', role: 'Lead CyberSecurity', tag: 'CYBER_LEAD', linkedin: 'https://www.linkedin.com/in/roshanajith', image: '/images/pixelverseTeam/misc/RoshanAjith_CybersecurityLead .jpeg' },
             { name: 'Poornaya Pardeshi', role: 'Lead DS & ML', tag: 'ML_LEAD', linkedin: 'https://www.linkedin.com/in/poornaya-pardeshi-46043631a', image: '/images/pixelverseTeam/ds&ml/POORNAYA_DS&ML LEAD.jpg' },
 
             // Coordinators
@@ -259,32 +259,7 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
 
 const TeamPage: React.FC = () => {
     useEffect(() => {
-        // Restore saved scroll position after reload
-        const saved = sessionStorage.getItem('teamPageScrollY');
-        if (saved) {
-            // Small delay to let the page render first
-            requestAnimationFrame(() => {
-                window.scrollTo(0, parseInt(saved, 10));
-            });
-        }
-
-        // Save scroll position on scroll (debounced)
-        let timeout: ReturnType<typeof setTimeout>;
-        const handleScroll = () => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                sessionStorage.setItem('teamPageScrollY', String(window.scrollY));
-            }, 150);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-            clearTimeout(timeout);
-            window.removeEventListener('scroll', handleScroll);
-            // Clear on unmount (navigating away from team page)
-            sessionStorage.removeItem('teamPageScrollY');
-        };
+        window.scrollTo(0, 0);
     }, []);
 
     const totalMembers = teamSections.reduce((acc, s) => acc + s.members.length, 0);

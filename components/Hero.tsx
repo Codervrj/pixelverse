@@ -215,7 +215,6 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIsActive(checkdis());
-      console.log(isActive);
     }, 1000);
     return () => clearInterval(timer);
   }, []);

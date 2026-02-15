@@ -84,11 +84,11 @@ const teamSections: TeamSection[] = [
         title: 'Volunteers',
         label: 'The Helping Hands',
         members: [
-            { name: 'Mayuri D. Gade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/MayuriGade_Vol.png' },
-            { name: 'Pranjali Rane', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/Pranjali Rane_Volunteer.jpeg' },
-            { name: 'Pritam P. Kharade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/prit passport.jpg' },
-            { name: 'Atharva A. Khandagale', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/AtharvaKhandagale_Vol.jpg' },
-            { name: 'Zubiya Mhaisker', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/Zubiya Mhaisker_Volunteer.jpg' },
+            { name: 'Mayuri D. Gade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: 'https://www.linkedin.com/in/mayuri-gade-435637378/', image: '/images/pixelverseTeam/vol/MayuriGade_Vol.png' },
+            { name: 'Pranjali Rane', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: 'https://www.linkedin.com/in/pranjali-rane-724a16340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', image: '/images/pixelverseTeam/vol/Pranjali Rane_Volunteer.jpeg' },
+            { name: 'Pritam P. Kharade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: 'https://www.linkedin.com/in/pritam-kharade-a89028394/', image: '/images/pixelverseTeam/vol/prit passport.jpg' },
+            { name: 'Atharva A. Khandagale', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: 'https://www.linkedin.com/in/atharva-khandagale-412892333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', image: '/images/pixelverseTeam/vol/AtharvaKhandagale_Vol.jpg' },
+            { name: 'Zubiya Mhaisker', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: 'https://www.linkedin.com/in/zubiya-mhaisker-4ba073319?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', image: '/images/pixelverseTeam/vol/Zubiya Mhaisker_Volunteer.jpg' },
         ],
     },
 ];

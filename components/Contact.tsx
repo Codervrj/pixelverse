@@ -36,18 +36,16 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div className="space-y-1">
                     <a
-                      href="tel:+918828046919"
-                      onClick={() => triggerHaptic('medium')}
-                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
+                      href="#"
+                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block cursor-default"
                     >
-                      +91 88280 46919
+                      +91 98765 43210
                     </a>
                     <a
-                      href="tel:+919833875297"
-                      onClick={() => triggerHaptic('medium')}
-                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block"
+                      href="#"
+                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block cursor-default"
                     >
-                      +91 98338 75297
+                      +91 98765 43210
                     </a>
                   </div>
                 </div>
@@ -64,11 +62,11 @@ const ContactSection: React.FC = () => {
                   <div className="min-w-0">
                     <p className="text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
-                      href="mailto:pixelverse@siesgst.ac.in"
+                      href="mailto:letstalk@pixelverse-gdg.in"
                       onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
-                      pixelverse@siesgst.ac.in
+                      letstalk@pixelverse-gdg.in
                     </a>
                   </div>
                 </div>

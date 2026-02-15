@@ -35,12 +35,20 @@ const Navbar: React.FC = () => {
         navigate('/');
         // Wait for navigation then scroll
         setTimeout(() => {
-          const el = document.querySelector(link.href);
-          el?.scrollIntoView({ behavior: 'smooth' });
+          if (link.href === '#home') {
+            window.scrollTo(0, 0);
+          } else {
+            const el = document.querySelector(link.href);
+            el?.scrollIntoView({ behavior: 'smooth' });
+          }
         }, 100);
       } else {
-        const el = document.querySelector(link.href);
-        el?.scrollIntoView({ behavior: 'smooth' });
+        if (link.href === '#home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const el = document.querySelector(link.href);
+          el?.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   };

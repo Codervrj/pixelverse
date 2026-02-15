@@ -35,6 +35,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     trackPageView(location.pathname);
+    // Disable native scroll restoration and force scroll to top on route change
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
   }, [location]);
 
   useEffect(() => {

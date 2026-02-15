@@ -22,9 +22,9 @@ interface TeamSection {
 const teamSections: TeamSection[] = [
     {
         title: 'Organizer',
-        label: 'TheVisionary',
+        label: 'The Visionary',
         members: [
-            { name: 'Shreya Patil', role: 'Organizer', tag: 'GDGoC Lead', linkedin: 'https://www.linkedin.com/in/shreya-patil-9b83352a7', image: '/images/shreya_patil.jpg' },
+            { name: 'Shreya Patil', role: 'Organizer', tag: 'GDGoC Lead', linkedin: 'https://www.linkedin.com/in/shreya-patil-9b83352a7', image: '/images/pixelverseTeam/organizer/Screenshot_20260128_180756_Gallery~2.jpg' },
         ],
     },
     {
@@ -32,21 +32,21 @@ const teamSections: TeamSection[] = [
         label: 'The Architects & Strategists',
         members: [
             // Secretaries
-            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-' },
-            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/' },
+            { name: 'Shreya Yadav', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/shreya-y-', image: '/images/pixelverseTeam/secretary/ShreyaYadav_secretary.jpg' },
+            { name: 'Sanay Patil', role: 'Secretary', tag: 'SECRETARY', linkedin: 'https://www.linkedin.com/in/sanaypatil/', image: '/images/pixelverseTeam/secretary/SanayPatil_Secretary.webp' },
             // Event Leads
-            { name: 'Atharva Gadekar', role: 'Lead UI/UX', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/' },
-            { name: 'Varun Jain', role: 'Lead Web', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/' },
-            { name: 'Abbas Shaikh', role: 'Lead App', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16' },
+            { name: 'Atharva Gadekar', role: 'Lead UI/UX', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/atharva-gadekar/', image: '/images/pixelverseTeam/eventLeads/atharvagadekar_uiuxlead.jpeg' },
+            { name: 'Varun Jain', role: 'Lead Web', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/varun-jain-dev/', image: '/images/pixelverseTeam/eventLeads/VarunJain_weblead.jpeg' },
+            { name: 'Abbas Shaikh', role: 'Lead App', tag: 'EVENT_LEAD', linkedin: 'https://www.linkedin.com/in/mohammed-abbas-shaikh16', image: '/images/pixelverseTeam/eventLeads/Mohammed Abbas Shaikh _AppLead.jpg' },
             // Core Coordinators
-            { name: 'Sushmita Das', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216' },
-            { name: 'Atharva Matale', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/atharvamatale' },
-            { name: 'Shreya Kanchan', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/shreya-kanchan-79850631b/' },
-            { name: 'Venisha Pitchaiya', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/venisha-pitchaiya' },
-            { name: 'Prathamesh Bhagwat', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/prathamesh-bhagwat' },
-            { name: 'Adya Poojary', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/adya-poojary-4775ba37b' },
-            { name: 'Farheen Patel', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/farheen-patel-897b78318/' },
-            { name: 'Eshan Uday Lavate', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/eshan-lavate' },
+            { name: 'Sushmita Das', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/sushmita-das-66594b216', image: '/images/pixelverseTeam/web/Shusmita_WebCoord.jpg' },
+            { name: 'Atharva Matale', role: 'Technical Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/atharvamatale', image: '/images/pixelverseTeam/agentic/Atharva_AgenticAIcoord.jpg' },
+            { name: 'Shreya Kanchan', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/shreya-kanchan-79850631b/', image: '/images/pixelverseTeam/management/Shreya kanchan_Management.jpg' },
+            { name: 'Venisha Pitchaiya', role: 'Internal Mgt Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/venisha-pitchaiya', image: '/images/pixelverseTeam/management/VenishaPitchaiya_Management.jpg' },
+            { name: 'Prathamesh Bhagwat', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/prathamesh-bhagwat', image: '/images/pixelverseTeam/management/PrathameshBhagwat_ManagementCoord.jpg' },
+            { name: 'Adya Poojary', role: 'PR & Publicity Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/adya-poojary-4775ba37b', image: '/images/pixelverseTeam/misc/Adya.jpg' },
+            { name: 'Farheen Patel', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/farheen-patel-897b78318/', image: '/images/pixelverseTeam/ds&ml/Farheen_Ds&ML coord.jpg' },
+            { name: 'Eshan Uday Lavate', role: 'Overall Event Co-ord', tag: 'CORE_COORD', linkedin: 'https://www.linkedin.com/in/eshan-lavate', image: '/images/pixelverseTeam/management/EshanLavate_ManagementCoord.jpeg' },
         ],
     },
     {
@@ -54,41 +54,41 @@ const teamSections: TeamSection[] = [
         label: 'Domain Leads & Coordinators',
         members: [
             // Domain Leads
-            { name: 'Koshik Mehta', role: 'Lead Agentic AI', tag: 'AI_LEAD', linkedin: 'https://www.linkedin.com/in/koshik-mehta-9271b0258/' },
-            { name: 'Abhinav Tiwari', role: 'Lead Cloud', tag: 'CLOUD_LEAD', linkedin: 'https://www.linkedin.com/in/abhinav-tiwari-3468b0318/' },
-            { name: 'Ayush Ghadge', role: 'Lead Social Media', tag: 'SOCIAL_LEAD', linkedin: 'https://www.linkedin.com/in/ayush-ghadge-4747a6321' },
-            { name: 'Roshan Ajith', role: 'Lead CyberSecurity', tag: 'CYBER_LEAD', linkedin: 'https://www.linkedin.com/in/roshanajith' },
-            { name: 'Poornaya Pardeshi', role: 'Lead DS & ML', tag: 'ML_LEAD', linkedin: 'https://www.linkedin.com/in/poornaya-pardeshi-46043631a' },
+            { name: 'Koshik Mehta', role: 'Lead Agentic AI', tag: 'AI_LEAD', linkedin: 'https://www.linkedin.com/in/koshik-mehta-9271b0258/', image: '/images/pixelverseTeam/agentic/Koshik_AgenticAiLead.jpg' },
+            { name: 'Abhinav Tiwari', role: 'Lead Cloud', tag: 'CLOUD_LEAD', linkedin: 'https://www.linkedin.com/in/abhinav-tiwari-3468b0318/', image: '/images/pixelverseTeam/cloud/Abhinav_Tiwari_Cloud_Lead.jpg' },
+            { name: 'Ayush Ghadge', role: 'Lead Social Media', tag: 'SOCIAL_LEAD', linkedin: 'https://www.linkedin.com/in/ayush-ghadge-4747a6321', image: '/images/pixelverseTeam/socialMedia/AyushGhadge_SMLead.jpg' },
+            { name: 'Roshan Ajith', role: 'Lead CyberSecurity', tag: 'CYBER_LEAD', linkedin: 'https://www.linkedin.com/in/roshanajith', image: '/images/pixelverseTeam/misc/RoshanAjith_CybersecurityLead .jpeg' },
+            { name: 'Poornaya Pardeshi', role: 'Lead DS & ML', tag: 'ML_LEAD', linkedin: 'https://www.linkedin.com/in/poornaya-pardeshi-46043631a', image: '/images/pixelverseTeam/ds&ml/POORNAYA_DS&ML LEAD.jpg' },
 
             // Coordinators
-            { name: 'Dwithi Poojary', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305' },
-            { name: 'Atharva Chauhan', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08' },
-            { name: 'Chandrayan Paul', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322' },
-            { name: 'Shatakshi Marathe', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351' },
-            { name: 'Anushka Mali', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/anushka-mali-486857297/' },
-            { name: 'Khushi Khanna', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/khushi-khanna-00a849313' },
-            { name: 'Elamurugu Shanmugavel', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/elamurugu-shanmugavel-985428288' },
-            { name: 'Atharva Jadhav', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/atharva-jadhav-72b6b32b3' },
-            { name: 'Rutik Manish Kore', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/rutik-kore-8903ba317/' },
-            { name: 'Srusti Ponnaganti', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/srusti-ponnaganti-2a7b55348' },
-            { name: 'Ujair Inamdar', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/ujairinamdar/' },
-            { name: 'Omkar Dewasi', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/omkar-dewasi/' },
-            { name: 'Arohi Pathak', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/arohi-pathak-a793b4350/' },
-            { name: 'Daksh Thakur', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/daksh-thakur-79152532a' },
-            { name: 'Devanshu Bansode', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/devanshu-bansode-bb6a84320/' },
-            { name: 'Sanchita Gupta', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/sanchitagupta-aiml' },
-            { name: 'Mohit Naidu', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mohit-naidu-12b8a1268/' },
+            { name: 'Dwithi Poojary', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/dwithi-poojary-b24325305', image: '/images/pixelverseTeam/uiux/Dwithi_uiuxcoord.jpg' },
+            { name: 'Atharva Chauhan', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mrtag08', image: '/images/pixelverseTeam/web/Chauhan_WebCoord.jpg' },
+            { name: 'Chandrayan Paul', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/chandrayan-paul-7a736b322', image: '/images/pixelverseTeam/web/WebCoord_ChandrayanPaul.png' },
+            { name: 'Shatakshi Marathe', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/shatakshi-marathe-793792351', image: '/images/pixelverseTeam/app/Shatakshi.jpg' },
+            { name: 'Anushka Mali', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/anushka-mali-486857297/', image: '/images/pixelverseTeam/agentic/anushka_AgenticAiCoord.jpg' },
+            { name: 'Khushi Khanna', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/khushi-khanna-00a849313', image: '/images/pixelverseTeam/agentic/Khushi_AgenticAIcoord_web.jpg' },
+            { name: 'Elamurugu Shanmugavel', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/elamurugu-shanmugavel-985428288', image: '/images/pixelverseTeam/cloud/Elamurugu Shanmugavel_Cloud Computing Coord.jpg' },
+            { name: 'Atharva Jadhav', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/atharva-jadhav-72b6b32b3', image: '/images/pixelverseTeam/cloud/Atharva Jadhav_ Cloud Computing coordinator_.jpg' },
+            { name: 'Rutik Manish Kore', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/rutik-kore-8903ba317/', image: '/images/pixelverseTeam/management/RutikKore_ManagementCoord.jpeg' },
+            { name: 'Srusti Ponnaganti', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/srusti-ponnaganti-2a7b55348', image: '/images/pixelverseTeam/socialMedia/Srusti Ponnaganti_SmCoord.jpg' },
+            { name: 'Ujair Inamdar', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/ujairinamdar/', image: '/images/pixelverseTeam/socialMedia/Ujairinamdar_SMcord.jpg' },
+            { name: 'Omkar Dewasi', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/omkar-dewasi/', image: '/images/pixelverseTeam/socialMedia/OMKARDEWASI_SMCORD.jpg' },
+            { name: 'Arohi Pathak', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/arohi-pathak-a793b4350/', image: '/images/pixelverseTeam/cyberSec/Arohi Pathak_CyberSecCoord.jpg' },
+            { name: 'Daksh Thakur', role: 'Coordinator', tag: 'COORD', linkedin: 'https://in.linkedin.com/in/daksh-thakur-79152532a', image: '/images/pixelverseTeam/cyberSec/Daksh_Thakur_Cybersecurity_Coordinator.jpg' },
+            { name: 'Devanshu Bansode', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/devanshu-bansode-bb6a84320/', image: '/images/pixelverseTeam/cyberSec/Devanshu_Bansode_CyberSecurity_Coord.jpeg' },
+            { name: 'Sanchita Gupta', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/sanchitagupta-aiml', image: '/images/pixelverseTeam/ds&ml/Sanchita_DS&MLco- ord.jpg' },
+            { name: 'Mohit Naidu', role: 'Coordinator', tag: 'COORD', linkedin: 'https://www.linkedin.com/in/mohit-naidu-12b8a1268/', image: '/images/pixelverseTeam/ds&ml/MOHIT_DSMLCoord.jpeg' },
         ],
     },
     {
         title: 'Volunteers',
         label: 'The Helping Hands',
         members: [
-            { name: 'Mayuri D. Gade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
-            { name: 'Pranjali Rane', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
-            { name: 'Pritam P. Kharade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
-            { name: 'Atharva A. Khandagale', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
-            { name: 'Zubiya Mhaisker', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#' },
+            { name: 'Mayuri D. Gade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/MayuriGade_Vol.png' },
+            { name: 'Pranjali Rane', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/Pranjali Rane_Volunteer.jpeg' },
+            { name: 'Pritam P. Kharade', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/prit passport.jpg' },
+            { name: 'Atharva A. Khandagale', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/AtharvaKhandagale_Vol.jpg' },
+            { name: 'Zubiya Mhaisker', role: 'Volunteer', tag: 'VOLUNTEER', linkedin: '#', image: '/images/pixelverseTeam/vol/Zubiya Mhaisker_Volunteer.jpg' },
         ],
     },
 ];
@@ -190,6 +190,7 @@ const MemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, i
             viewport={{ once: true, margin: '-20px' }}
             transition={{ duration: 0.35, delay: (index % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
             className="group relative bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-300"
+            onMouseEnter={() => triggerHaptic('card')}
         >
             {/* 1. Image Section (Rectangular 4:5) */}
             <div

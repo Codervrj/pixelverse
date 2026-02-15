@@ -255,6 +255,7 @@ export default function Hero() {
               style={{ zIndex: 2 }}
             >
               PIXELVERSE
+              <span className="sr-only"> Design Hackathon</span>
             </h1>
 
             {/* sm+ Layer 3: DESIGNATHON white text on top */}

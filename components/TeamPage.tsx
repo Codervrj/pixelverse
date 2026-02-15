@@ -22,7 +22,7 @@ interface TeamSection {
 const teamSections: TeamSection[] = [
     {
         title: 'Organizer',
-        label: 'TheVisionary',
+        label: 'The Visionary',
         members: [
             { name: 'Shreya Patil', role: 'Organizer', tag: 'GDGoC Lead', linkedin: 'https://www.linkedin.com/in/shreya-patil-9b83352a7', image: '/images/pixelverseTeam/organizer/Screenshot_20260128_180756_Gallery~2.jpg' },
         ],

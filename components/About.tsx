@@ -28,7 +28,7 @@ const About: React.FC = () => {
           <div className="w-full md:col-span-6 md:pt-8 lg:pt-20 xl:pt-48">
             <div className="space-y-10 sm:space-y-16 xl:space-y-24">
               <p className="text-xl sm:text-2xl md:text-xl lg:text-3xl xl:text-6xl font-medium leading-[1.15] tracking-tight text-black uppercase max-w-3xl font-archivo cursor-target">
-                PixelVerse is the ultimate <span className="text-[#FFD700] bg-black px-1 sm:px-2 italic">Design Hackathon</span> & battleground where Form doesn't just follow Function—it <span className="underline decoration-2 sm:decoration-4 decoration-[#FFD700]">Elevates it</span>.
+                PixelVerse is the ultimate <span className="text-[#FFD700] bg-black px-1 sm:px-2 italic">Design Hackathon</span> & battleground where Form doesn't just follow Function - it <span className="underline decoration-2 sm:decoration-4 decoration-[#FFD700]">Elevates it</span>.
               </p>
 
               <div className="pt-10 sm:pt-16 border-t-2 sm:border-t-4 border-black grid grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20">

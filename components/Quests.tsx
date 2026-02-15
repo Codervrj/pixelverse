@@ -135,7 +135,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
   };
 
   const handleClick = () => {
-    // Only toggle on touch devices — desktop uses hover
+    // Only toggle on touch devices - desktop uses hover
     if (!isTouchDevice.current) return;
     setIsFlipped(f => !f);
     triggerHaptic('immersive');

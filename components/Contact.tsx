@@ -62,11 +62,11 @@ const ContactSection: React.FC = () => {
                   <div className="min-w-0">
                     <p className="text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
-                      href="mailto:letstalk@pixelverse-gdg.in"
+                      href="mailto:pixelverse.gdg2026@gmail.com"
                       onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
-                      letstalk@pixelverse-gdg.in
+                      pixelverse.gdg2026@gmail.com
                     </a>
                   </div>
                 </div>

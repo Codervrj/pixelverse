@@ -10,6 +10,19 @@
   --color-green: #37A221;
 }
 
+nav, 
+nav *, 
+.fixed.inset-0, 
+.fixed.inset-0 * {
+  cursor: none;
+}
+
+nav button:hover, 
+nav a:hover,
+nav img {
+  cursor: none;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--color-cream);

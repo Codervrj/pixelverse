@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.08 }}
-                className="text-white font-archivo text-3xl uppercase hover:text-[#FFD700] transition-colors bg-transparent border-none"
+                className="cursor-none text-white font-archivo text-3xl uppercase hover:text-[#FFD700] transition-colors bg-transparent border-none"
               >
                 {item.name}
               </motion.button>
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
       </AnimatePresence>
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-[100] bg-black/90 backdrop-blur-sm border-b-2 border-white px-4 sm:px-6 md:px-12 py-3 sm:py-5 flex justify-between items-center transition-all">
+      <nav className="cursor-none fixed top-0 left-0 w-full z-[100] bg-black/90 backdrop-blur-sm border-b-2 border-white px-4 sm:px-6 md:px-12 py-3 sm:py-5 flex justify-between items-center transition-all">
         <Link to="/" className="flex items-center gap-4">
           <img src="/logo.png" alt="Pixelverse Logo" className="h-8 sm:h-10" />
         </Link>

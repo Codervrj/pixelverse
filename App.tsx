@@ -16,6 +16,24 @@ import Guidelines from './components/Guidelines';
 import TeamPage from './components/TeamPage';
 import { trackPageView } from "./src/analytics";
 
+const RoundOneRedirect: React.FC = () => {
+  useEffect(() => {
+    console.log("Redirecting to PDF...");
+    window.location.href = '/round1.pdf';
+  }, []);
+
+  return (
+    <div className="min-h-[70vh] flex flex-col items-center justify-center bg-[#F5F5DC]">
+      <div className="text-center">
+        <h2 className="text-4xl font-archivo animate-pulse text-black">OPENING PDF...</h2>
+        <p className="mt-4 text-gray-600">If it doesn't open automatically, 
+          <a href="/round1.pdf" className="underline ml-1">click here</a>.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const HomePage: React.FC = () => (
   <main>
     <Hero />
@@ -54,6 +72,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/round-1" element={<RoundOneRedirect />} />
       </Routes>
       <Footer />
     </div>

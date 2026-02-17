@@ -135,7 +135,7 @@ const UnoReverseCard = ({ quest, index, isVisible }) => {
   };
 
   const handleClick = () => {
-    // Only toggle on touch devices — desktop uses hover
+    // Only toggle on touch devices - desktop uses hover
     if (!isTouchDevice.current) return;
     setIsFlipped(f => !f);
     triggerHaptic('immersive');
@@ -341,7 +341,7 @@ export default function Quests() {
           </h2>
 
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-3 sm:mb-4 px-2">
-            Four distinct paths. One final objective. Choose your specialty and conquer the mainframe.
+           Three distinct paths. One final objective. Choose your specialty and conquer the mainframe.
           </p>
 
           <p className="text-cyan-400 text-xs sm:text-sm font-mono">

@@ -237,7 +237,7 @@ export default function Hero() {
 
         {/* Big Title */}
         <div className="mb-6">
-          {/* PIXELVERSE — main title (shared) */}
+          {/* PIXELVERSE - main title (shared) */}
           <div className="relative" style={{ isolation: 'isolate' }}>
             {/* sm+ Layer 1: Yellow plate behind PIXELVERSE */}
             <div
@@ -255,6 +255,7 @@ export default function Hero() {
               style={{ zIndex: 2 }}
             >
               PIXELVERSE
+              <span className="sr-only"> Design Hackathon</span>
             </h1>
 
             {/* sm+ Layer 3: DESIGNATHON white text on top */}

@@ -16,6 +16,20 @@ import Guidelines from './components/Guidelines';
 import TeamPage from './components/TeamPage';
 import { trackPageView } from "./src/analytics";
 
+const RoundOneRedirect: React.FC = () => {
+  useEffect(() => {
+    window.location.replace('/round1.pdf');
+  }, []);
+
+  return (
+    <div className="h-screen flex items-center justify-center bg-black text-white font-archivo">
+      <div className="text-center">
+        <p className="text-2xl animate-pulse">LOADING ROUND 1 DETAILS...</p>
+        <p className="text-sm text-gray-400 mt-2">Please wait while we open the document.</p>
+      </div>
+    </div>
+  );
+};
 const HomePage: React.FC = () => (
   <main>
     <Hero />

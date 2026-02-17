@@ -72,6 +72,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<TeamPage />} />
+        <Route path="/round-1" element={<RoundOneRedirect />} />
       </Routes>
       <Footer />
     </div>

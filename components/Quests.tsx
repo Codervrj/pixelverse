@@ -80,7 +80,7 @@ const ArrowUpRight = ({ size = 24, strokeWidth = 2 }) => (
 const questList = [
   {
     title: 'Consumer & Gen Z (Mobile App) ',
-    desc: 'Digital Wellness & Social Health',
+    desc: '',
     icon: Brain,
     color: '#FF5555',
     cardColor: 'bg-red-600',
@@ -88,7 +88,7 @@ const questList = [
   },
   {
     title: 'B2B & Efficiency (Tablet/Web) ',
-    desc: 'The Gig Worker\u2019s Cockpit',
+    desc: '',
     icon: HeartPulse,
     color: '#001aff',
     cardColor: 'bg-yellow-400',
@@ -96,7 +96,7 @@ const questList = [
   },
   {
     title: 'Social Good & Accessibility (Mobile App) ',
-    desc: 'Hyper-Local Civic Action',
+    desc: '',
     icon: Sparkles,
     color: '#55AA55',
     cardColor: 'bg-green-600',

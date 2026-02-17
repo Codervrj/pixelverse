@@ -18,18 +18,22 @@ import { trackPageView } from "./src/analytics";
 
 const RoundOneRedirect: React.FC = () => {
   useEffect(() => {
-    window.location.replace('/round1.pdf');
+    console.log("Redirecting to PDF...");
+    window.location.href = '/round1.pdf';
   }, []);
 
   return (
-    <div className="h-screen flex items-center justify-center bg-black text-white font-archivo">
+    <div className="min-h-[70vh] flex flex-col items-center justify-center bg-[#F5F5DC]">
       <div className="text-center">
-        <p className="text-2xl animate-pulse">LOADING ROUND 1 DETAILS...</p>
-        <p className="text-sm text-gray-400 mt-2">Please wait while we open the document.</p>
+        <h2 className="text-4xl font-archivo animate-pulse text-black">OPENING PDF...</h2>
+        <p className="mt-4 text-gray-600">If it doesn't open automatically, 
+          <a href="/round1.pdf" className="underline ml-1">click here</a>.
+        </p>
       </div>
     </div>
   );
 };
+
 const HomePage: React.FC = () => (
   <main>
     <Hero />

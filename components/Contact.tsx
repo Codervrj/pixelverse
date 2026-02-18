@@ -41,7 +41,8 @@ const ContactSection: React.FC = () => {
                       onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
-                      pixelverse.gdg2026@gmail.com</a>
+                      pixelverse.gdg2026@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>

@@ -56,14 +56,17 @@ const Sponsors: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mt-20 text-center">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="px-10 py-5 bg-black text-white font-archivo text-xl uppercase tracking-tighter border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-none cursor-target"
-        >
-          BECOME A SPONSOR
-        </motion.button>
-      </div>
+   <div className="relative z-10 mt-20 text-center">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkryy8Vxf13kIUfA_aqFarwxd72Bxubq14HpSmR9E3ft-VwA/viewform" target="_blank" rel="noopener noreferrer" className="inline-block" 
+  >
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      className="px-10 py-5 bg-black text-white font-archivo text-xl uppercase tracking-tighter border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-none cursor-target"
+    >
+      BECOME A SPONSOR
+    </motion.button>
+  </a>
+</div>
     </div>
   );
 };

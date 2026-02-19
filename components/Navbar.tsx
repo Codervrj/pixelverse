@@ -117,13 +117,19 @@ const Navbar: React.FC = () => {
               <span className="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all group-hover:w-full" />
             </button>
           ))}
-
+<a 
+    href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="inline-block ml-4"
+  >
           <button
             onClick={() => handleNavClick({ name: 'CONTACT', href: '#contact' })}
             className="ml-4 px-8 py-3 bg-white text-black font-archivo text-sm hover:bg-[#FFD700] hover:text-black transition-all uppercase tracking-tighter border-2 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
           >
             REGISTER_NOW
           </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}

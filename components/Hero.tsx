@@ -229,11 +229,12 @@ export default function Hero() {
       >
         {/* Status Badge */}
         <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <img src="fofmumbai_primarylogo.png" alt="Mumbai Primary Logo" className="h-6" />
+          <img src="/images/gdg-logo.png" alt="Logo" className="h-10" />
           <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
              X
           </span>
-          <img src="/images/gdg-logo.png" alt="Logo" className="h-6" />
+          
+          <img src="fofmumbai_primarylogo.png" alt="Mumbai Primary Logo" className="h-10" />
           <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
              presents
           </span>

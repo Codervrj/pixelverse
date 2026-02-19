@@ -45,6 +45,22 @@ const ContactSection: React.FC = () => {
                     </a>
                   </div>
                 </div>
+
+<div className="flex justify-center mt-10 w-full">
+  <a 
+    href="https://unstop.com/o/pixelverse-2026" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    onClick={() => triggerHaptic('medium')}
+    className="inline-block"
+  >
+    <button
+      className="px-8 py-4 bg-[#FFD700] text-black font-archivo font-black text-lg uppercase tracking-tighter border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-target"
+    >
+      REGISTER NOW
+    </button>
+  </a>
+</div>
               </div>
 
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />

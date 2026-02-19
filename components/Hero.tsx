@@ -315,11 +315,13 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto relative z-40">
-          <button onClick={() => triggerHaptic('medium')} className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
-            <span className="flex items-center gap-2 justify-center">
-              Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
-            </span>
-          </button>
+          <a href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" target="_blank" rel="noopener noreferrer">
+            <button onClick={() => triggerHaptic('medium')} className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+              <span className="flex items-center gap-2 justify-center">
+                Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
+              </span>
+            </button>
+          </a>
 
           <button
             onClick={() => triggerHaptic('medium')}

@@ -39,7 +39,7 @@ const About: React.FC = () => {
                   className="cursor-target"
                 >
                   <div className="text-[10px] sm:text-xs font-bold font-archivo text-black mb-3 sm:mb-6 uppercase tracking-widest">MAX_PARTICIPANTS</div>
-                  <div className="text-4xl sm:text-6xl md:text-4xl lg:text-6xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">150+</div>
+                  <div className="text-4xl sm:text-6xl md:text-4xl lg:text-6xl xl:text-9xl font-archivo tracking-tighter text-black drop-shadow-[3px_3px_0px_rgba(255,215,0,1)] sm:drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">500+</div>
                   <div className="text-[10px] sm:text-sm font-bold uppercase mt-2 sm:mt-4 tracking-widest text-black/60">PLAYERS_READY</div>
                 </motion.div>
                 <motion.div

@@ -48,7 +48,7 @@ const ContactSection: React.FC = () => {
 
 <div className="flex justify-center mt-10 w-full">
   <a 
-    href="https://unstop.com/o/pixelverse-2026" 
+    href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" 
     target="_blank" 
     rel="noopener noreferrer"
     onClick={() => triggerHaptic('medium')}

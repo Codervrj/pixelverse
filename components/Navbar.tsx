@@ -86,7 +86,11 @@ const Navbar: React.FC = () => {
               </motion.button>
             ))}
 
-            <motion.button
+<a 
+    href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" 
+    target="_blank" 
+  >
+     <motion.button
               onClick={() => { setIsOpen(false); triggerHaptic('medium'); handleNavClick({ name: 'CONTACT', href: '#contact' }); }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -95,6 +99,8 @@ const Navbar: React.FC = () => {
             >
               REGISTER_NOW
             </motion.button>
+  </a>
+           
           </motion.div>
         )}
       </AnimatePresence>

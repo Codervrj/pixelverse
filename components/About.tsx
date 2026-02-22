@@ -111,7 +111,7 @@ const About: React.FC = () => {
                     MAX_PARTICIPANTS
                   </div>
                   <div className="text-6xl sm:text-7xl lg:text-[5vw] xl:text-8xl font-archivo font-black tracking-tighter text-black drop-shadow-[4px_4px_0px_rgba(255,215,0,1)]">
-                    150+
+                    500+
                   </div>
                   <div className="text-[10px] font-bold uppercase mt-2 tracking-widest text-black/40">
                     PLAYERS_READY

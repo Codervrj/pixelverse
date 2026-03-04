@@ -67,6 +67,26 @@ const Sponsors: React.FC = () => {
                   Platform Partner
                 </span>
               </div>
+              <div className="flex flex-col items-center gap-3 cursor-target">
+                <img 
+                  src="/masterunion.webp" 
+                  alt="Master Union" 
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+                <span className="text-xs font-bold font-archivo text-black/60 uppercase tracking-wider whitespace-nowrap">
+                  Education Partner
+                </span>
+              </div>
+              <div className="flex flex-col items-center gap-3 cursor-target">
+                <img 
+                  src="/procreator.png" 
+                  alt="Procreator" 
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+                <span className="text-xs font-bold font-archivo text-black/60 uppercase tracking-wider whitespace-nowrap">
+                  Design Partner
+                </span>
+              </div>
             </React.Fragment>
           ))}
         </motion.div>

@@ -65,7 +65,7 @@ const HomePage: React.FC = () => (
     <About />
     <Quests />
     <Timeline />
-    <PrizePool />
+    {/* <PrizePool /> */}
     <Sponsors />
     <Guidelines />
     <RulesAndFaq />

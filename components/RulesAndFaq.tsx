@@ -3,7 +3,7 @@ import { triggerHaptic } from '../hooks/useHaptic';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
-  { q: "Who can participate?", a: "Students and young professionals interested in UI/UX." },
+  { q: "Who can participate?", a: "Students interested in UI/UX." },
   { q: "Online or Offline?", a: "PivelVerse 2026 hackathon will consist of 2 rounds: Elimination Round (Online) and Final Round (Offline)" },
   { q: "What tools can we use?", a: "Figma, Adobe XD, Sketch, or any design tool of your choice." },
   { q: "How will judging be done?", a: "Based on Empathy & UX, Visual Design (UI), Problem Solving, Innovation, Presentation" },

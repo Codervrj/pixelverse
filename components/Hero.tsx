@@ -333,7 +333,7 @@ export default function Hero() {
               }`}
           >
             <a
-              href={!isActive ? "/round1.pdf" : undefined}
+              href={!isActive ? "/problemstatement.pdf" : undefined}
               target="_blank"
               className={`flex items-center gap-2 justify-center ${isActive ? "pointer-events-none" : ""}`}
             >

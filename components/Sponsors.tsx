@@ -79,7 +79,7 @@ const Sponsors: React.FC = () => {
               </div>
               <div className="flex flex-col items-center gap-3 cursor-target">
                 <img 
-                  src="/procreator.png" 
+                  src="/procreator.jpeg" 
                   alt="Procreator" 
                   className="h-16 md:h-20 w-auto object-contain"
                 />

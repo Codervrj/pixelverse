@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { triggerHaptic } from '../hooks/useHaptic';
 
-const EVENT_DATE = new Date("2026-03-08T09:00:00"); //2026-03-08T09:00:00
+const EVENT_DATE = new Date("2026-03-08T10:30:00"); //2026-03-08T09:00:00
 
 // Simple icons as SVG components
 const Zap = ({ size = 24, className = "" }) => (
@@ -229,9 +229,14 @@ export default function Hero() {
       >
         {/* Status Badge */}
         <div className="mb-8 inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-          <Sparkles size={16} className="text-black fill-[#FFD700]" />
+          <img src="/images/gdg-logo.png" alt="Logo" className="h-10" />
           <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
-            Google Developer Groups presents
+             X
+          </span>
+          
+          <img src="fofmumbai_primarylogo.png" alt="Mumbai Primary Logo" className="h-10" />
+          <span className="text-xs font-bold text-black tracking-[0.2em] uppercase">
+             presents
           </span>
         </div>
 
@@ -310,11 +315,13 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto relative z-40">
-          <button onClick={() => triggerHaptic('medium')} className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
-            <span className="flex items-center gap-2 justify-center">
-              Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
-            </span>
-          </button>
+          <a href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" target="_blank" rel="noopener noreferrer">
+            <button onClick={() => triggerHaptic('medium')} className="relative px-10 py-5 bg-black text-white font-bold text-xl uppercase tracking-tight border-2 border-black shadow-[8px_8px_0px_0px_rgba(255,215,0,1)] hover:shadow-none hover:translate-x-[4px] hover:translate-y-[4px] transition-all">
+              <span className="flex items-center gap-2 justify-center">
+                Join the Quest <Zap size={20} className="fill-[#FFD700] text-[#FFD700]" />
+              </span>
+            </button>
+          </a>
 
           <button
             onClick={() => triggerHaptic('medium')}

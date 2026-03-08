@@ -29,47 +29,38 @@ const ContactSection: React.FC = () => {
                 Any query, suggestion or comment? Feel free to contact us.
               </p>
 
-              <div className="space-y-6 mb-10">
-                <div className="flex items-center gap-4 group/phone">
-                  <div className="w-14 h-14 flex items-center justify-center p-3 bg-white/5 border border-white/10 group-hover/phone:border-yellow-400/50 transition-colors">
-                    <Phone className="text-yellow-400" size={24} />
-                  </div>
-                  <div className="space-y-1">
-                    <a
-                      href="#"
-                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block cursor-default"
-                    >
-                      +91 98765 43210
-                    </a>
-                    <a
-                      href="#"
-                      className="text-white text-sm sm:text-lg font-bold uppercase tracking-tight hover:text-yellow-400 transition-colors block cursor-default"
-                    >
-                      +91 98765 43210
-                    </a>
-                  </div>
-                </div>
-              </div>
-
               <div>
-                <h3 className="font-pixel text-[10px] sm:text-xs text-zinc-500 uppercase tracking-widest mb-4 sm:mb-6">
-                  Any Queries?
-                </h3>
-                <div className="flex items-center gap-3 sm:gap-4 group/mail">
+                              <div className="flex items-center gap-3 sm:gap-4 group/mail">
                   <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center p-2 sm:p-3 bg-white/5 border border-white/10 group-hover/mail:border-yellow-400/50 transition-colors shrink-0">
                     <Mail className="text-yellow-400" size={20} />
                   </div>
                   <div className="min-w-0">
                     <p className="text-zinc-600 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-1">Email us at</p>
                     <a
-                      href="mailto:letstalk@pixelverse-gdg.in"
+                      href="mailto:pixelverse.gdg2026@gmail.com"
                       onClick={() => triggerHaptic('medium')}
                       className="text-white text-sm sm:text-lg font-bold tracking-tight hover:text-yellow-400 transition-colors break-all"
                     >
-                      letstalk@pixelverse-gdg.in
+                      pixelverse.gdg2026@gmail.com
                     </a>
                   </div>
                 </div>
+
+<div className="flex justify-center mt-10 w-full">
+  <a 
+    href="https://unstop.com/p/pixelverse-uiux-design-hackathon-google-developer-groups-siesgst-1643612" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    onClick={() => triggerHaptic('medium')}
+    className="inline-block"
+  >
+    <button
+      className="px-8 py-4 bg-[#FFD700] text-black font-archivo font-black text-lg uppercase tracking-tighter border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] transition-all cursor-target"
+    >
+      REGISTER NOW
+    </button>
+  </a>
+</div>
               </div>
 
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-yellow-400/0 group-hover:border-yellow-400 transition-all duration-300" />

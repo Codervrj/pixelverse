@@ -80,7 +80,7 @@ const ArrowUpRight = ({ size = 24, strokeWidth = 2 }) => (
 const questList = [
   {
     title: 'Consumer & Gen Z (Mobile App) ',
-    desc: 'Digital Wellness & Social Health',
+    desc: '',
     icon: Brain,
     color: '#FF5555',
     cardColor: 'bg-red-600',
@@ -88,7 +88,7 @@ const questList = [
   },
   {
     title: 'B2B & Efficiency (Tablet/Web) ',
-    desc: 'The Gig Worker\u2019s Cockpit',
+    desc: '',
     icon: HeartPulse,
     color: '#001aff',
     cardColor: 'bg-yellow-400',
@@ -96,7 +96,7 @@ const questList = [
   },
   {
     title: 'Social Good & Accessibility (Mobile App) ',
-    desc: 'Hyper-Local Civic Action',
+    desc: '',
     icon: Sparkles,
     color: '#55AA55',
     cardColor: 'bg-green-600',
@@ -341,7 +341,7 @@ export default function Quests() {
           </h2>
 
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-3 sm:mb-4 px-2">
-            Four distinct paths. One final objective. Choose your specialty and conquer the mainframe.
+           Three distinct paths. One final objective. Choose your specialty and conquer the mainframe.
           </p>
 
           <p className="text-cyan-400 text-xs sm:text-sm font-mono">

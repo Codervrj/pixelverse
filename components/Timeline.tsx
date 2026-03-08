@@ -12,7 +12,7 @@ const timelineData = [
     color: "#FFD700"
   },
   {
-    time: "28th February 2026",
+    time: "2nd March 2026",
     title: "Round 1 ends",
     desc: ["Submission of your Micro-challenge", "Wait for Round 1 results"],
     icon: Code,
